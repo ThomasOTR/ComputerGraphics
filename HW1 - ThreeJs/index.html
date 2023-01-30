@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>Three.js Starter</title>
+    <style>
+        html, body {
+            margin: 0; padding: 0; overflow: hidden;
+        }
+        #controls {
+            background-color: rgba(0,0,0,.3);
+            position: absolute;
+            z-index: 100;
+            display:block;
+            color: white;
+            margin: 10px;
+            padding: 10px;
+            width: auto;
+}
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h3>Controls</h3>
+        <p>WASD - Forwards, left, backwards, right</p>
+        <p>Q - Upwards</p>
+        <p>E - Downwards</p>
+        <p>Esc - Toggle AutoRotate (Default off)</p>
+        <p>Left Mouse Button (hold) - Panning</p>
+        <p>Right Mouse Button (hold) - Rotating</p>
+    </div>
+    <script src="three/three.js"></script>
+    <script src="three/OrbitControls.js"></script>
+    <script src="three/GLTFLoader.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
