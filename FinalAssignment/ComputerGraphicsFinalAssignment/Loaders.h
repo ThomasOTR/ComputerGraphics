@@ -14,19 +14,51 @@
 
 #ifndef TEXTURE_HPP
 #define TEXTURE_HPP
-unsigned int loadBMP(const char* imagepath);
-unsigned int loadDDS(const char* imagepath);
+
+/// <summary>
+/// Method to load a BMP file as texture
+/// </summary>
+/// <param name=""></param>
+/// <returns>Unsigned int which contains the loaded texture</returns>
+unsigned int loadBMP(const char*);
+
+/// <summary>
+/// method to load a DDS file as texture.
+/// </summary>
+/// <param name=""></param>
+/// <returns>Unsigned int which contains the loaded object</returns>
+unsigned int loadDDS(const char*);
 #endif
 
 #ifndef OBJLOADER_H
 #define OBJLOADER_H
+
+/// <summary>
+/// Method to load an object
+/// </summary>
+/// <param name="">path to objection location</param>
+/// <param name="">Memory address to vector of vertices</param>
+/// <param name="">Memory address to vector of uvs </param>
+/// <param name="">Memory address to vector of normals</param>
+/// <returns>Boolean if object is loaded or not.</returns>
 bool loadOBJ(
-	const char* path,
+	const char*,
 	std::vector<glm::vec3>&,
 	std::vector<glm::vec2>&,
 	std::vector<glm::vec3>&
 );
 #endif
 
-unsigned int loadCubemap(std::vector<std::string> faces);
+/// <summary>
+/// Method to load a Cubemap
+/// </summary>
+/// <param name="">a vector with path of each side of the cubemap</param>
+/// <returns>Unsigned int which contains the loaded texture</returns>
+unsigned int loadCubemap(std::vector<std::string>);
+
+/// <summary>
+/// A method to set a texture
+/// </summary>
+/// <param name="">Path to texture location</param>
+/// <returns>Unsigned int which contains the loaded texture</returns>
 unsigned int setTexture(const char*);

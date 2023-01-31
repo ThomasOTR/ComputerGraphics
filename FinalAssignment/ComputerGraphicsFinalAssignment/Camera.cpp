@@ -1,25 +1,43 @@
 #include "Camera.h"
 
-void Camera::updateCameraVectors()
+
+Camera::Camera()
 {
-        // calculate the new Front vector
+    CurrentMode = WalkMode;
+}
+
+void Camera::UpdateCameraVectors()
+{
         glm::vec3 front;
-        front.x = cos(glm::radians(currentMode.yaw)) * cos(glm::radians(currentMode.pitch));
-        front.y = sin(glm::radians(currentMode.pitch));
-        front.z = sin(glm::radians(currentMode.yaw)) * cos(glm::radians(currentMode.pitch));
-        currentMode.Front = glm::normalize(front);
-        // also re-calculate the Right and Up vector
-        currentMode.Right = glm::normalize(glm::cross(currentMode.Front, currentMode.WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
-        currentMode.Up = glm::normalize(glm::cross(currentMode.Right, currentMode.Front));
+        front.x = cos(glm::radians(CurrentMode.yaw)) * cos(glm::radians(CurrentMode.pitch));
+        front.y = sin(glm::radians(CurrentMode.pitch));
+        front.z = sin(glm::radians(CurrentMode.yaw)) * cos(glm::radians(CurrentMode.pitch));
+        CurrentMode.Front = glm::normalize(front);
+        CurrentMode.Right = glm::normalize(glm::cross(CurrentMode.Front, CurrentMode.WorldUp));
+        CurrentMode.Up = glm::normalize(glm::cross(CurrentMode.Right, CurrentMode.Front));
+}
+void Camera::SwitchMode()
+{
+    if (CurrentMode.Mode == ModeType::Walk)
+    {
+        WalkMode = CurrentMode;
+        DroneMode.projection = WalkMode.projection;
+        CurrentMode = DroneMode;
+    }
+    else if (CurrentMode.Mode == ModeType::Drone)
+    {
+        DroneMode = CurrentMode;
+        CurrentMode = WalkMode;
+    }
 }
 void Camera::CalculateViewMatrix()
 {
-    currentMode.view = glm::lookAt(currentMode.Pos, currentMode.Pos + currentMode.Front, currentMode.Up);
+    CurrentMode.view = glm::lookAt(CurrentMode.Pos, CurrentMode.Pos + CurrentMode.Front, CurrentMode.Up);
 }
 
 void Camera::CalculateProjectionMatrix()
 {
-    currentMode.projection = glm::perspective(glm::radians(currentMode.FOV), 
+    CurrentMode.projection = glm::perspective(glm::radians(CurrentMode.FOV),
                                              (float)glutGet(GLUT_WINDOW_WIDTH) / (float)glutGet(GLUT_WINDOW_HEIGHT), 
                                               0.1f, 100.0f);
 }

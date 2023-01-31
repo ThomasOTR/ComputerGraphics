@@ -12,51 +12,37 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		glutExit();
 		break;
 	case 'v':
-		if (camera.mode == ViewMode::Walk) {
-			camera.mode = ViewMode::Drone;
-			camera.walkMode = camera.currentMode;
-			camera.droneMode.projection = camera.walkMode.projection;
-			camera.currentMode = camera.droneMode;
-		}
-		else if (camera.mode == ViewMode::Drone) {
-			
-			camera.mode = ViewMode::Walk;
-			camera.droneMode = camera.currentMode;
-			camera.currentMode = camera.walkMode;
-		}
+		camera.SwitchMode();
 		break;
 	case 'w':
 		// Move Forward
-		camera.currentMode.Pos += movementSpeed * camera.currentMode.Front;
-		std::cout << glm::to_string(camera.currentMode.Pos) << std::endl;
+		camera.CurrentMode.Pos += movementSpeed * camera.CurrentMode.Front;
+		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	
 	case 'a':
 		// Move left
-		camera.currentMode.Pos -= glm::normalize(glm::cross(camera.currentMode.Front, camera.currentMode.Up)) * movementSpeed;
-		 std::cout << glm::to_string(camera.currentMode.Pos) << std::endl;
+		camera.CurrentMode.Pos -= glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
+		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 's':
 		// Move Backwards
-		 camera.currentMode.Pos -= movementSpeed * camera.currentMode.Front;
-		 std::cout << glm::to_string(camera.currentMode.Pos) << std::endl;
+		 camera.CurrentMode.Pos -= movementSpeed * camera.CurrentMode.Front;
+		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 'd':
 		// Move right
-		camera.currentMode.Pos += glm::normalize(glm::cross(camera.currentMode.Front, camera.currentMode.Up)) * movementSpeed;
-		 std::cout << glm::to_string(camera.currentMode.Pos) << std::endl;
-
+		camera.CurrentMode.Pos += glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
+		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 'q': 
-		if(camera.mode == ViewMode::Drone)
-			camera.currentMode.Pos.y += movementSpeed;
-
+		if(camera.CurrentMode.Mode == ModeType::Drone)
+			camera.CurrentMode.Pos.y += movementSpeed;
 		break;
 	case 'e' :
-		if (camera.mode == ViewMode::Drone)
-			camera.currentMode.Pos.y -= movementSpeed;
+		if (camera.CurrentMode.Mode == ModeType::Drone)
+			camera.CurrentMode.Pos.y -= movementSpeed;
 		break;
-
 	}
 	return camera;
 }
@@ -80,15 +66,15 @@ Camera InputHandler::processMouseInput(Camera camera, int x, int y)
 	offsetX *= sensitivity;
 	offsetY *= sensitivity;
 
-	camera.currentMode.yaw += offsetX;
-	camera.currentMode.pitch += offsetY;
+	camera.CurrentMode.yaw += offsetX;
+	camera.CurrentMode.pitch += offsetY;
 
-	if (camera.currentMode.pitch > 89.0f)
-		camera.currentMode.pitch = 89.0f;
-	if (camera.currentMode.pitch < -89.0f)
-		camera.currentMode.pitch = -89.0f;
+	if (camera.CurrentMode.pitch > 89.0f)
+		camera.CurrentMode.pitch = 89.0f;
+	if (camera.CurrentMode.pitch < -89.0f)
+		camera.CurrentMode.pitch = -89.0f;
 
-	camera.updateCameraVectors();
+	camera.UpdateCameraVectors();
 	glutWarpPointer(400, 300);
 	return camera;
 }

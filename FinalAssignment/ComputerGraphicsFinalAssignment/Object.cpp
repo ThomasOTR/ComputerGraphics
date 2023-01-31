@@ -106,12 +106,12 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 
     shader.setMat4("mv", mv);
     shader.setMat4("projection", projection);
-    shader.setVec3("light_pos", light.position);
+    shader.setVec3("light_pos", light.Position);
 
-    shader.setVec3("mat_ambient", light.ambient_color);
-    shader.setVec3("mat_diffuse", light.diffuse_color);
-    shader.setVec3("mat_specular", light.specular);
-    shader.setFloat("mat_power", light.power);
+    shader.setVec3("mat_ambient", light.AmbientColor);
+    shader.setVec3("mat_diffuse", light.DiffuseColor);
+    shader.setVec3("mat_specular", light.Specular);
+    shader.setFloat("mat_power", light.Power);
 
     if (!texture_path.empty())
     {
