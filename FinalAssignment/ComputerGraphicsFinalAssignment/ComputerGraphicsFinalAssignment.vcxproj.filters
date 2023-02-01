@@ -181,22 +181,28 @@
     <None Include="Shaders\basic_shader.vert">
       <Filter>Source Files\Shaders</Filter>
     </None>
+    <None Include="Shaders\lambert_shader.frag">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\lambert_shader.vert">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
     <None Include="Shaders\phong_shader.frag">
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="Shaders\phong_shader.vert">
       <Filter>Source Files\Shaders</Filter>
     </None>
+    <None Include="Shaders\skybox_shader.frag">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\skybox_shader.vert">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
     <None Include="Shaders\texture_shader.frag">
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="Shaders\texture_shader.vert">
-      <Filter>Source Files\Shaders</Filter>
-    </None>
-    <None Include="lambert_shader.vert">
-      <Filter>Source Files\Shaders</Filter>
-    </None>
-    <None Include="lambert_shader.frag">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>

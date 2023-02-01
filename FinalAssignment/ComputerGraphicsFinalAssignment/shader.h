@@ -54,6 +54,8 @@ public:
     /// <param name="">float that needs to be stored</param>
     void setFloat(const std::string&, float);
 
+    void setInt(const std::string&, int);
+
     /// <summary>
     /// Method to set a Texture
     /// </summary>

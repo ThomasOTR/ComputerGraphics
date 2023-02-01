@@ -83,6 +83,10 @@ void Shader::setFloat(const std::string& name, float value)
 {
     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 }
+void Shader::setInt(const std::string& name, int value)
+{
+    glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+}
 void Shader::setTexture(const std::string& name, const std::string& bool_name)
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), 0);

@@ -7,3 +7,5 @@ extern const char* phongFragPath;
 extern const char* phongVertPath;
 extern const char* lambertFragPath;
 extern const char* lambertVertPath;
+extern const char* skyboxFragPath;
+extern const char* skyboxVertPath;

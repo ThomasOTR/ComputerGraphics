@@ -16,7 +16,7 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 'w':
 		// Move Forward
-		camera.CurrentMode.Pos += movementSpeed * camera.CurrentMode.Front;
+		camera.CurrentMode.Pos += (movementSpeed * 0.25) * camera.CurrentMode.Front;
 		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	
@@ -27,7 +27,7 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 's':
 		// Move Backwards
-		 camera.CurrentMode.Pos -= movementSpeed * camera.CurrentMode.Front;
+		 camera.CurrentMode.Pos -= (movementSpeed * 0.25) * camera.CurrentMode.Front;
 		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 'd':
