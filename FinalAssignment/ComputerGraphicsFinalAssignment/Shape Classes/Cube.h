@@ -1,5 +1,9 @@
 #pragma once
 #include "../Shape.h"
+
+/// <summary>
+/// A class to create a Cube Shape and render it on the screen.
+/// </summary>
 class Cube :
 	public Shape
 {

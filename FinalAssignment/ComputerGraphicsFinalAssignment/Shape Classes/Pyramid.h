@@ -1,6 +1,10 @@
 #pragma once
 #include "../Shape.h"
 #include <vector>
+
+/// <summary>
+/// A class to create a Pyramid shape and render it.
+/// </summary>
 class Pyramid : public Shape
 {
 private:

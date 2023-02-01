@@ -34,7 +34,7 @@ public:
 	/// <summary>
 	/// An property which stores a lightsource that is used with Phong Shaders.
 	/// </summary>
-	Light light;
+	Material material;
 	/* Scaling, Rotating, Positioning and doing this in Animations */
 
 	/// <summary>

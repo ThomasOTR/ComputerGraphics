@@ -1,5 +1,9 @@
 #pragma once
 #include "../Mesh.h"
+
+/// <summary>
+/// A class to create a Blokkentoren Mesh
+/// </summary>
 class Blokkentoren :
     public Mesh
 {

@@ -1,5 +1,9 @@
 #pragma once
 #include "../Shape.h"
+
+/// <summary>
+/// A class to create a plane shape and render it
+/// </summary>
 class Plane :
     public Shape
 {

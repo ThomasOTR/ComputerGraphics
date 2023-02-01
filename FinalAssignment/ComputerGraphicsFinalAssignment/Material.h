@@ -2,9 +2,9 @@
 #include <glm/glm.hpp>
 
 /// <summary>
-/// A class which stores everything related to a light source.
+/// A class which stores everything related to a Material.
 /// </summary>
-class Light
+class Material
 {
 public:
 	glm::vec3 Position = glm::vec3(4, 4, 4);
@@ -12,5 +12,9 @@ public:
 	glm::vec3 DiffuseColor = glm::vec3(0.5, 0.5, 0.3);
 	glm::vec3 Specular = glm::vec3(0.7, 0.7, 0.7);
 	float Power = 1024;
+
+	Material() {
+
+	}
 };
 
