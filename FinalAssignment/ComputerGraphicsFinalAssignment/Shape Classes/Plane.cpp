@@ -5,7 +5,7 @@ Plane::Plane(glm::vec3 color, float posX, float posY, float posZ)
 	this->color = color;
 	SetPosition(posX, posY, posZ);
 	shading_type = ShadingType::Basic;
-
+	material = defaultMaterial;
 }
 
 void Plane::setData()

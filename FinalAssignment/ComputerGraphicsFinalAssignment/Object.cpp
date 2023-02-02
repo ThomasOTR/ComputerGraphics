@@ -106,7 +106,7 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 
     shader.setMat4("mv", mv);
     shader.setMat4("projection", projection);
-    shader.setVec3("light_pos", material.Position);
+    shader.setVec3("light_pos", defaultLight.Position);
 
     shader.setVec3("mat_ambient", material.AmbientColor);
     shader.setVec3("mat_diffuse", material.DiffuseColor);

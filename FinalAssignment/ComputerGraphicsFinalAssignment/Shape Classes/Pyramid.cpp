@@ -8,6 +8,8 @@ Pyramid::Pyramid()
 {
 	setData();
 	setAnimations();
+	material = defaultMaterial;
+
 }
 
 Pyramid::Pyramid(std::string texture_uri, float posX, float posY, float posZ) : Pyramid()

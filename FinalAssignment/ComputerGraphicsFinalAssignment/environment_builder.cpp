@@ -16,7 +16,7 @@ void EnvironmentBuilder::LoadAllEntities()
 	//entities.push_back(new Pyramid(url, 1, 1, -10));
 	entities.push_back(new Object("Objects/teapot.obj", url, 0, 0, 0));
 	//entities.push_back(new Object("Objects/box.obj", url, 5, 0, -10));
-	////entities.push_back(new Cube(glm::vec3(0.173, 0., 0.8), 0, 0, 0));
+	entities.push_back(new Cube(glm::vec3(0.173, 0., 0.8), 0, 0, 0));
 	//entities.push_back(new Plane(glm::vec3(200, 1, 1), 0, 0, 0));
 	//Blokkentoren* bla = new Blokkentoren(0, 0, 0);
 	//bla->SetPosition(4, 4, 4);

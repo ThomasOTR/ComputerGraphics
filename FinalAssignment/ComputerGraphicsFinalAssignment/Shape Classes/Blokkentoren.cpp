@@ -6,6 +6,7 @@ Blokkentoren::Blokkentoren(float positionX, float positionY, float positionZ)
 	SetPosition(positionX, positionY, positionZ);
 	Transform();
 	AddComponents();
+	material = defaultMaterial;
 }
 
 void Blokkentoren::AddComponents()

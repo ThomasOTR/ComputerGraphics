@@ -146,44 +146,40 @@ void Shape::RenderShading(glm::mat4, glm::mat4)
 {
 }
 
-glm::vec3 CalculateNormal(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3)
-{
-	glm::vec3 N, U, V;
 
-	U = p2 - p1;
-
-	V = p3 - p1;
-
-	N.x = (U.y * V.z) - (U.z * V.y);
-	N.y = (U.z * V.x) - (U.x * V.z);
-	N.z = (U.x * V.y) - (U.y * V.x);
-
-	return glm::normalize(N);
-
-}
+// TODO: make 2 methods for it. 
 void Shape::CalculateNormals(std::vector<GLfloat> vertices)
 {
-	std::vector<GLfloat> calculatedNormals;
-	for (int i = 0; i < sizeof(vertices); i += 9)
-	{
+	glm::vec3 N, U, V;
+	std::vector<GLfloat> newNormals;
+
+	for (int i = 0; i < sizeof(vertices); i += 9) {
+		glm::vec3 p1, p2, p3;
+
 		int j = i;
-		glm::vec3 p1 = glm::vec3(vertices[i], vertices[i + 1], vertices[i + 2]);
+		p1 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
 		j += 3;
-		glm::vec3 p2 = glm::vec3(vertices[i], vertices[i + 1], vertices[i + 2]);
+		p2 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
 		j += 3;
-		glm::vec3 p3 = glm::vec3(vertices[i], vertices[i + 1], vertices[i + 2]);
+		p3 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
 
-		for (int k = 0; k < 3; k++)
-		{
-			glm::vec3 calculatedNormal = CalculateNormal(p1, p2, p3);
+		U = p2 - p1;
+		V = p3 - p1;
 
-			calculatedNormals.push_back(calculatedNormal.x);
-			calculatedNormals.push_back(calculatedNormal.y);
-			calculatedNormals.push_back(calculatedNormal.z);
+		N.x = (U.y * V.z) - (U.z * V.y);
+		N.y = (U.z * V.x) - (U.x * V.z);
+		N.z = (U.x * V.y) - (U.y * V.x);
+
+		// Normalize (divide by root of dot product)
+		N = glm::normalize(N);
+
+		for (int p = 0; p < 3; p++) {
+			newNormals.push_back(N.x);
+			newNormals.push_back(N.y);
+			newNormals.push_back(N.z);
 		}
 	}
-	std::copy(calculatedNormals.begin(), calculatedNormals.end(), normals);
-
+	std::copy(newNormals.begin(), newNormals.end(), normals);
 }
 void Shape::BufferLambert(glm::mat4, glm::mat4)
 {

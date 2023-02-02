@@ -5,7 +5,7 @@
 #include <vector>
 #include "Globals.h"
 #include "Loaders.h"
-#include "Light.h"
+#include "Material.h"
 class Entity
 {
 private:
