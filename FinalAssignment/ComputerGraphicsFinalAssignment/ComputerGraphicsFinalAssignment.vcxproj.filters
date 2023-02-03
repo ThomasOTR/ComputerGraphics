@@ -81,7 +81,7 @@
     <ClCompile Include="Shape Classes\Plane.cpp">
       <Filter>Source Files\Shape Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Shape Classes\Blokkentoren.cpp">
+    <ClCompile Include="Shape Classes\House.cpp">
       <Filter>Source Files\Shape Classes</Filter>
     </ClCompile>
     <ClCompile Include="Skybox.cpp">
@@ -164,7 +164,7 @@
     <ClInclude Include="Shape Classes\Plane.h">
       <Filter>Source Files\Shape Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Shape Classes\Blokkentoren.h">
+    <ClInclude Include="Shape Classes\House.h">
       <Filter>Source Files\Shape Classes</Filter>
     </ClInclude>
     <ClInclude Include="Skybox.h">

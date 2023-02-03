@@ -4,12 +4,12 @@
 /// <summary>
 /// A class to create a Blokkentoren Mesh
 /// </summary>
-class Blokkentoren :
+class House :
     public Mesh
 {
 public:
-    Blokkentoren() = default;
-    Blokkentoren(float, float, float);
+    House() = default;
+    House(float, float, float);
 
     // Inherited via Mesh
     virtual void AddComponents() override;

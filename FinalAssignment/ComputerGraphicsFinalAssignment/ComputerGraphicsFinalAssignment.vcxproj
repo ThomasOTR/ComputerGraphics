@@ -169,7 +169,7 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="Shape Classes\Blokkentoren.cpp" />
+    <ClCompile Include="Shape Classes\House.cpp" />
     <ClCompile Include="Shape Classes\Cube.cpp" />
     <ClCompile Include="Shape Classes\Plane.cpp" />
     <ClCompile Include="Shape Classes\Pyramid.cpp" />
@@ -197,7 +197,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="shader.h" />
-    <ClInclude Include="Shape Classes\Blokkentoren.h" />
+    <ClInclude Include="Shape Classes\House.h" />
     <ClInclude Include="Shape Classes\Cube.h" />
     <ClInclude Include="Shape Classes\Plane.h" />
     <ClInclude Include="Shape Classes\Pyramid.h" />

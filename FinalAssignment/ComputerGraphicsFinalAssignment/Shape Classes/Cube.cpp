@@ -30,7 +30,7 @@ Cube::Cube(glm::vec3 inputColor, float posX, float posY, float posZ) : Cube()
 void Cube::setData()
 {
 	std::copy(Cube_Vertices.begin(), Cube_Vertices.end(), vertices);
-	std::copy(Cube_uvs.begin(), Cube_uvs.end(), uvs);
+	std::copy(Cube_Texcoords.begin(), Cube_Texcoords.end(), uvs);
 	std::copy(Cube_Elements.begin(), Cube_Elements.end(), indices);
 }
 

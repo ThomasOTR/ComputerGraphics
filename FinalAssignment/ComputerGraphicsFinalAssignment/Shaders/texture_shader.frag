@@ -1,16 +1,15 @@
-#version 430 core
+#version 330 core
 
-// Inputs from vertexshader
-in vec2 UV;
+out vec4 FragColor;
 
-// Output
-out vec3 FragColor;
+in vec2 TexCoord;
 
-// Values that stay constant for the whole mesh.
-uniform sampler2D myTextureSampler;
+// texture samplers
+uniform sampler2D texture1;
+
 
 void main()
 {
-    // Output FragColor = color of the texture at the specified UV
-    FragColor = texture(myTextureSampler, UV).rgb;
+	// set simple our texture
+	 FragColor = texture(texture1, TexCoord);
 }
