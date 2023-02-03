@@ -16,9 +16,6 @@ void House::AddComponents()
 
 	Object* Base = new Object("Objects/box.obj", "Textures/brick.bmp", position.x, position.y, position.z);
 	Base->SetScale(1.75, 1.75, 1.75);
-	//Base->Transform();
-	//Cube* Base = new Cube("Textures/brick.bmp", position.x, position.y, position.z);
-
 	Pyramid* Top = new Pyramid("Textures/rooftiles.bmp", position.x, position.y, position.z);
 	Top->SetPosition(position.x, position.y + 2.5, position.z);
 

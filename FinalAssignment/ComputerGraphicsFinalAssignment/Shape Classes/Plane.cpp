@@ -11,7 +11,6 @@ Plane::Plane(glm::vec3 color, float posX, float posY, float posZ)
 void Plane::setData()
 {
 	std::copy(PlaneVertices.begin(), PlaneVertices.end(), vertices);
-	std::copy(Plane_Uvs.begin(), Plane_Uvs.end(), uvs);
 	std::copy(Plane_Elements.begin(), Plane_Elements.end(), indices);
 }
 
