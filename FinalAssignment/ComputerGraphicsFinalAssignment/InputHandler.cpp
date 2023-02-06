@@ -44,6 +44,7 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 			camera.CurrentMode.Pos.y -= movementSpeed;
 		break;
 	}
+	if (camera.CurrentMode.Mode == ModeType::Walk) camera.CurrentMode.Pos.y = camera.CurrentMode.OriginalPos.y;
 	return camera;
 }
 

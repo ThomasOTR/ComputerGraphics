@@ -17,10 +17,13 @@ void EnvironmentBuilder::LoadAllEntities()
 	//entities.push_back(new Object("Objects/teapot.obj", url, 0, 0, 0));
 	//entities.push_back(new Object("Objects/box.obj", url, 5, 0, -10));
 	//entities.push_back(new Cube(glm::vec3(0.173, 0., 0.8), 0, 0, 0));
-	entities.push_back(new Plane(glm::vec3(0.173, 0., 0.8), -2, 0, 0));
 	entities.push_back(new House(0,0,0));
 	entities.push_back(new Skybox());
 	entities.push_back(new Object("Objects/hek.obj", url, 1, 1, 1));
+
+	Plane* plane = new Plane(glm::vec3(0.173, 0., 0.8), 0, 0, 0);
+	plane->SetScale(30, 1, 30);
+	entities.push_back(plane);
 	//entities.push_back(new Object("Objects/grass.obj", url, 1, 1, 1));
 
 }

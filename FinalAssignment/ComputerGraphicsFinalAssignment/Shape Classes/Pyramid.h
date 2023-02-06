@@ -36,8 +36,6 @@ private:
 public:
     Pyramid();
     Pyramid(std::string, float, float, float);
-    Pyramid(std::string, float, float, float, float, float, float);
-    Pyramid(std::string, float, float, float, float, float, float, float, float, float, float);
 
 	// Inherited via Shape
 	virtual void setData() override;

@@ -27,6 +27,8 @@ public:
 	float pitch = 0.0f;
 	float FOV = 45.0f;
 
+	glm::vec3 OriginalPos;
+
 	/// <summary>
 	/// The view and projection needed to position all the other elements on the right spot.
 	/// </summary>

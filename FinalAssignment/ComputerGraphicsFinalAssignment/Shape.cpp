@@ -127,13 +127,9 @@ void Shape::RenderBasic(glm::mat4 view, glm::mat4 projection)
 	glBindTexture(GL_TEXTURE_2D, texture_id);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	//std::cout << "animation size" << animations.size() << std::endl;
-	// Animations
-	if (animations.size() > 0) {
-		for (auto& ani : animations) {
-			model = ani->Animate(model);
-		}
-	}
+
+	RunAnimations();
+
 	// Send mvp
 	shader.setMat4("model", model);
 	shader.setMat4("view", view);

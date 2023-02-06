@@ -34,7 +34,7 @@ Object::Object(std::string object_path, std::string texture_path,
 
 void Object::LoadObject()
 {
-    loadOBJ(object_path.c_str(), vertices, uvs, normals);
+    LoadOBJ(object_path.c_str(), vertices, uvs, normals);
 
 }
 
@@ -126,6 +126,8 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 void Object::Render(glm::mat4 view, glm::mat4 projection)
 {
     shader.use();
+
+    RunAnimations();
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture_id);

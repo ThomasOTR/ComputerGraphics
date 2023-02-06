@@ -1,5 +1,23 @@
 #include "Entity.h"
 #include "Transformations.h"
+
+void Entity::RunAnimations()
+{
+	if (animations.size() == 0) return;
+	else
+	{
+		AnimationRunning = true;
+		int index = 0;
+		while (AnimationRunning)
+		{
+			Animation* A = animations[index];
+			A->Animate(model);
+			index++;
+			if (index >= animations.size()) index=0;
+		}
+	}
+
+}
 void Entity::Transform()
 {
 	if(Position != glm::vec3()) model = translate(model, Position.x, Position.y, Position.z);

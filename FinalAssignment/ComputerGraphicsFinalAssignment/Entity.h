@@ -41,6 +41,8 @@ public:
 	/// An property which stores all the animations that is performed by this Entity.
 	/// </summary>
 	std::vector<Animation*> animations = {};
+	void RunAnimations();
+	bool AnimationRunning = false;
 
 	/// <summary>
 	/// Properties which will be used to buffer and render the entity.
@@ -53,11 +55,19 @@ public:
 
 	Entity() = default;
 
+	/// <summary>
+	/// Methods to buffer and render each entity
+	/// </summary>
+	/// <param name="">projection</param>
+	/// <param name="">view</param>
 	virtual void Buffer(glm::mat4, glm::mat4) = 0;
 	virtual void Render(glm::mat4, glm::mat4) = 0;
-	
+
 	virtual void Transform();
-	
+
+	/// <summary>
+	/// Get & Set Methods for Positioning, Rotation and Scaling
+	/// </summary
 	virtual void SetPosition(float, float, float);
 	glm::vec3 GetPosition();
 
@@ -67,9 +77,8 @@ public:
 	virtual void SetScale(float, float, float);
 	glm::vec3 GetScale();
 
-
 	/// <summary>
-	/// Methods to handle memory alllocation 
+	/// Methods to handle memory allocation 
 	/// </summary>
 	void* operator new(size_t i)
 	{

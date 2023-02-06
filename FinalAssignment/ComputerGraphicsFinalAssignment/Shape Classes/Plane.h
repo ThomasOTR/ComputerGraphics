@@ -16,7 +16,7 @@ public:
     };
     std::vector<GLushort> Plane_Elements = {
         0,1,2,
-        0,2,3,
+        2,3,1
     };
     Plane() = default;
     Plane(glm::vec3, float, float, float);

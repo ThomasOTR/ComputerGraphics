@@ -41,7 +41,7 @@ unsigned int loadDDS(const char*);
 /// <param name="">Memory address to vector of uvs </param>
 /// <param name="">Memory address to vector of normals</param>
 /// <returns>Boolean if object is loaded or not.</returns>
-bool loadOBJ(
+bool LoadOBJ(
 	const char*,
 	std::vector<glm::vec3>&,
 	std::vector<glm::vec2>&,

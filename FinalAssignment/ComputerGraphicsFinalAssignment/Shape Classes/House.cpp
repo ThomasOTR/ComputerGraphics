@@ -16,10 +16,12 @@ void House::AddComponents()
 
 	Object* Base = new Object("Objects/box.obj", "Textures/brick.bmp", position.x, position.y, position.z);
 	Base->SetScale(1.75, 1.75, 1.75);
-	Pyramid* Top = new Pyramid("Textures/rooftiles.bmp", position.x, position.y, position.z);
-	Top->SetPosition(position.x, position.y + 2.5, position.z);
+	Pyramid* Top = new Pyramid("Textures/rooftiles.bmp", position.x, position.y + 2.5, position.z);
 
-	Parts.insert(Parts.end(), { Base,Top });
+	Cube* chimney = new Cube("Textures/brick.bmp", position.x - 0.5,position.y+2.7,position.z);
+	chimney->SetScale(0.15, 0.5, 0.15);
+
+	Parts.insert(Parts.end(), { Base,Top,chimney });
 }
 
 void House::ResetComponents()
