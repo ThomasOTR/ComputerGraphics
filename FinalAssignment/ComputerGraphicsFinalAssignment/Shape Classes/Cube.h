@@ -72,8 +72,7 @@ private:
 
 public:
 	Cube();
-	Cube(std::string, float, float, float);
-	Cube(glm::vec3, float, float, float);
+	Cube(glm::vec3, float, float, float, ShadingType);
 	// Inherited via Shape
 	virtual void setData();
 	virtual void setAnimations();

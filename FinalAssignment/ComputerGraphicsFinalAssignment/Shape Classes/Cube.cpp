@@ -10,21 +10,12 @@ Cube::Cube()
 
 }
 
-Cube::Cube(std::string texture_uri, float posX, float posY, float posZ) : Cube()
-{
-	shading_type = ShadingType::BasicTexture;
-	texture_path = texture_uri;
-	SetPosition(posX, posY, posZ);
-	material = defaultMaterial;
 
-}
-
-Cube::Cube(glm::vec3 inputColor, float posX, float posY, float posZ) : Cube()
+Cube::Cube(glm::vec3 inputColor, float posX, float posY, float posZ, ShadingType st) : Cube()
 {
 	color = inputColor;
-	shading_type = ShadingType::Basic;
+	shading_type = st;
 	SetPosition(posX, posY, posZ);
-	material = defaultMaterial;
 
 }
 void Cube::setData()

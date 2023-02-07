@@ -38,7 +38,7 @@ public:
 	/* Scaling, Rotating, Positioning and doing this in Animations */
 
 	/// <summary>
-	/// An property which stores all the animations that is performed by this Entity.
+	/// Properties about the animations.
 	/// </summary>
 	std::vector<Animation*> animations = {};
 	void RunAnimations();

@@ -25,10 +25,13 @@ public:
 	/// Vector to store uvs
 	/// </summary>
 	std::vector<glm::vec2> uvs;
+
+	glm::vec3 color = glm::vec3();
+
 	Object() = default;
 	Object(std::string, std::string, float, float, float);
-	Object(std::string, std::string, float, float, float, float, float, float);
-	Object(std::string, std::string, float, float, float, float, float, float, float, float, float, float);
+	Object(std::string, glm::vec3, float, float, float);
+
 
 	void LoadObject();
 	// Inherited via Entity

@@ -92,8 +92,9 @@ void Shape::BufferBasicTexture(glm::mat4 view, glm::mat4 projection)
 
 }
 
-void Shape::BufferPhong(glm::mat4, glm::mat4)
+void Shape::BufferPhong(glm::mat4 view, glm::mat4 projection)
 {
+	
 }
 
 void Shape::Buffer(glm::mat4 view, glm::mat4 projection) {
@@ -123,12 +124,16 @@ void Shape::RenderBasic(glm::mat4 view, glm::mat4 projection)
 {
 	shader.use();
 
+	if (animations.size() > 0) {
+		for (auto& ani : animations) {
+			model = ani->Animate(model);
+		}
+	}
+
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture_id);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	RunAnimations();
 
 	// Send mvp
 	shader.setMat4("model", model);

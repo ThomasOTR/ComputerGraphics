@@ -8,34 +8,21 @@ Object::Object(std::string object_path, std::string texture_path, float posX, fl
 
     LoadObject();
 }
-Object::Object(std::string object_path, std::string texture_path, float posX, float posY, float posZ, float scaleX, float scaleY, float scaleZ)
+
+Object::Object(std::string object_path, glm::vec3 color, float posX, float posY, float posZ)
 {
     this->object_path = object_path;
-    this->texture_path = texture_path;
-    SetPosition(posX, posY, posZ);
-    SetScale(scaleX, scaleY, scaleZ);
-
-    LoadObject();
-}
-Object::Object(std::string object_path, std::string texture_path,
-    float posX, float posY, float posZ,
-    float scaleX, float scaleY, float scaleZ,
-    float angle, float rotX, float rotY, float rotZ)
-{
-    this->object_path = object_path;
-    this->texture_path = texture_path;
+    this->color = color;
 
     SetPosition(posX, posY, posZ);
-    SetScale(scaleX, scaleY, scaleZ);
-    SetRotation(rotX, rotY, rotZ, angle);
 
     LoadObject();
+
 }
 
 void Object::LoadObject()
 {
     LoadOBJ(object_path.c_str(), vertices, uvs, normals);
-
 }
 
 void Object::Buffer(glm::mat4 view, glm::mat4 projection)
@@ -120,6 +107,7 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
     }
     else {
         shader.setNoTexture("texture_applied");
+        shader.setVec3("objectColor", color);
     }
 }
 

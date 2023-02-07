@@ -3,7 +3,7 @@
 
 void Entity::RunAnimations()
 {
-	if (animations.size() == 0) return;
+	/*if (animations.size() == 0) return;
 	else
 	{
 		AnimationRunning = true;
@@ -15,7 +15,9 @@ void Entity::RunAnimations()
 			index++;
 			if (index >= animations.size()) index=0;
 		}
-	}
+	}*/
+
+	// This doesnt work
 
 }
 void Entity::Transform()

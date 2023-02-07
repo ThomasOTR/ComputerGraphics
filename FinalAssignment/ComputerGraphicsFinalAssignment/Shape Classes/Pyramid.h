@@ -24,18 +24,9 @@ private:
        3,0,2, // left side
        3,4,1, 3,1,0 // bottom
     };
-
-    std::vector<GLfloat> Pyramid_uvs = {
-        // U, V,
-        // front
-        0.0f, 0.0f, // bottom left
-        1.0f, 0.0f, // bottom right
-        1.0f, 1.0f, // top right
-        0.0f, 1.0f, // top left
-    };
 public:
     Pyramid();
-    Pyramid(std::string, float, float, float);
+    Pyramid(glm::vec3, float, float, float, ShadingType);
 
 	// Inherited via Shape
 	virtual void setData() override;
