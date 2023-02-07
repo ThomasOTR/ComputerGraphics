@@ -27,5 +27,5 @@ void Pyramid::setData()
 
 void Pyramid::setAnimations()
 {
-	animations.push_back(new LeftRightAnimation(50.0f));
+	animations.push_back(new LeftRightAnimation(1.0f));
 }

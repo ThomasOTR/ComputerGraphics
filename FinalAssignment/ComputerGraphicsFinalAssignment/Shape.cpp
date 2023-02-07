@@ -124,11 +124,7 @@ void Shape::RenderBasic(glm::mat4 view, glm::mat4 projection)
 {
 	shader.use();
 
-	if (animations.size() > 0) {
-		for (auto& ani : animations) {
-			model = ani->Animate(model);
-		}
-	}
+	RunAnimations();
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture_id);

@@ -3,6 +3,19 @@
 
 void Entity::RunAnimations()
 {
+	if (AnimationInLoop)
+	{
+		if (animations.size() > 0) {
+			for (auto& ani : animations) {
+				model = ani->Animate(model);
+			}
+		}
+	}
+	else
+	{
+		
+	}
+
 	/*if (animations.size() == 0) return;
 	else
 	{

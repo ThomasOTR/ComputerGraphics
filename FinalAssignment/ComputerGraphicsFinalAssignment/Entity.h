@@ -43,6 +43,7 @@ public:
 	std::vector<Animation*> animations = {};
 	void RunAnimations();
 	bool AnimationRunning = false;
+	bool AnimationInLoop = false;
 
 	/// <summary>
 	/// Properties which will be used to buffer and render the entity.
