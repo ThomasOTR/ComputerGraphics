@@ -57,6 +57,6 @@ public:
 	/// </summary>
 	virtual void setData() = 0;
 	virtual void setAnimations() = 0;
-	
+
 };
 

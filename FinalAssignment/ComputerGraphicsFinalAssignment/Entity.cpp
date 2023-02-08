@@ -3,19 +3,21 @@
 
 void Entity::RunAnimations()
 {
-	if (AnimationInLoop)
+	if (animations.size() != 0)
 	{
-		if (animations.size() > 0) {
-			for (auto& ani : animations) {
-				model = ani->Animate(model);
+		Animation* animation = animations.front();
+		model = animation->Animate(model);
+		if (animation->AnimationCompleted == true)
+		{
+			if (AnimationInLoop)
+			{
+				animation->ResetAnimation();
+				animations.push_back(animation);
 			}
+			animations.erase(animations.begin());
 		}
-	}
-	else
-	{
-		
-	}
 
+	}
 	/*if (animations.size() == 0) return;
 	else
 	{
@@ -31,18 +33,23 @@ void Entity::RunAnimations()
 	}*/
 
 	// This doesnt work
-
 }
+
 void Entity::Transform()
 {
-	if(Position != glm::vec3()) model = translate(model, Position.x, Position.y, Position.z);
-	if(Scale != glm::vec3()) model = scale(model, Scale.x, Scale.y, Scale.z);
-	if(Rotation != glm::vec3()) model =rotate(model, RotAngle, Rotation.x, Rotation.y, Rotation.z);
+	if (Position != glm::vec3()) model = translate(model, Position.x, Position.y, Position.z);
+	if (Scale != glm::vec3()) model = scale(model, Scale.x, Scale.y, Scale.z);
+	if (Rotation != glm::vec3()) model = rotate(model, RotAngle, Rotation.x, Rotation.y, Rotation.z);
 }
 
 void Entity::SetPosition(float positionX, float positionY, float positionZ)
 {
 	Position = glm::vec3(positionX, positionY, positionZ);
+}
+
+void Entity::SetPosition(glm::vec3 position)
+{
+	Position = position;
 }
 
 glm::vec3 Entity::GetPosition()
@@ -56,6 +63,12 @@ void Entity::SetRotation(float rotationX, float rotationY, float rotationZ, floa
 	RotAngle = rotAngle;
 }
 
+void Entity::SetRotation(glm::vec3 rotation, float rotAngle)
+{
+	Rotation = rotation;
+	RotAngle = rotAngle;
+}
+
 glm::vec3 Entity::GetRotation()
 {
 	return Rotation;
@@ -64,6 +77,11 @@ glm::vec3 Entity::GetRotation()
 void Entity::SetScale(float scaleX, float scaleY, float scaleZ)
 {
 	Scale = glm::vec3(scaleX, scaleY, scaleZ);
+}
+
+void Entity::SetScale(glm::vec3 scale)
+{
+	Scale = scale;
 }
 
 glm::vec3 Entity::GetScale()

@@ -22,13 +22,19 @@
     <Filter Include="Source Files\Shape Classes">
       <UniqueIdentifier>{cab8ee90-6108-4e2b-852f-19018271210d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Animations\Scale">
+      <UniqueIdentifier>{05ae5397-558e-4748-bf78-12304fdecb36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animations\Move">
+      <UniqueIdentifier>{fea3056c-d721-413e-afef-73917652ad09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animations\Rotate">
+      <UniqueIdentifier>{e2093b58-e17d-4b04-a6cb-e41b999f6958}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\UpDownAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
     </ClCompile>
     <ClCompile Include="Shape Classes\Pyramid.cpp">
       <Filter>Source Files\Shape Classes</Filter>
@@ -54,20 +60,8 @@
     <ClCompile Include="environment_builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\LeftRightAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\ScalingToAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
-    </ClCompile>
     <ClCompile Include="CameraMode.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\ForwardBackwardAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\RotateLeftRightAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
@@ -102,11 +96,26 @@
     <ClCompile Include="Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Animations\Move\TranslateY_Animation.cpp">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Move\TranslateX_Animation.cpp">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Rotate\RotationAnimation.cpp">
+      <Filter>Source Files\Animations\Rotate</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Scale\ScalingAnimation.cpp">
+      <Filter>Source Files\Animations\Scale</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animations\UpDownAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
     <ClInclude Include="Shape Classes\Pyramid.h">
       <Filter>Source Files\Shape Classes</Filter>
     </ClInclude>
@@ -134,20 +143,8 @@
     <ClInclude Include="environment_builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\LeftRightAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\ScalingToAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
     <ClInclude Include="CameraMode.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\ForwardBackwardAnimation.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\RotateLeftRightAnimation.h">
-      <Filter>Source Files\Animations</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
@@ -181,6 +178,21 @@
     </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Move\TranslateY_Animation.h">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Move\TranslateX_Animation.h">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Move\TranslateZ_Animation.h">
+      <Filter>Source Files\Animations\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Rotate\RotationAnimation.h">
+      <Filter>Source Files\Animations\Rotate</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Scale\ScalingAnimation.h">
+      <Filter>Source Files\Animations\Scale</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,15 +13,17 @@ void EnvironmentBuilder::LoadAllEntities()
 {
 	std::string url = "Textures/uvtemplate.bmp";
 
-	entities.push_back(new Pyramid(glm::vec3(0.173, 0., 0.9), 1, 1, -10,ShadingType::Basic));
+	entities.push_back(new Pyramid(glm::vec3(0.9, 0.1, 0.9), 0,0,0,ShadingType::Basic));
 	//entities.push_back(new Object("Objects/teapot.obj", url, 0, 0, 0));
 	//entities.push_back(new Object("Objects/box.obj", url, 5, 0, -10));
 	//entities.push_back(new Cube(glm::vec3(0.173, 0., 0.8), 0, 0, 0));
-	entities.push_back(new House(0,0,0));
-	entities.push_back(new Skybox());
-	entities.push_back(new Object("Objects/hek.obj", "Textures/wood.bmp", 1, 1, 1));
-	entities.push_back(new Object("Objects/bench.obj", "Textures/wood.bmp", 0, 1, 1));
-	entities.push_back(new Object("Objects/TrashBin.obj",glm::vec3(1, 0, 0),2,0,0));
+	//entities.push_back(new House(0,0,0));
+	//entities.push_back(new Skybox()); (5.0f, 0.0f, -2.0f)
+	entities.push_back(new Object("Objects/hek.obj", "Textures/wood.bmp", 5.0f,0.0f,-2.0f));
+
+
+	//entities.push_back(new Object("Objects/bench.obj", "Textures/wood.bmp", 0, 1, 1));
+	//entities.push_back(new Object("Objects/TrashBin.obj",glm::vec3(1, 0, 0),2,0,0));
 
 
 

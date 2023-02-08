@@ -1,7 +1,6 @@
 #include "Pyramid.h"
 #include "../Transformations.h"
-#include "../Animations/LeftRightAnimation.h"
-
+#include "../Animations/Move/TranslateX_Animation.h"
 
 
 Pyramid::Pyramid()
@@ -27,5 +26,5 @@ void Pyramid::setData()
 
 void Pyramid::setAnimations()
 {
-	animations.push_back(new LeftRightAnimation(1.0f));
+	animations.push_back(new TranslateX_Animation(-0.2f));
 }

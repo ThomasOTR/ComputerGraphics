@@ -151,11 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animations\ForwardBackwardAnimation.cpp" />
-    <ClCompile Include="Animations\LeftRightAnimation.cpp" />
-    <ClCompile Include="Animations\RotateLeftRightAnimation.cpp" />
-    <ClCompile Include="Animations\ScalingToAnimation.cpp" />
-    <ClCompile Include="Animations\UpDownAnimation.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp" />
+    <ClCompile Include="Animations\Move\TranslateY_Animation.cpp" />
+    <ClCompile Include="Animations\Move\TranslateX_Animation.cpp" />
+    <ClCompile Include="Animations\Rotate\RotationAnimation.cpp" />
+    <ClCompile Include="Animations\Scale\ScalingAnimation.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraMode.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -180,11 +181,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
-    <ClInclude Include="Animations\ForwardBackwardAnimation.h" />
-    <ClInclude Include="Animations\LeftRightAnimation.h" />
-    <ClInclude Include="Animations\RotateLeftRightAnimation.h" />
-    <ClInclude Include="Animations\ScalingToAnimation.h" />
-    <ClInclude Include="Animations\UpDownAnimation.h" />
+    <ClInclude Include="Animations\Move\TranslateZ_Animation.h" />
+    <ClInclude Include="Animations\Move\TranslateY_Animation.h" />
+    <ClInclude Include="Animations\Move\TranslateX_Animation.h" />
+    <ClInclude Include="Animations\Rotate\RotationAnimation.h" />
+    <ClInclude Include="Animations\Scale\ScalingAnimation.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraMode.h" />
     <ClInclude Include="Entity.h" />
