@@ -7,6 +7,7 @@ void Entity::RunAnimations()
 	{
 		Animation* animation = animations.front();
 		model = animation->Animate(model);
+
 		if (animation->AnimationCompleted == true)
 		{
 			if (AnimationInLoop)
@@ -18,21 +19,6 @@ void Entity::RunAnimations()
 		}
 
 	}
-	/*if (animations.size() == 0) return;
-	else
-	{
-		AnimationRunning = true;
-		int index = 0;
-		while (AnimationRunning)
-		{
-			Animation* A = animations[index];
-			A->Animate(model);
-			index++;
-			if (index >= animations.size()) index=0;
-		}
-	}*/
-
-	// This doesnt work
 }
 
 void Entity::Transform()

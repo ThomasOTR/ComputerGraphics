@@ -1,6 +1,10 @@
 #include "Pyramid.h"
 #include "../Transformations.h"
 #include "../Animations/Move/TranslateX_Animation.h"
+#include "../Animations/Move/TranslateY_Animation.h"
+#include "../Animations/Move/TranslateZ_Animation.h"
+#include "../Animations/Scale/ScalingAnimation.h"
+#include "../Animations/Rotate/Rotation_Animation.h"
 
 
 Pyramid::Pyramid()
@@ -26,5 +30,6 @@ void Pyramid::setData()
 
 void Pyramid::setAnimations()
 {
-	animations.push_back(new TranslateX_Animation(-0.2f));
+	//animations.push_back(new ScalingAnimation(-50.0f,0.001f));
+	animations.push_back(new Rotation_Animation(0.0f, 1.0f, 0.0f, glm::radians(90)));
 }

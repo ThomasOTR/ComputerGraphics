@@ -2,12 +2,31 @@
 #include "../../Transformations.h"
 #include <iostream>
 
-ScalingAnimation::ScalingAnimation(float maxSize)
+ScalingAnimation::ScalingAnimation(float AddValue, float AnimateValue)
 {
-	AddValue = maxSize;
+	this->AddValue = AddValue;
+	this->AnimateValue = AnimateValue;
+	if (AddValue > 0 || AddValue < 1) Negative = true;
+
+
 }
 
-glm::mat4 ScalingAnimation::Animate(glm::mat4)
+glm::mat4 ScalingAnimation::Animate(glm::mat4 model)
 {
-	return glm::mat4();
+	if (!AnimationStarted)
+	{
+		AnimationStarted = true;
+		StartValue = model[1].y;
+	}
+
+	if (!Negative && (StartValue + AddValue <= model[1].y) or (Negative && StartValue + AddValue >= model[1].y))
+	{
+		AnimationCompleted = true;
+		return model;
+	}
+	else return scale(model, 
+					  Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue,
+		              Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue, 
+		              Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue
+					 );
 }

@@ -5,7 +5,7 @@ class ScalingAnimation :
 	public Animation
 {
 public:
-	ScalingAnimation(float);
+	ScalingAnimation(float, float);
 
 	// Inherited via Animation
 	virtual glm::mat4 Animate(glm::mat4) override;

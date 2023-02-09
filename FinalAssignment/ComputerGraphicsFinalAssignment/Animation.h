@@ -17,7 +17,7 @@ public:
 	bool AnimationCompleted = false;
 	bool Negative = false;
 
-	float AnimateValue = 0.001f;
+	float AnimateValue = 0.1f;
 	float StartValue = 0.0f;
 	float AddValue = 0.0f;
 	/// <summary>

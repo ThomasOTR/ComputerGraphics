@@ -18,12 +18,12 @@ void EnvironmentBuilder::LoadAllEntities()
 	//entities.push_back(new Object("Objects/box.obj", url, 5, 0, -10));
 	//entities.push_back(new Cube(glm::vec3(0.173, 0., 0.8), 0, 0, 0));
 	//entities.push_back(new House(0,0,0));
-	//entities.push_back(new Skybox()); (5.0f, 0.0f, -2.0f)
+	entities.push_back(new Skybox()); (5.0f, 0.0f, -2.0f);
 	entities.push_back(new Object("Objects/hek.obj", "Textures/wood.bmp", 5.0f,0.0f,-2.0f));
 
 
-	//entities.push_back(new Object("Objects/bench.obj", "Textures/wood.bmp", 0, 1, 1));
-	//entities.push_back(new Object("Objects/TrashBin.obj",glm::vec3(1, 0, 0),2,0,0));
+	entities.push_back(new Object("Objects/bench.obj", "Textures/wood.bmp", 0, 1, 1));
+	entities.push_back(new Object("Objects/TrashBin.obj",glm::vec3(1, 0, 0),2,0,0));
 
 
 

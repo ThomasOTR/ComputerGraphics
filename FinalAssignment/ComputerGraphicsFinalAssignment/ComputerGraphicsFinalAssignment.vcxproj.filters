@@ -29,7 +29,7 @@
       <UniqueIdentifier>{fea3056c-d721-413e-afef-73917652ad09}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Animations\Rotate">
-      <UniqueIdentifier>{e2093b58-e17d-4b04-a6cb-e41b999f6958}</UniqueIdentifier>
+      <UniqueIdentifier>{71598171-1cf2-40d2-a262-a0ca008d28ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,14 +105,14 @@
     <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp">
       <Filter>Source Files\Animations\Move</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\Rotate\RotationAnimation.cpp">
-      <Filter>Source Files\Animations\Rotate</Filter>
-    </ClCompile>
     <ClCompile Include="Animations\Scale\ScalingAnimation.cpp">
       <Filter>Source Files\Animations\Scale</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Rotate\Rotation_Animation.cpp">
+      <Filter>Source Files\Animations\Rotate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,11 +188,11 @@
     <ClInclude Include="Animations\Move\TranslateZ_Animation.h">
       <Filter>Source Files\Animations\Move</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Rotate\RotationAnimation.h">
-      <Filter>Source Files\Animations\Rotate</Filter>
-    </ClInclude>
     <ClInclude Include="Animations\Scale\ScalingAnimation.h">
       <Filter>Source Files\Animations\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Rotate\Rotation_Animation.h">
+      <Filter>Source Files\Animations\Rotate</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
