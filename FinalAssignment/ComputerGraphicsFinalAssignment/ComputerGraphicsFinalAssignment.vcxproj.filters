@@ -111,8 +111,11 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\Rotate\Rotation_Animation.cpp">
+    <ClCompile Include="Animations\Rotate\RotationAnimation.cpp">
       <Filter>Source Files\Animations\Rotate</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,8 +194,11 @@
     <ClInclude Include="Animations\Scale\ScalingAnimation.h">
       <Filter>Source Files\Animations\Scale</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Rotate\Rotation_Animation.h">
+    <ClInclude Include="Animations\Rotate\RotationAnimation.h">
       <Filter>Source Files\Animations\Rotate</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

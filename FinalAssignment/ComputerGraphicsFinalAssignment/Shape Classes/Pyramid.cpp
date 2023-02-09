@@ -4,7 +4,7 @@
 #include "../Animations/Move/TranslateY_Animation.h"
 #include "../Animations/Move/TranslateZ_Animation.h"
 #include "../Animations/Scale/ScalingAnimation.h"
-#include "../Animations/Rotate/Rotation_Animation.h"
+#include "../Animations/Rotate/RotationAnimation.h"
 
 
 Pyramid::Pyramid()
@@ -31,5 +31,5 @@ void Pyramid::setData()
 void Pyramid::setAnimations()
 {
 	//animations.push_back(new ScalingAnimation(-50.0f,0.001f));
-	animations.push_back(new Rotation_Animation(0.0f, 1.0f, 0.0f, glm::radians(90)));
+	//animations.push_back(new RotationAnimation(0.0f, 1.0f, 0.0f, 1.0f));
 }
