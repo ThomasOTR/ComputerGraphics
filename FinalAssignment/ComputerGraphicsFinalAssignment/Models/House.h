@@ -1,11 +1,11 @@
 #pragma once
-#include "../Mesh.h"
+#include "../Model.h"
 
 /// <summary>
 /// A class to create a Blokkentoren Mesh
 /// </summary>
 class House :
-    public Mesh
+    public Model
 {
 public:
     House() = default;
@@ -13,10 +13,5 @@ public:
 
     // Inherited via Mesh
     virtual void AddComponents() override;
-
-
-    // Inherited via Mesh
-    virtual void ResetComponents() override;
-
 };
 

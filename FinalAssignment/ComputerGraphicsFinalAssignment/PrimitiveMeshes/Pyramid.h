@@ -1,11 +1,11 @@
 #pragma once
-#include "../Shape.h"
+#include "../PrimitiveMesh.h"
 #include <vector>
 
 /// <summary>
 /// A class to create a Pyramid shape and render it.
 /// </summary>
-class Pyramid : public Shape
+class Pyramid : public PrimitiveMesh
 {
 private:
     std::vector<GLfloat> Pyramid_Vertices = { // X, Y, Z.

@@ -1,6 +1,6 @@
-#include "Mesh.h"
+#include "Model.h"
 
-void Mesh::SetPosition(float positionX, float positionY, float positionZ)
+void Model::SetPosition(float positionX, float positionY, float positionZ)
 {
 	glm::vec3 before = GetPosition();
 	Entity::SetPosition(positionX, positionY, positionZ);
@@ -14,7 +14,7 @@ void Mesh::SetPosition(float positionX, float positionY, float positionZ)
 	}
 }
 
-void Mesh::SetRotation(float rotationX, float rotationY, float rotationZ, float rotAngle)
+void Model::SetRotation(float rotationX, float rotationY, float rotationZ, float rotAngle)
 {
 	Entity::SetRotation(rotationX, rotationY, rotationZ,rotAngle);
 	for (Entity* p : Parts)
@@ -23,7 +23,7 @@ void Mesh::SetRotation(float rotationX, float rotationY, float rotationZ, float 
 	}
 }
 
-void Mesh::SetScale(float scaleX, float scaleY, float scaleZ)
+void Model::SetScale(float scaleX, float scaleY, float scaleZ)
 {
 	Entity::SetScale(scaleX, scaleY, scaleZ);
 	for (Entity* p : Parts)
@@ -32,20 +32,26 @@ void Mesh::SetScale(float scaleX, float scaleY, float scaleZ)
 	}
 }
 
-void Mesh::Transform()
+void Model::Transform()
 {
 	for (Entity* p : Parts) {
 		p->Transform();
 	}
 }
 
+void Model::ResetComponents()
+{
+	Parts.clear();
+	ResetComponents();
+}
 
-void Mesh::Buffer(glm::mat4 view, glm::mat4 projection)
+
+void Model::Buffer(glm::mat4 view, glm::mat4 projection)
 {
 	for (Entity* p : Parts) p->Buffer(view, projection);
 }
 
-void Mesh::Render(glm::mat4 view, glm::mat4 projection)
+void Model::Render(glm::mat4 view, glm::mat4 projection)
 {
 	for (Entity* p : Parts) p->Render(view, projection);
 }

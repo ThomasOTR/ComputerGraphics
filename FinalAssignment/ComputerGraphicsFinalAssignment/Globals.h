@@ -26,3 +26,11 @@ extern const Material defaultMaterial;
  */
 
 extern const Light defaultLight;
+
+/*
+ *  Resource paths
+ */
+
+extern const char* blenderObjectPath;
+extern const char* objectPath;
+extern const char* resourcePath;

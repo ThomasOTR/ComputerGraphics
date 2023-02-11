@@ -1,7 +1,6 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include "InputHandler.h"
-#include "Shape Classes/Pyramid.h"
 #include "environment_builder.h"
 
 /* */
@@ -41,7 +40,7 @@ void MouseCallback(int x, int y)
  * A method to render each part of this project 
  */
 void Render() {
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    //glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
    camera.CalculateViewMatrix();

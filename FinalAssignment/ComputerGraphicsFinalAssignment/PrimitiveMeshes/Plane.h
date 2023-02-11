@@ -1,11 +1,11 @@
 #pragma once
-#include "../Shape.h"
+#include "../PrimitiveMesh.h"
 
 /// <summary>
 /// A class to create a plane shape and render it
 /// </summary>
 class Plane :
-    public Shape
+    public PrimitiveMesh
 {
 public:
     std::vector<GLfloat> PlaneVertices = {
@@ -19,7 +19,7 @@ public:
         2,3,1
     };
     Plane() = default;
-    Plane(glm::vec3, float, float, float);
+    Plane(glm::vec3 color, float, float, float);
 
 
     // Inherited via Shape

@@ -1,4 +1,5 @@
 #include "Globals.h"
+#include <string>
 
 const char* basicFragPath = "Shaders/basic_shader.frag";
 const char* basicVertPath = "Shaders/basic_shader.vert";
@@ -13,3 +14,7 @@ const char* skyboxVertPath = "Shaders/skybox_shader.vert";
 
 const Material defaultMaterial = Material(glm::vec3(0.2, 0.2, 0.1), glm::vec3(0.5, 0.5, 0.3), glm::vec3(0.7, 0.7, 0.7), 1024);
 const Light defaultLight = Light(glm::vec3(4, 4, 4));
+
+//extern std::string blenderObjectPath = "Objects/";
+//extern std::string objectPath = "Objects/MadeInBlender/";
+//extern std::string resourcePath = "Textures/";

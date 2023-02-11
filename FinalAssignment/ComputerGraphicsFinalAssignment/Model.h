@@ -4,13 +4,13 @@
 #include "Entity.h"
 
 /// <summary>
-/// Class to create a Mesh of multiple entity.
+/// Class to create a Model of entities
 /// </summary>
-class Mesh : public Entity
+class Model : public Entity
 {
 public:
 	/// <summary>
-	/// A vector of all parts of this mesh
+	/// A vector of all parts of this model
 	/// </summary>
 	std::vector<Entity*> Parts = {};
 
@@ -42,7 +42,7 @@ public:
 	void SetScale(float, float, float);
 
 	/// <summary>
-	/// A method to Transform the mesh. Only needed when Set Methods are called.
+	/// A method to Transform the model. Only needed when Set Methods are called.
 	/// This method is needed to override the Entity Transform to transform each part.
 	/// </summary>
 	void Transform();
@@ -50,23 +50,23 @@ public:
 	/// <summary>
 	/// Method to reset all components after Transforming.
 	/// </summary>
-	virtual void ResetComponents() = 0;
+	void ResetComponents();
 
 	/// <summary>
-	/// Method to add all components to initalise the mesh.
+	/// Method to add all components to initalise the model.
 	/// </summary>
 	virtual void AddComponents() = 0;
 	// Inherited via Entity
 
 	/// <summary>
-	/// Method to buffer the Mesh
+	/// Method to buffer the Model
 	/// </summary>
 	/// <param name="">view</param>
 	/// <param name="">projection</param>
 	virtual void Buffer(glm::mat4, glm::mat4) override;
 
 	/// <summary>
-	/// Method to render the mesh
+	/// Method to render the Model
 	/// </summary>
 	/// <param name="">view</param>
 	/// <param name="">projection</param>

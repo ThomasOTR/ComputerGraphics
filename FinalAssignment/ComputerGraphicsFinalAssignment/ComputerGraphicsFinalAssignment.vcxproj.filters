@@ -19,9 +19,6 @@
     <Filter Include="Source Files\Shaders">
       <UniqueIdentifier>{56196e5a-de26-44b9-9b3d-f21049ed6ec7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Shape Classes">
-      <UniqueIdentifier>{cab8ee90-6108-4e2b-852f-19018271210d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Animations\Scale">
       <UniqueIdentifier>{05ae5397-558e-4748-bf78-12304fdecb36}</UniqueIdentifier>
     </Filter>
@@ -31,13 +28,34 @@
     <Filter Include="Source Files\Animations\Rotate">
       <UniqueIdentifier>{71598171-1cf2-40d2-a262-a0ca008d28ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PrimitiveMeshes">
+      <UniqueIdentifier>{cd2b2473-5338-4f8e-8ffa-0897137f31ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PrimitiveMeshes">
+      <UniqueIdentifier>{48e83fb8-7567-45ba-85a2-0d90f320e38f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{09a45c5e-a1d6-40cb-a1c9-b9dffb9d1bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{902566a1-66bd-45e5-972d-483675654d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animations">
+      <UniqueIdentifier>{3cd1b9d6-2d7b-4ce9-af45-1c2d0e4c0c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animations\Move">
+      <UniqueIdentifier>{03fee516-64e5-4a0e-92a8-db71910ca0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animations\Rotate">
+      <UniqueIdentifier>{d9b87eba-714a-4305-94c5-bb0cf7aa8bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animations\Scale">
+      <UniqueIdentifier>{4f269691-f701-47fc-8fa7-e845a17265e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shape Classes\Pyramid.cpp">
-      <Filter>Source Files\Shape Classes</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
@@ -51,7 +69,7 @@
     <ClCompile Include="Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Shape.cpp">
+    <ClCompile Include="PrimitiveMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Transformations.cpp">
@@ -63,20 +81,11 @@
     <ClCompile Include="CameraMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
+    <ClCompile Include="Model.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shape Classes\Cube.cpp">
-      <Filter>Source Files\Shape Classes</Filter>
     </ClCompile>
     <ClCompile Include="Globals.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shape Classes\Plane.cpp">
-      <Filter>Source Files\Shape Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="Shape Classes\House.cpp">
-      <Filter>Source Files\Shape Classes</Filter>
     </ClCompile>
     <ClCompile Include="Skybox.cpp">
       <Filter>Source Files</Filter>
@@ -117,11 +126,26 @@
     <ClCompile Include="Helpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrimitiveMeshes\Cube.cpp">
+      <Filter>Source Files\PrimitiveMeshes</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveMeshes\Plane.cpp">
+      <Filter>Source Files\PrimitiveMeshes</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveMeshes\Pyramid.cpp">
+      <Filter>Source Files\PrimitiveMeshes</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\House.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\TrashBin.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Shape Classes\Pyramid.h">
-      <Filter>Source Files\Shape Classes</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -137,7 +161,7 @@
     <ClInclude Include="Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shape.h">
+    <ClInclude Include="PrimitiveMesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Transformations.h">
@@ -149,23 +173,14 @@
     <ClInclude Include="CameraMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="Model.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shape Classes\Cube.h">
-      <Filter>Source Files\Shape Classes</Filter>
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shape Classes\Plane.h">
-      <Filter>Source Files\Shape Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Shape Classes\House.h">
-      <Filter>Source Files\Shape Classes</Filter>
     </ClInclude>
     <ClInclude Include="Skybox.h">
       <Filter>Header Files</Filter>
@@ -182,22 +197,40 @@
     <ClInclude Include="Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Move\TranslateY_Animation.h">
-      <Filter>Source Files\Animations\Move</Filter>
+    <ClInclude Include="Helpers.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Animations\Move\TranslateX_Animation.h">
-      <Filter>Source Files\Animations\Move</Filter>
+      <Filter>Header Files\Animations\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Move\TranslateY_Animation.h">
+      <Filter>Header Files\Animations\Move</Filter>
     </ClInclude>
     <ClInclude Include="Animations\Move\TranslateZ_Animation.h">
-      <Filter>Source Files\Animations\Move</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\Scale\ScalingAnimation.h">
-      <Filter>Source Files\Animations\Scale</Filter>
+      <Filter>Header Files\Animations\Move</Filter>
     </ClInclude>
     <ClInclude Include="Animations\Rotate\RotationAnimation.h">
-      <Filter>Source Files\Animations\Rotate</Filter>
+      <Filter>Header Files\Animations\Rotate</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers.h">
+    <ClInclude Include="Animations\Scale\ScalingAnimation.h">
+      <Filter>Header Files\Animations\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveMeshes\Cube.h">
+      <Filter>Header Files\PrimitiveMeshes</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveMeshes\Plane.h">
+      <Filter>Header Files\PrimitiveMeshes</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveMeshes\Pyramid.h">
+      <Filter>Header Files\PrimitiveMeshes</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\House.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\TrashBin.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

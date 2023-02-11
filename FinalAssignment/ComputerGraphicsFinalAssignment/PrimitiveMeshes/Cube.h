@@ -1,11 +1,11 @@
 #pragma once
-#include "../Shape.h"
+#include "../PrimitiveMesh.h"
 
 /// <summary>
 /// A class to create a Cube Shape and render it on the screen.
 /// </summary>
 class Cube :
-	public Shape
+	public PrimitiveMesh
 {
 private:
 	std::vector<GLfloat> Cube_Vertices = {

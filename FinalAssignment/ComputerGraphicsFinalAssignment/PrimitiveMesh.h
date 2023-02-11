@@ -12,7 +12,7 @@ enum class ShadingType {
 /// <summary>
 /// A class to create a shape.
 /// </summary>
-class Shape : public Entity
+class PrimitiveMesh : public Entity
 {
 public:	
 

@@ -1,6 +1,6 @@
-#include "Shape.h"
+#include "PrimitiveMesh.h"
 
-void Shape::BufferBasic(glm::mat4 view, glm::mat4 projection)
+void PrimitiveMesh::BufferBasic(glm::mat4 view, glm::mat4 projection)
 {
 	unsigned int position_id;
 
@@ -41,7 +41,7 @@ void Shape::BufferBasic(glm::mat4 view, glm::mat4 projection)
 	shader.setMat4("projection", projection);
 }
 
-void Shape::BufferBasicTexture(glm::mat4 view, glm::mat4 projection)
+void PrimitiveMesh::BufferBasicTexture(glm::mat4 view, glm::mat4 projection)
 {
 	unsigned int position_id, uv_id;
 
@@ -92,12 +92,12 @@ void Shape::BufferBasicTexture(glm::mat4 view, glm::mat4 projection)
 
 }
 
-void Shape::BufferPhong(glm::mat4 view, glm::mat4 projection)
+void PrimitiveMesh::BufferPhong(glm::mat4 view, glm::mat4 projection)
 {
 	
 }
 
-void Shape::Buffer(glm::mat4 view, glm::mat4 projection) {
+void PrimitiveMesh::Buffer(glm::mat4 view, glm::mat4 projection) {
 	Transform();
 
 	switch (shading_type) {
@@ -120,7 +120,7 @@ void Shape::Buffer(glm::mat4 view, glm::mat4 projection) {
 		break;
 	}
 }
-void Shape::RenderBasic(glm::mat4 view, glm::mat4 projection)
+void PrimitiveMesh::RenderBasic(glm::mat4 view, glm::mat4 projection)
 {
 	shader.use();
 
@@ -139,13 +139,13 @@ void Shape::RenderBasic(glm::mat4 view, glm::mat4 projection)
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, sizeof(vertices) / sizeof(unsigned int), GL_UNSIGNED_INT, 0);
 }
-void Shape::RenderShading(glm::mat4, glm::mat4)
+void PrimitiveMesh::RenderShading(glm::mat4, glm::mat4)
 {
 }
 
 
 // TODO: make 2 methods for it. 
-void Shape::CalculateNormals(std::vector<GLfloat> vertices)
+void PrimitiveMesh::CalculateNormals(std::vector<GLfloat> vertices)
 {
 	glm::vec3 N, U, V;
 	std::vector<GLfloat> newNormals;
@@ -178,10 +178,10 @@ void Shape::CalculateNormals(std::vector<GLfloat> vertices)
 	}
 	std::copy(newNormals.begin(), newNormals.end(), normals);
 }
-void Shape::BufferLambert(glm::mat4, glm::mat4)
+void PrimitiveMesh::BufferLambert(glm::mat4, glm::mat4)
 {
 }
-void Shape::Render(glm::mat4 view, glm::mat4 projection) {
+void PrimitiveMesh::Render(glm::mat4 view, glm::mat4 projection) {
 	if (shading_type == ShadingType::Basic || shading_type == ShadingType::BasicTexture)RenderBasic(view, projection);
 	else RenderShading(view, projection);
 }
