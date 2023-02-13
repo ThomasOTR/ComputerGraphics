@@ -5,7 +5,9 @@
 #include "Models/TrashBin.h"
 #include "Color.h"
 #include "PrimitiveMeshes/TriangularPrism.h"
-
+#include "Animations/Scale/ScalingAnimation.h"
+#include "Animations/Move/TranslateX_Animation.h"
+#include <vector>
 EnvironmentBuilder::EnvironmentBuilder()
 {
 	LoadAllEntities();
@@ -21,6 +23,10 @@ void EnvironmentBuilder::LoadAllEntities()
 	House* house = new House(glm::vec3(0,1,0));
 
 	Object* fence = new Object("Objects/MadeInBlender/fence.obj", "Textures/wood.bmp", glm::vec3(0.0f, 0.0f, 2.0f));
+	//fence->AddAnimation(new ScalingAnimation(-50.0f,0.001f));
+	/*std::vector<Animation*> animations = { new TranslateX_Animation(2.0f,0.001f), new ScalingAnimation(-50.0f,0.001f) };
+	fence->AddAnimations(animations);*/
+
 
 	Object* bench = new Object("Objects/MadeInBlender/bench.obj", "Textures/wood.bmp", glm::vec3(0.0f, 0.02f, 5.0f));
 	bench->SetScale(glm::vec3(2, 2, 2));
@@ -32,14 +38,14 @@ void EnvironmentBuilder::LoadAllEntities()
 	Skybox* skybox = new Skybox();
 
 	entities.insert(entities.end(), {
-		plane,
+		/*plane,
 		road,
-		house,
+		house,*/
 		fence,
-		bench,
+		/*bench,
 		trashbin,
 		TP,
-		skybox
+		skybox*/
 		});
 
 }

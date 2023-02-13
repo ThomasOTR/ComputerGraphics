@@ -14,8 +14,3 @@ void Plane::setData()
 	std::copy(PlaneVertices.begin(), PlaneVertices.end(), vertices);
 	std::copy(Plane_Elements.begin(), Plane_Elements.end(), indices);
 }
-
-void Plane::setAnimations()
-{
-
-}

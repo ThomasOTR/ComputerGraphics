@@ -56,7 +56,6 @@ public:
 	/// Methods that will be inherited by subclasses to set multiple things that are different for each shape
 	/// </summary>
 	virtual void setData() = 0;
-	virtual void setAnimations() = 0;
 
 };
 

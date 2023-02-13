@@ -14,7 +14,3 @@ void TriangularPrism::setData()
 	std::copy(Prism_Vertices.begin(), Prism_Vertices.end(), vertices);
 	std::copy(Prism_Elements.begin(), Prism_Elements.end(), indices);
 }
-
-void TriangularPrism::setAnimations()
-{
-}

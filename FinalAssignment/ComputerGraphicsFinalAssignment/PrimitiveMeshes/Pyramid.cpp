@@ -10,7 +10,6 @@
 Pyramid::Pyramid()
 {
 	setData();
-	setAnimations();
 	material = defaultMaterial;
 
 }
@@ -26,10 +25,4 @@ void Pyramid::setData()
 {
 	std::copy(Pyramid_Vertices.begin(), Pyramid_Vertices.end(), vertices);
 	std::copy(Pyramid_Elements.begin(), Pyramid_Elements.end(), indices);
-}
-
-void Pyramid::setAnimations()
-{
-	//animations.push_back(new ScalingAnimation(-50.0f,0.001f));
-	//animations.push_back(new RotationAnimation(0.0f, 1.0f, 0.0f, 1.0f));
 }

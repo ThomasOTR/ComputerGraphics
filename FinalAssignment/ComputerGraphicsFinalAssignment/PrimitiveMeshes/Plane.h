@@ -25,7 +25,5 @@ public:
     // Inherited via Shape
     virtual void setData() override;
 
-    virtual void setAnimations() override;
-
 };
 

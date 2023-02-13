@@ -75,5 +75,4 @@ public:
 	Cube(glm::vec3, glm::vec3, ShadingType);
 	// Inherited via Shape
 	virtual void setData();
-	virtual void setAnimations();
 };
