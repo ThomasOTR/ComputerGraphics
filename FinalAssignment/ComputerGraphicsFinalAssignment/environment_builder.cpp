@@ -4,6 +4,7 @@
 #include "Models/House.h"
 #include "Models/TrashBin.h"
 #include "Color.h"
+#include "PrimitiveMeshes/TriangularPrism.h"
 
 EnvironmentBuilder::EnvironmentBuilder()
 {
@@ -11,32 +12,35 @@ EnvironmentBuilder::EnvironmentBuilder()
 }
 void EnvironmentBuilder::LoadAllEntities()
 {
-	Color c = Color(RGB{ 10,10,10 });
-	c.ToVec3();
-	//Color c2 = Color(glm::vec3(0.502, 0.502, 0.502));
-	//Plane* plane = new Plane(glm::vec3(0.173, 0., 0.8), 0, 0, 0);
-	//plane->SetScale(30, 1, 30);
-	//entities.push_back(plane);
-	//
-	//Plane* road = new Plane(glm::vec3(0.502, 0.502, 0.502), 5, 0.01, 0);
-	//road->SetScale(1, 0, 5);
-	//entities.push_back(road);
+	Plane* plane = new Plane(glm::vec3(0.173, 0., 0.8), glm::vec3(0, 0, 0));
+	plane->SetScale(glm::vec3(30, 1, 30));
+	
+	Plane* road = new Plane(glm::vec3(0.502, 0.502, 0.502), glm::vec3(5, 0.01, 0));
+	road->SetScale(glm::vec3(1, 0, 5));
 
-	//House* house = new House(0,1,0);
-	//entities.push_back(house);
+	House* house = new House(glm::vec3(0,1,0));
 
-	//
-	//Object* fence = new Object("Objects/MadeInBlender/fence.obj", "Textures/wood.bmp", 0.0f, 0.0f, 2.0f);
-	//entities.push_back(fence);
+	Object* fence = new Object("Objects/MadeInBlender/fence.obj", "Textures/wood.bmp", glm::vec3(0.0f, 0.0f, 2.0f));
 
-	//Object* bench = new Object("Objects/MadeInBlender/bench.obj", "Textures/wood.bmp", 0.0f, 0.02f, 5.0f);
-	//bench->SetScale(2, 2, 2);
-	//entities.push_back(bench);
+	Object* bench = new Object("Objects/MadeInBlender/bench.obj", "Textures/wood.bmp", glm::vec3(0.0f, 0.02f, 5.0f));
+	bench->SetScale(glm::vec3(2, 2, 2));
 
-	//TrashBin* trashbin = new TrashBin(0, 0, 3);
-	//entities.push_back(trashbin);
+	TrashBin* trashbin = new TrashBin(glm::vec3(0, 0, 3));
 
-	entities.push_back(new Skybox());
+	TriangularPrism* TP = new TriangularPrism(glm::vec3(0.173, 0., 0.8), glm::vec3(4, 0, 0), ShadingType::Basic);
+
+	Skybox* skybox = new Skybox();
+
+	entities.insert(entities.end(), {
+		plane,
+		road,
+		house,
+		fence,
+		bench,
+		trashbin,
+		TP,
+		skybox
+		});
 
 }
 void EnvironmentBuilder::BufferAllEntities(glm::mat4 view, glm::mat4 projection)

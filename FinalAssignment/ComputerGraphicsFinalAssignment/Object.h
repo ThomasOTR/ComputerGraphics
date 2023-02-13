@@ -29,8 +29,8 @@ public:
 	glm::vec3 color = glm::vec3();
 
 	Object() = default;
-	Object(std::string, std::string, float, float, float);
-	Object(std::string, glm::vec3, float, float, float);
+	Object(std::string, std::string, glm::vec3);
+	Object(std::string, glm::vec3, glm::vec3);
 
 
 	void LoadObject();

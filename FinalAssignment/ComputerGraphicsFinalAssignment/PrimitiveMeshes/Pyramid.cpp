@@ -15,12 +15,12 @@ Pyramid::Pyramid()
 
 }
 
-Pyramid::Pyramid(glm::vec3 inputColor, float posX, float posY, float posZ, ShadingType st) : Pyramid()
+Pyramid::Pyramid(glm::vec3 inputColor, glm::vec3 position, ShadingType st) : Pyramid()
 {
 	color = inputColor;
 	shading_type = st;
 
-	SetPosition(posX, posY, posZ);
+	SetPosition(position);
 }
 void Pyramid::setData()
 {

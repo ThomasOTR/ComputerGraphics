@@ -26,7 +26,7 @@ private:
     };
 public:
     Pyramid();
-    Pyramid(glm::vec3, float, float, float, ShadingType);
+    Pyramid(glm::vec3, glm::vec3, ShadingType);
 
 	// Inherited via Shape
 	virtual void setData() override;

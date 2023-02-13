@@ -11,11 +11,11 @@ Cube::Cube()
 }
 
 
-Cube::Cube(glm::vec3 inputColor, float posX, float posY, float posZ, ShadingType st) : Cube()
+Cube::Cube(glm::vec3 inputColor, glm::vec3 position, ShadingType st) : Cube()
 {
 	color = inputColor;
 	shading_type = st;
-	SetPosition(posX, posY, posZ);
+	SetPosition(position);
 
 }
 void Cube::setData()

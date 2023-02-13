@@ -66,19 +66,13 @@ public:
 
 	virtual void Transform();
 
-	/// <summary>
-	/// Get & Set Methods for Positioning, Rotation and Scaling
-	/// </summary
-	virtual void SetPosition(float, float, float);
-	void SetPosition(glm::vec3);
+	virtual void SetPosition(glm::vec3);
 	glm::vec3 GetPosition();
 
-	virtual void SetRotation(float, float, float,float);
-	void SetRotation(glm::vec3, float);
+	virtual void SetRotation(glm::vec3, float);
 	glm::vec3 GetRotation();
 
-	virtual void SetScale(float, float, float);
-	void SetScale(glm::vec3);
+	virtual void SetScale(glm::vec3);
 	glm::vec3 GetScale();
 
 	/// <summary>

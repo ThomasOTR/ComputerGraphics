@@ -28,11 +28,6 @@ void Entity::Transform()
 	if (Rotation != glm::vec3()) model = rotate(model, RotAngle, Rotation.x, Rotation.y, Rotation.z);
 }
 
-void Entity::SetPosition(float positionX, float positionY, float positionZ)
-{
-	Position = glm::vec3(positionX, positionY, positionZ);
-}
-
 void Entity::SetPosition(glm::vec3 position)
 {
 	Position = position;
@@ -41,12 +36,6 @@ void Entity::SetPosition(glm::vec3 position)
 glm::vec3 Entity::GetPosition()
 {
 	return Position;
-}
-
-void Entity::SetRotation(float rotationX, float rotationY, float rotationZ, float rotAngle)
-{
-	Rotation = glm::vec3(rotationX, rotationY, rotationZ);
-	RotAngle = rotAngle;
 }
 
 void Entity::SetRotation(glm::vec3 rotation, float rotAngle)
@@ -58,11 +47,6 @@ void Entity::SetRotation(glm::vec3 rotation, float rotAngle)
 glm::vec3 Entity::GetRotation()
 {
 	return Rotation;
-}
-
-void Entity::SetScale(float scaleX, float scaleY, float scaleZ)
-{
-	Scale = glm::vec3(scaleX, scaleY, scaleZ);
 }
 
 void Entity::SetScale(glm::vec3 scale)

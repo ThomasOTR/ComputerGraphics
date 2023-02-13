@@ -9,7 +9,7 @@ class House :
 {
 public:
     House() = default;
-    House(float, float, float);
+    House(glm::vec3);
 
     // Inherited via Mesh
     virtual void AddComponents() override;

@@ -5,7 +5,7 @@ class TrashBin :
 {
 public:
     TrashBin() = default;
-    TrashBin(float, float, float);
+    TrashBin(glm::vec3);
 
     // Inherited via Model
     virtual void AddComponents() override;

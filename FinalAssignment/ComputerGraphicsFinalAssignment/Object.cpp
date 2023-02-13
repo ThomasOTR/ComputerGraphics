@@ -1,21 +1,20 @@
 #include "Object.h"
-Object::Object(std::string object_path, std::string texture_path, float posX, float posY, float posZ)
+Object::Object(std::string object_path, std::string texture_path, glm::vec3 position)
 {
     this->object_path = object_path;
     this->texture_path = texture_path;
 
-    SetPosition(posX, posY, posZ);
+    SetPosition(position);
 
     LoadObject();
 }
 
-Object::Object(std::string object_path, glm::vec3 color, float posX, float posY, float posZ)
+Object::Object(std::string object_path, glm::vec3 color, glm::vec3 position)
 {
     this->object_path = object_path;
     this->color = color;
 
-    SetPosition(posX, posY, posZ);
-
+    SetPosition(position);
     LoadObject();
 
 }

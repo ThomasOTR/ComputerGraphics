@@ -81,6 +81,7 @@ void InitGlutGlew(int argc, char** argv) {
     glutPassiveMotionFunc(MouseCallback);
     glutSetCursor(GLUT_CURSOR_NONE);
     glutTimerFunc(DELTA_TIME, Render, 0);
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); enable for lines
     glewInit();
 }
 

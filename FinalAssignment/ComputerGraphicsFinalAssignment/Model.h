@@ -21,7 +21,7 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetPosition(float, float, float);
+	void SetPosition(glm::vec3) override;
 
 	/// <summary>
 	/// Methods to set the Rotation. 
@@ -30,7 +30,7 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetRotation(float, float, float, float);
+	void SetRotation(glm::vec3, float);
 
 	/// <summary>
 	/// Methods to set the Scale. 
@@ -39,7 +39,7 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetScale(float, float, float);
+	void SetScale(glm::vec3);
 
 	/// <summary>
 	/// A method to Transform the model. Only needed when Set Methods are called.

@@ -5,7 +5,7 @@ Skybox::Skybox()
     std::copy(skyboxVertices.begin(), skyboxVertices.end(), vertices);
     std::copy(skyboxIndices.begin(), skyboxIndices.end(), indices);
 
-    SetScale(10, 10, 10);
+    SetScale(glm::vec3(10, 10, 10));
     Transform();
 
 }

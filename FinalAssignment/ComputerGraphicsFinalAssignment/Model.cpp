@@ -1,34 +1,31 @@
 #include "Model.h"
 
-void Model::SetPosition(float positionX, float positionY, float positionZ)
+void Model::SetPosition(glm::vec3 position)
 {
 	glm::vec3 before = GetPosition();
-	Entity::SetPosition(positionX, positionY, positionZ);
+	Entity::SetPosition(position);
 	for (Entity* p : Parts)
 	{
 		glm::vec3 difference = GetPosition() - before;
-
-		p->SetPosition(p->GetPosition().x + difference.x,
-					   p->GetPosition().y + difference.y, 
-					   p->GetPosition().z + difference.z);
+		p->SetPosition(p->GetPosition() + difference);
 	}
 }
 
-void Model::SetRotation(float rotationX, float rotationY, float rotationZ, float rotAngle)
+void Model::SetRotation(glm::vec3 rotation, float rotAngle)
 {
-	Entity::SetRotation(rotationX, rotationY, rotationZ,rotAngle);
+	Entity::SetRotation(rotation, rotAngle);
 	for (Entity* p : Parts)
 	{
-		p->SetRotation(rotationX, rotationY, rotationZ, rotAngle);
+		p->SetRotation(rotation, rotAngle);
 	}
 }
 
-void Model::SetScale(float scaleX, float scaleY, float scaleZ)
+void Model::SetScale(glm::vec3 scale)
 {
-	Entity::SetScale(scaleX, scaleY, scaleZ);
+	Entity::SetScale(scale);
 	for (Entity* p : Parts)
 	{
-		p->SetScale(scaleX, scaleY, scaleZ);
+		p->SetScale(scale);
 	}
 }
 

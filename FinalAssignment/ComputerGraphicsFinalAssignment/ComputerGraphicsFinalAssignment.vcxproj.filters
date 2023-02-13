@@ -144,6 +144,9 @@
     <ClCompile Include="Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrimitiveMeshes\TriangularPrism.cpp">
+      <Filter>Source Files\PrimitiveMeshes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -232,6 +235,9 @@
     </ClInclude>
     <ClInclude Include="Color.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveMeshes\TriangularPrism.h">
+      <Filter>Header Files\PrimitiveMeshes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
