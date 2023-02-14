@@ -25,8 +25,8 @@ private:
        3,4,1, 3,1,0 // bottom
     };
 public:
-    Pyramid();
-    Pyramid(glm::vec3, glm::vec3, ShadingType);
+    Pyramid() = default;
+    Pyramid(glm::vec3 color, ShadingType);
 
 	// Inherited via Shape
 	virtual void setData() override;

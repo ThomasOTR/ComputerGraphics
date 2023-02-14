@@ -71,8 +71,8 @@ private:
 
 
 public:
-	Cube();
-	Cube(glm::vec3, glm::vec3, ShadingType);
+    Cube() = default;
+	Cube(glm::vec3, ShadingType);
 	// Inherited via Shape
 	virtual void setData();
 };

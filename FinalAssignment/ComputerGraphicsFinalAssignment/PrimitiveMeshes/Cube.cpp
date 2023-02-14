@@ -1,20 +1,13 @@
 #include "Cube.h"
 #include "../Transformations.h"
 
-Cube::Cube()
-{
-	setData();
-	CalculateNormals(Cube_Vertices);
-	material = defaultMaterial;
 
-}
-
-
-Cube::Cube(glm::vec3 inputColor, glm::vec3 position, ShadingType st) : Cube()
+Cube::Cube(glm::vec3 inputColor, ShadingType st)
 {
 	color = inputColor;
 	shading_type = st;
-	SetPosition(position);
+	material = defaultMaterial;
+	setData();
 
 }
 void Cube::setData()

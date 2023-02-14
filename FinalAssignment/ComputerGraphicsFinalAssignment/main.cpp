@@ -3,6 +3,8 @@
 #include "InputHandler.h"
 #include "environment_builder.h"
 
+#include <ft2build.h>
+#include FT_FREETYPE_H  
 /* */
 const unsigned int WIDTH = 800, HEIGHT = 600;
 unsigned const int DELTA_TIME = 10;

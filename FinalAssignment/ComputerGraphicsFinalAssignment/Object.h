@@ -29,8 +29,8 @@ public:
 	glm::vec3 color = glm::vec3();
 
 	Object() = default;
-	Object(std::string, std::string, glm::vec3);
-	Object(std::string, glm::vec3, glm::vec3);
+	Object(std::string, std::string texture_path);
+	Object(std::string, glm::vec3 color);
 
 
 	void LoadObject();

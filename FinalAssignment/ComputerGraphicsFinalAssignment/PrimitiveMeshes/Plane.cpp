@@ -1,10 +1,9 @@
 #include "Plane.h"
 
-Plane::Plane(glm::vec3 color, glm::vec3 position)
+Plane::Plane(glm::vec3 color, ShadingType st)
 {
 	this->color = color;
-	SetPosition(position);
-	shading_type = ShadingType::Basic;
+	shading_type = st;
 	material = defaultMaterial;
 	setData();
 }

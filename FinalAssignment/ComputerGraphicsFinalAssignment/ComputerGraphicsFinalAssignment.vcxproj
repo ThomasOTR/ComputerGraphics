@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Libraries\glm-0.9.6.3\glm;C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\include;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\include;C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\include;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\include;C:\Libraries\glm-0.9.6.3\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\lib;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\lib\Release\Win32;$(LibraryPath);C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\lib;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\lib\Release\Win32</LibraryPath>
+    <IncludePath>C:\Libraries\glm-0.9.6.3\glm;C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\include;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\include;C:\Libraries\freetype\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Libraries\freeglut-MSVC-3.0.0-2.mp\freeglut\lib;C:\Libraries\glew-2.0.0-win32\glew-2.0.0\lib\Release\Win32;C:\Libraries\freetype\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -100,7 +100,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies);freeglut.lib;glew32.lib</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

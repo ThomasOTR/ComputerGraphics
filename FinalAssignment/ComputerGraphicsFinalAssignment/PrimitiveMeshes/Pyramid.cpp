@@ -6,20 +6,12 @@
 #include "../Animations/Scale/ScalingAnimation.h"
 #include "../Animations/Rotate/RotationAnimation.h"
 
-
-Pyramid::Pyramid()
-{
-	setData();
-	material = defaultMaterial;
-
-}
-
-Pyramid::Pyramid(glm::vec3 inputColor, glm::vec3 position, ShadingType st) : Pyramid()
+Pyramid::Pyramid(glm::vec3 inputColor, ShadingType st) : Pyramid()
 {
 	color = inputColor;
 	shading_type = st;
-
-	SetPosition(position);
+	material = defaultMaterial;
+	setData();
 }
 void Pyramid::setData()
 {
