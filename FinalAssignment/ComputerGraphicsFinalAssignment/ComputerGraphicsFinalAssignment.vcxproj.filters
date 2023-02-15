@@ -147,6 +147,12 @@
     <ClCompile Include="PrimitiveMeshes\TriangularPrism.cpp">
       <Filter>Source Files\PrimitiveMeshes</Filter>
     </ClCompile>
+    <ClCompile Include="Models\Tree.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\Sidewalk.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -238,6 +244,12 @@
     </ClInclude>
     <ClInclude Include="PrimitiveMeshes\TriangularPrism.h">
       <Filter>Header Files\PrimitiveMeshes</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\Tree.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\Sidewalk.h">
+      <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
