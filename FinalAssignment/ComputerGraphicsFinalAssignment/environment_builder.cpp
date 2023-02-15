@@ -38,6 +38,7 @@ void EnvironmentBuilder::LoadAllEntities()
 	}
 #pragma endregion
 
+#pragma region Environment
 	Plane* road = new Plane(glm::vec3(0.502, 0.502, 0.502), ShadingType::Basic);
 	road->SetPosition(glm::vec3(-8, 0.01, 5));
 	//road->SetRotation(glm::vec3(0, 1, 0), 180);
@@ -66,10 +67,8 @@ void EnvironmentBuilder::LoadAllEntities()
 		Tree* tree = new Tree(glm::vec3(sidewalkPos.x - i, sidewalkPos.y, sidewalkPos.z + 2));
 		entities.push_back(tree);
 	}
-
+#pragma endregion
 	
-
-
 	Plane* plane = new Plane(glm::vec3(0.282, 0.435, 0.22), ShadingType::Basic);
 	plane->SetPosition(glm::vec3(0, 0, 0));
 	plane->SetScale(glm::vec3(30, 1, 30));
@@ -80,8 +79,8 @@ void EnvironmentBuilder::LoadAllEntities()
 
 	
 	//fence->AddAnimation(new ScalingAnimation(-50.0f,0.001f));
-/*std::vector<Animation*> animations = { new TranslateX_Animation(2.0f,0.001f), new ScalingAnimation(-50.0f,0.001f) };
-fence->AddAnimations(animations);*/
+	/*std::vector<Animation*> animations = { new TranslateX_Animation(2.0f,0.001f), new ScalingAnimation(-50.0f,0.001f) };
+	fence->AddAnimations(animations);*/
 }
 void EnvironmentBuilder::BufferAllEntities(glm::mat4 view, glm::mat4 projection)
 {
