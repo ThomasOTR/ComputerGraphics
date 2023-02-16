@@ -42,6 +42,28 @@ void Model::ResetComponents()
 	ResetComponents();
 }
 
+void Model::RunAnimations()
+{
+	if (animations.size() != 0)
+	{
+		Animation* animation = animations.front();
+		for (Entity* p : Parts) {
+			p->model = animation->Animate(p->model);
+		}
+
+		if (animation->AnimationCompleted == true)
+		{
+			if (AnimationInLoop)
+			{
+				animation->ResetAnimation();
+				animations.push_back(animation);
+			}
+			animations.erase(animations.begin());
+		}
+
+	}
+}
+
 
 void Model::Buffer(glm::mat4 view, glm::mat4 projection)
 {
@@ -50,7 +72,10 @@ void Model::Buffer(glm::mat4 view, glm::mat4 projection)
 
 void Model::Render(glm::mat4 view, glm::mat4 projection)
 {
-	for (Entity* p : Parts) p->Render(view, projection);
+	for (Entity* p : Parts) {
+		RunAnimations();
+		p->Render(view, projection);
+	}
 }
 
 

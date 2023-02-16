@@ -170,6 +170,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Models\Car.cpp" />
     <ClCompile Include="Models\House.cpp" />
     <ClCompile Include="Models\Sidewalk.cpp" />
     <ClCompile Include="Models\TrashBin.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="Material.h" />
     <ClInclude Include="Loaders.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Models\Car.h" />
     <ClInclude Include="Models\House.h" />
     <ClInclude Include="Models\Sidewalk.h" />
     <ClInclude Include="Models\TrashBin.h" />

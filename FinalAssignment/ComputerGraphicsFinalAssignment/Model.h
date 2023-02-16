@@ -52,6 +52,8 @@ public:
 	/// </summary>
 	void ResetComponents();
 
+	void RunAnimations();
+
 	/// <summary>
 	/// Method to add all components to initalise the model.
 	/// </summary>

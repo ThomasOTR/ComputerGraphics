@@ -24,7 +24,6 @@ private:
 	/// </summary>
 	glm::vec3 Rotation = glm::vec3();
 	float RotAngle = 0;
-	std::vector<Animation*> animations = {};
 public:
 
 	/// <summary>
@@ -41,9 +40,11 @@ public:
 	/// <summary>
 	/// Properties about the animations.
 	/// </summary>
+
+	std::vector<Animation*> animations = {};
 	void AddAnimation(Animation*);
 	void AddAnimations(std::vector<Animation*>);
-	void RunAnimations();
+	virtual void RunAnimations();
 	bool AnimationRunning = false;
 	bool AnimationInLoop = false;
 

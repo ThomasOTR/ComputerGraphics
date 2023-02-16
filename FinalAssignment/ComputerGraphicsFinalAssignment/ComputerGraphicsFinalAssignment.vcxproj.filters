@@ -153,6 +153,9 @@
     <ClCompile Include="Models\Sidewalk.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
+    <ClCompile Include="Models\Car.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -249,6 +252,9 @@
       <Filter>Header Files\Models</Filter>
     </ClInclude>
     <ClInclude Include="Models\Sidewalk.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\Car.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>
