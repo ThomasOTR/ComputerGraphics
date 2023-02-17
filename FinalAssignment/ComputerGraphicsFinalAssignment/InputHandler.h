@@ -21,6 +21,9 @@ private:
 	/// </summary>
 	bool firstMouseMovement = true;
 
+	glm::vec3 CalculateLeftRightMovement(Camera camera);
+	glm::vec3 CalculateForwardBackwardMovement(Camera camera);
+
 public:
 	/// <summary>
 	/// Method to process key input

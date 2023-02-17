@@ -4,6 +4,16 @@
 #include <iostream>
 
 
+glm::vec3 InputHandler::CalculateLeftRightMovement(Camera camera)
+{
+	return glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
+}
+
+glm::vec3 InputHandler::CalculateForwardBackwardMovement(Camera camera)
+{
+	return movementSpeed * camera.CurrentMode.Front;
+}
+
 Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 {
 	switch (key)
@@ -16,24 +26,29 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 'w':
 		// Move Forward
-		camera.CurrentMode.Pos += movementSpeed * camera.CurrentMode.Front;
+		camera.CurrentMode.Pos.x += CalculateForwardBackwardMovement(camera).x;
+		camera.CurrentMode.Pos.z += CalculateForwardBackwardMovement(camera).z;
+
 		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	
 	case 'a':
 		// Move left
-		camera.CurrentMode.Pos -= glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
-		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Pos.x -= CalculateLeftRightMovement(camera).x;
+		camera.CurrentMode.Pos.z -= CalculateLeftRightMovement(camera).z;
+		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 's':
 		// Move Backwards
-		 camera.CurrentMode.Pos -= movementSpeed * camera.CurrentMode.Front;
-		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Pos.x -= CalculateForwardBackwardMovement(camera).x;
+		camera.CurrentMode.Pos.z -= CalculateForwardBackwardMovement(camera).z;
+		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 'd':
 		// Move right
-		camera.CurrentMode.Pos += glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
-		 std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Pos.x += CalculateLeftRightMovement(camera).x;
+		camera.CurrentMode.Pos.z += CalculateLeftRightMovement(camera).z;
+		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
 		break;
 	case 'q': 
 		if(camera.CurrentMode.Mode == ModeType::Drone)
@@ -44,7 +59,6 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 			camera.CurrentMode.Pos.y -= movementSpeed;
 		break;
 	}
-	if (camera.CurrentMode.Mode == ModeType::Walk) camera.CurrentMode.Pos.y = camera.CurrentMode.OriginalPos.y;
 	return camera;
 }
 

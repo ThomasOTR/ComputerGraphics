@@ -19,12 +19,12 @@ public:
 	/// <summary>
 	/// A property which holds the values of the walk mode.
 	/// </summary>
-	CameraMode WalkMode = CameraMode(glm::vec3(2.0, 1.0, 7.0),ModeType::Walk);
+	CameraMode WalkMode = CameraMode(glm::vec3(2.0, 0.7, 7.0),ModeType::Walk);
 	
 	/// <summary>
 	/// A property which holds the values of the DroneMode;
 	/// </summary>
-	CameraMode DroneMode = CameraMode(glm::vec3(1.0, 1.0, 1.0), ModeType::Drone);
+	CameraMode DroneMode = CameraMode(glm::vec3(0.0, 8.0, 15.0), ModeType::Drone);
 
 	Camera();
 	
