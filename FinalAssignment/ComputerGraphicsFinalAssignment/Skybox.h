@@ -8,9 +8,7 @@ class Skybox :
     public Entity
 {
 private:
-    /// <summary>
-    /// A vector with all the vertices needed for the skybox
-    /// </summary>
+    /* A vector with all the vertices needed for the skybox */
     std::vector<GLfloat> skyboxVertices =
     {
         //   Coordinates
@@ -24,6 +22,7 @@ private:
         -1.0f,  1.0f, -1.0f
     };
 
+    /* A vector with all the indices needed for the skybox */
     std::vector<GLushort> skyboxIndices =
     {
         // Right
@@ -46,9 +45,7 @@ private:
         6, 2, 3
     };
     
-    /// <summary>
-    /// A vector with image_paths of each side of the skybox
-    /// </summary>
+    /* A vector with image_paths of each side of the skybox */
     std::vector<std::string> sides
     {
         "Textures/skybox/right.jpg",

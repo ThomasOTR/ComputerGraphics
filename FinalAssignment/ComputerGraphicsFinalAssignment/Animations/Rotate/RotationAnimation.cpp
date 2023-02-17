@@ -9,5 +9,5 @@ RotationAnimation::RotationAnimation(float rotateX, float rotateY, float rotateZ
 glm::mat4 RotationAnimation::Animate(glm::mat4 model)
 {
 	this->AnimationCompleted = true;
-	return rotate(model, glm::radians(rotAngle), rotation);
+	return RotateEntity(model, glm::radians(rotAngle), rotation);
 }

@@ -8,22 +8,6 @@
 #include "Material.h"
 class Entity
 {
-private:
-	/// <summary>
-	/// Position of the Entity
-	/// </summary>
-	glm::vec3 Position = glm::vec3();
-
-	/// <summary>
-	/// Scale of the Entity
-	/// </summary>
-	glm::vec3 Scale = glm::vec3();
-
-	/// <summary>
-	/// Rotation of the entity
-	/// </summary>
-	glm::vec3 Rotation = glm::vec3();
-	float RotAngle = 0;
 public:
 
 	/// <summary>
@@ -67,16 +51,11 @@ public:
 	virtual void Buffer(glm::mat4, glm::mat4) = 0;
 	virtual void Render(glm::mat4, glm::mat4) = 0;
 
-	virtual void Transform();
-
-	virtual void SetPosition(glm::vec3);
+	virtual void Move(glm::vec3);
 	glm::vec3 GetPosition();
 
-	virtual void SetRotation(glm::vec3, float);
-	glm::vec3 GetRotation();
-
-	virtual void SetScale(glm::vec3);
-	glm::vec3 GetScale();
+	virtual void Rotate(glm::vec3, float);
+	virtual void Scale(glm::vec3);
 
 	/// <summary>
 	/// Methods to handle memory allocation 

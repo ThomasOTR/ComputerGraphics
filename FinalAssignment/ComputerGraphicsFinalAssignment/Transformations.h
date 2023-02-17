@@ -10,7 +10,7 @@
 /// <param name="">Y</param>
 /// <param name="">Z</param>
 /// <returns>Scaled Mat4</returns>
-glm::mat4 scale(glm::mat4, float, float, float);
+glm::mat4 ScaleEntity(glm::mat4, glm::vec3);
 
 /// <summary>
 /// Method to rotate a Mat4 variable
@@ -20,7 +20,7 @@ glm::mat4 scale(glm::mat4, float, float, float);
 /// <param name="">Y</param>
 /// <param name="">Z</param>
 /// <returns>Scaled Mat4</returns>
-glm::mat4 rotate(glm::mat4, float radians, float, float, float);
+glm::mat4 RotateEntity(glm::mat4, float radians, glm::vec3);
 
 /// <summary>
 /// Method to position a Mat4 variable
@@ -30,4 +30,5 @@ glm::mat4 rotate(glm::mat4, float radians, float, float, float);
 /// <param name="">Y</param>
 /// <param name="">Z</param>
 /// <returns>positioned Mat4</returns>
+glm::mat4 TranslateEntity(glm::mat4, glm::vec3);
 glm::mat4 translate(glm::mat4, float, float, float);

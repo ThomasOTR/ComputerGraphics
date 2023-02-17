@@ -2,14 +2,13 @@
 #include "../Model.h"
 
 /// <summary>
-/// A class to create a Blokkentoren Mesh
+/// An subclass of Model that creates a House
 /// </summary>
 class House :
     public Model
 {
 public:
-    House() = default;
-    House(glm::vec3);
+    House();
 
     // Inherited via Mesh
     virtual void AddComponents() override;

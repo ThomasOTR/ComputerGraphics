@@ -2,31 +2,33 @@
 #include "../../Transformations.h"
 #include <iostream>
 
-ScalingAnimation::ScalingAnimation(float AddValue, float AnimateValue)
+ScalingAnimation::ScalingAnimation(float Goal, float AnimateValue)
 {
-	this->AddValue = AddValue;
+	this->Goal = Goal;
 	this->AnimateValue = AnimateValue;
-	if (AddValue > 0 || AddValue < 1) Negative = true;
 
 
 }
 
 glm::mat4 ScalingAnimation::Animate(glm::mat4 model)
 {
+	/* A check to start the animation with adding the startvalue */
 	if (!AnimationStarted)
 	{
 		AnimationStarted = true;
-		StartValue = model[1].y;
+		if (model[3].y > Goal) Negative = true;
 	}
 
-	if (!Negative && (StartValue + AddValue <= model[1].y) or (Negative && StartValue + AddValue >= model[1].y))
+	/* Checks if the Animation is completed */
+	if ((!Negative && model[3].y < Goal) or (Negative && model[3].y > Goal))
 	{
 		AnimationCompleted = true;
 		return model;
 	}
-	else return scale(model, 
+
+	else return ScaleEntity(model, glm::vec3(
 					  Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue,
 		              Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue, 
 		              Negative ? 1.0 - AnimateValue : 1.0 + AnimateValue
-					 );
+					 ));
 }

@@ -31,40 +31,23 @@ void Entity::RunAnimations()
 	}
 }
 
-void Entity::Transform()
+void Entity::Move(glm::vec3 position)
 {
-	if (Position != glm::vec3()) model = translate(model, Position.x, Position.y, Position.z);
-	if (Scale != glm::vec3()) model = scale(model, Scale.x, Scale.y, Scale.z);
-	if (Rotation != glm::vec3()) model = rotate(model, RotAngle, Rotation.x, Rotation.y, Rotation.z);
-}
-
-void Entity::SetPosition(glm::vec3 position)
-{
-	Position = position;
+	model = TranslateEntity(model, position);
 }
 
 glm::vec3 Entity::GetPosition()
 {
-	return Position;
+	return glm::vec3(model[3].x, model[3].y, model[3].z);
 }
 
-void Entity::SetRotation(glm::vec3 rotation, float rotAngle)
+void Entity::Rotate(glm::vec3 rotation, float rotAngle)
 {
-	Rotation = rotation;
-	RotAngle = rotAngle;
+	model = RotateEntity(model, rotAngle, rotation);
 }
 
-glm::vec3 Entity::GetRotation()
+void Entity::Scale(glm::vec3 scale)
 {
-	return Rotation;
+	model = ScaleEntity(model, scale);
 }
 
-void Entity::SetScale(glm::vec3 scale)
-{
-	Scale = scale;
-}
-
-glm::vec3 Entity::GetScale()
-{
-	return Scale;
-}

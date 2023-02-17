@@ -1,16 +1,19 @@
 #include "Transformations.h"
 
-glm::mat4 scale(glm::mat4 model, float x, float y, float z)
+glm::mat4 ScaleEntity(glm::mat4 model, glm::vec3 scale)
 {
-    return glm::scale(model, glm::vec3(x, y, z));
+    return glm::scale(model, scale);
 }
 
-glm::mat4 rotate(glm::mat4 model, float angle, float x, float y, float z)
+glm::mat4 RotateEntity(glm::mat4 model, float angle, glm::vec3 rotation)
 {
-    return glm::rotate(model, glm::radians(angle), glm::vec3(x, y, z));
+    return glm::rotate(model, glm::radians(angle), rotation);
 }
 
-glm::mat4 translate(glm::mat4 model, float x, float y, float z)
+glm::mat4 TranslateEntity(glm::mat4 model, glm::vec3 position)
 {
+    return glm::translate(model, position);;
+}
+glm::mat4 translate(glm::mat4 model, float x, float y, float z) {
     return glm::translate(model, glm::vec3(x, y, z));;
 }

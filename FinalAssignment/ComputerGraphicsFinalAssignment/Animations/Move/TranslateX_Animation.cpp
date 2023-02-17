@@ -1,26 +1,27 @@
 #include "TranslateX_Animation.h"
 #include "../../Transformations.h"
 #include <iostream>
-TranslateX_Animation::TranslateX_Animation(float AddValue, float AnimateValue)
+TranslateX_Animation::TranslateX_Animation(float Goal, float AnimateValue)
 {
-	this->AddValue = AddValue;
+	this->Goal = Goal;
 	this->AnimateValue = AnimateValue;
-	if (signbit(AddValue)) Negative = true;
 }
 
 glm::mat4 TranslateX_Animation::Animate(glm::mat4 model)
 {
-	glm::vec3 position = glm::vec3(model[3].x, model[3].y, model[3].z);
+	/* A check to start the animation with adding the startvalue */
 	if (!AnimationStarted)
 	{
 		AnimationStarted = true;
-		StartValue = position.x;
+		float bla = model[3].x;
+		if (model[3].x > Goal) Negative = true;
 	}
 
-	if (!Negative && (StartValue + AddValue <= position.x) or (Negative && StartValue + AddValue >= position.x))
+	/* Checks if the Animation is completed */
+	if ((!Negative && model[3].x > Goal) or (Negative && model[3].x < Goal))
 	{
 		AnimationCompleted = true;
 		return model;
 	}
-	else return translate(model, Negative ? -AnimateValue : AnimateValue, 0.0, 0.0);
+	else return TranslateEntity(model, glm::vec3(0.0, 0.0, Negative ? -AnimateValue : AnimateValue));
 }

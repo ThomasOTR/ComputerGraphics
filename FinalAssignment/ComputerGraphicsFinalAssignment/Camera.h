@@ -11,19 +11,14 @@
 class Camera
 {
 public:
-	/// <summary>
-	/// A property which hold the current Mode;
-	/// </summary>
+
+	/* A property which hold the current Mode; */
 	CameraMode CurrentMode;
 
-	/// <summary>
-	/// A property which holds the values of the walk mode.
-	/// </summary>
+	/* A property which holds the values of the walk mode; */
 	CameraMode WalkMode = CameraMode(glm::vec3(2.0, 0.7, 7.0),ModeType::Walk);
 	
-	/// <summary>
-	/// A property which holds the values of the DroneMode;
-	/// </summary>
+	/* A property which holds the values of the DroneMode; */
 	CameraMode DroneMode = CameraMode(glm::vec3(0.0, 8.0, 15.0), ModeType::Drone);
 
 	Camera();
@@ -34,14 +29,18 @@ public:
 	void CalculateViewMatrix();
 
 	/// <summary>
-	/// A method to calculate the projection matrix based on FOV and screen size;
+	/// A method to calculate the projection matrix based on FOV and screen size
 	/// </summary>
 	void CalculateProjectionMatrix();
 
 	/// <summary>
-	/// A method to update the camera vectors based on movement.
+	/// A method to update the camera vectors based on movement
 	/// </summary>
 	void UpdateCameraVectors();
+
+	/// <summary>
+	/// A method to switch the Camera Mode. This method will only be triggered by the InputHandler
+	/// </summary>
 	void SwitchMode();
 };
 

@@ -9,9 +9,7 @@
 class Model : public Entity
 {
 public:
-	/// <summary>
-	/// A vector of all parts of this model
-	/// </summary>
+	/* A vector of all parts of this model */
 	std::vector<Entity*> Parts = {};
 
 	/// <summary>
@@ -21,7 +19,7 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetPosition(glm::vec3) override;
+	void Move(glm::vec3) override;
 
 	/// <summary>
 	/// Methods to set the Rotation. 
@@ -30,7 +28,7 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetRotation(glm::vec3, float);
+	void Rotate(glm::vec3, float);
 
 	/// <summary>
 	/// Methods to set the Scale. 
@@ -39,25 +37,19 @@ public:
 	/// <param name="">X</param>
 	/// <param name="">Y</param>
 	/// <param name="">Z</param>
-	void SetScale(glm::vec3);
+	void Scale(glm::vec3);
 
 	/// <summary>
-	/// A method to Transform the model. Only needed when Set Methods are called.
-	/// This method is needed to override the Entity Transform to transform each part.
+	/// A method to run the animations. This will override the RunAnimations method of Entity.
 	/// </summary>
-	void Transform();
-
-	/// <summary>
-	/// Method to reset all components after Transforming.
-	/// </summary>
-	void ResetComponents();
-
 	void RunAnimations();
 
 	/// <summary>
 	/// Method to add all components to initalise the model.
 	/// </summary>
 	virtual void AddComponents() = 0;
+
+	void ResetComponents();
 	// Inherited via Entity
 
 	/// <summary>

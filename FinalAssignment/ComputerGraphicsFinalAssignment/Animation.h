@@ -9,26 +9,32 @@
 class Animation
 {
 public:
-	/// <summary>
-	/// A boolean to know if a animation is already started
-	/// This boolean will be true when the animation is started.
-	/// </summary>
+	/* A boolean that will be used to check if the animation is already started. */
 	bool AnimationStarted = false;
+
+	/* A boolean that will be used to check if the animation is completed. With this boolean the Entity knows it can start a new animation. */
 	bool AnimationCompleted = false;
+
+	/* A boolean to know in which direction it has to animate. */
 	bool Negative = false;
 
+	/* Useful values about speed, start and finish. */
 	float AnimateValue = 0.1f;
-	float StartValue = 0.0f;
-	float AddValue = 0.0f;
-	/// <summary>
-	/// A method to start the animation
-	/// </summary>
-	/// <param name=""></param>
-	/// <returns></returns>
-	///
+	float Goal;
+
 	
 	Animation() = default;
-	virtual glm::mat4 Animate(glm::mat4) = 0;
+	
+	/// <summary>
+	/// The method to start the animation 
+	/// </summary>
+	/// <param name="model">The model that will be updated in the Animation. </param>
+	/// <returns></returns>
+	virtual glm::mat4 Animate(glm::mat4 model) = 0;
+
+	/// <summary>
+	/// A method to reset the Animation so it can be reused without creating a new animation with all the values. */
+	/// </summary>
 	void ResetAnimation();
 };
 

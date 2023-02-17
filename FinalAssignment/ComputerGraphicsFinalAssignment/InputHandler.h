@@ -6,22 +6,27 @@
 class InputHandler
 {
 private:
-	/// <summary>
-	/// Multiplier to move the camera smoothly when WASD is presssed.
-	/// </summary>
+	/* Multiplier to move the camera smoothly when WASD is presssed. */
 	float movementSpeed = 0.25f;
 
-	/// <summary>
-	/// Multiplier to move the camera smoothly when the mouse is moved.
-	/// </summary>
+	/* Multiplier to move the camera smoothly when the mouse is moved. */
 	float sensitivity = 0.1f;
 
-	/// <summary>
-	/// Boolean to position the mouse right when it has never moved before.
-	/// </summary>
+	/* Boolean to position the mouse right when it has never moved before.*/
 	bool firstMouseMovement = true;
 
+	/// <summary>
+	/// A method that calculates a value to move the Camera to left or right.
+	/// </summary>
+	/// <param name="camera"></param>
+	/// <returns></returns>
 	glm::vec3 CalculateLeftRightMovement(Camera camera);
+
+	/// <summary>
+	/// A method that calculates a value to move the camera forward and backward
+	/// </summary>
+	/// <param name="camera"></param>
+	/// <returns></returns>
 	glm::vec3 CalculateForwardBackwardMovement(Camera camera);
 
 public:

@@ -1,5 +1,9 @@
 #pragma once
 #include "../../Animation.h"
+
+/// <summary>
+/// An Animation subclass that translates an entity on the Z-Axis. 
+/// </summary>
 class TranslateZ_Animation : 
 	public Animation
 {

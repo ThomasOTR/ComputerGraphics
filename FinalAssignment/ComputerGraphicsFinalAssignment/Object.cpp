@@ -22,8 +22,6 @@ void Object::LoadObject()
 
 void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 {
-    Transform();
-
     shader = Shader(phongVertPath, phongFragPath);
     unsigned int position_id, normal_id, uv_id;
     unsigned int vbo_vertices, vbo_normals, vbo_uvs;
@@ -86,15 +84,6 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
     mv = view * model;
     shader.use();
 
-    shader.setMat4("mv", mv);
-    shader.setMat4("projection", projection);
-    shader.setVec3("light_pos", defaultLight.Position);
-
-    shader.setVec3("mat_ambient", material.AmbientColor);
-    shader.setVec3("mat_diffuse", material.DiffuseColor);
-    shader.setVec3("mat_specular", material.Specular);
-    shader.setFloat("mat_power", material.Power);
-
     if (!texture_path.empty())
     {
         texture_id = setTexture(texture_path.c_str());
@@ -116,7 +105,16 @@ void Object::Render(glm::mat4 view, glm::mat4 projection)
     glBindTexture(GL_TEXTURE_2D, texture_id);
 
     mv = view * model;
+    shader.use();
+
     shader.setMat4("mv", mv);
+    shader.setMat4("projection", projection);
+    shader.setVec3("light_pos", defaultLight.Position);
+
+    shader.setVec3("mat_ambient", material.AmbientColor);
+    shader.setVec3("mat_diffuse", material.DiffuseColor);
+    shader.setVec3("mat_specular", material.Specular);
+    shader.setFloat("mat_power", material.Power);
 
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size());

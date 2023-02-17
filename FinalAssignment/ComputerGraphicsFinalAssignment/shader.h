@@ -16,9 +16,7 @@ public:
     Shader() = default;
     Shader(const char*, const char*);
 
-    /// <summary>
-    /// ID created by glCreateProgram()
-    /// </summary>
+   /* ID created by glCreateProgram() to get the right Program for your shaders. */
     unsigned int ID;
 
     /// <summary>
@@ -64,7 +62,7 @@ public:
     void setTexture(const std::string&, const std::string&);
 
     /// <summary>
-    /// method to set boolean related to textures
+    /// Method to set boolean related to textures
     /// </summary>
     /// <param name="">name of boolean</param>
     void setNoTexture(const std::string&);
@@ -74,7 +72,7 @@ public:
 private:
 
     /// <summary>
-    /// method to check the shader on any compile errors
+    /// Method to check the shader on any compile errors
     /// </summary>
     /// <param name="shader"></param>
     /// <param name="type"></param>

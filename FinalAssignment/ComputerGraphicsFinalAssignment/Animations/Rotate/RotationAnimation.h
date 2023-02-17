@@ -1,5 +1,9 @@
 #pragma once
 #include "../../Animation.h"
+
+/// <summary>
+/// An Animation subclass that rotates an entity
+/// </summary>
 class RotationAnimation :
     public Animation
 {

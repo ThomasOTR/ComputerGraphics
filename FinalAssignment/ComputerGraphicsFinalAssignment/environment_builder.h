@@ -9,14 +9,10 @@
 class EnvironmentBuilder
 {
 private:
-	/// <summary>
-	/// A property which will store all entities
-	/// </summary>
+	/* A property which will store all entities */
 	std::vector<Entity*> entities = {};
 
-	/// <summary>
-	/// A method to load all entities.
-	/// </summary>
+	/* A method to load all entities. */
 	void LoadAllEntities();
 public:
 	EnvironmentBuilder();

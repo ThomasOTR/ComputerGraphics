@@ -3,23 +3,24 @@
 
 TranslateY_Animation::TranslateY_Animation(float AddValue, float AnimateValue)
 {
-    this->AddValue = AddValue;
+    this->Goal = AddValue;
 	this->AnimateValue = AnimateValue;
-	if (signbit(AddValue)) Negative = true;
 }
 
 glm::mat4 TranslateY_Animation::Animate(glm::mat4 model)
 {
+	/* A check to start the animation with adding the startvalue */
 	if (!AnimationStarted)
 	{
 		AnimationStarted = true;
-		StartValue = model[3].y;
+		if (model[3].y > Goal) Negative = true;
 	}
 
-	if (!Negative && (StartValue + AddValue <= model[3].y) or (Negative && StartValue + AddValue >= model[3].y))
+	/* Checks if the Animation is completed */
+	if ((!Negative && model[3].y < Goal) or (Negative && model[3].y > Goal))
 	{
 		AnimationCompleted = true;
 		return model;
 	}
-	else return translate(model, 0.0, Negative ? -AnimateValue : AnimateValue, 0.0);
+	else return TranslateEntity(model, glm::vec3(0.0, Negative ? -AnimateValue : AnimateValue, 0.0));
 }

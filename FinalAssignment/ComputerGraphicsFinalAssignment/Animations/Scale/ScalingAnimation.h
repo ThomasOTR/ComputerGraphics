@@ -1,6 +1,9 @@
 #pragma once
 #include "../../Animation.h"
 
+/// <summary>
+/// An Animation subclass that scales an entity. 
+/// </summary>
 class ScalingAnimation :
 	public Animation
 {

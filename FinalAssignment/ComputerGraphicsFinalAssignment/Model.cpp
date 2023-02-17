@@ -1,45 +1,28 @@
 #include "Model.h"
+#include <glm/gtx/string_cast.hpp>
 
-void Model::SetPosition(glm::vec3 position)
+void Model::Move(glm::vec3 position)
 {
-	glm::vec3 before = GetPosition();
-	Entity::SetPosition(position);
-	for (Entity* p : Parts)
-	{
-		glm::vec3 difference = GetPosition() - before;
-		p->SetPosition(p->GetPosition() + difference);
-	}
-}
-
-void Model::SetRotation(glm::vec3 rotation, float rotAngle)
-{
-	Entity::SetRotation(rotation, rotAngle);
-	for (Entity* p : Parts)
-	{
-		p->SetRotation(rotation, rotAngle);
-	}
-}
-
-void Model::SetScale(glm::vec3 scale)
-{
-	Entity::SetScale(scale);
-	for (Entity* p : Parts)
-	{
-		p->SetScale(scale);
-	}
-}
-
-void Model::Transform()
-{
-	for (Entity* p : Parts) {
-		p->Transform();
-	}
-}
-
-void Model::ResetComponents()
-{
-	Parts.clear();
+	Entity::Move(position);
 	ResetComponents();
+}
+
+void Model::Rotate(glm::vec3 rotation, float rotAngle)
+{
+	Entity::Rotate(rotation, rotAngle);
+	for (Entity* p : Parts)
+	{
+		p->Rotate(rotation, rotAngle);
+	}
+}
+
+void Model::Scale(glm::vec3 scale)
+{
+	Entity::Scale(scale);
+	for (Entity* p : Parts)
+	{
+		p->Scale(scale);
+	}
 }
 
 void Model::RunAnimations()
@@ -62,6 +45,12 @@ void Model::RunAnimations()
 		}
 
 	}
+}
+
+void Model::ResetComponents()
+{
+	Parts.clear();
+	AddComponents();
 }
 
 

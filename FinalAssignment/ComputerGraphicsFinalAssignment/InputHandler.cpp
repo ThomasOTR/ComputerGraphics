@@ -16,9 +16,10 @@ glm::vec3 InputHandler::CalculateForwardBackwardMovement(Camera camera)
 
 Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 {
+	key = std::tolower(key);
 	switch (key)
 	{
-	case 27:
+	case 27: /* ESC */
 		glutExit();
 		break;
 	case 'v':

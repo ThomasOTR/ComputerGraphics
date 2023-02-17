@@ -15,9 +15,7 @@ enum class ModeType {
 class CameraMode
 {
 public:
-	/// <summary>
-	/// Properties to calculate the view and projection
-	/// </summary>
+	/* Properties to calculate the view and projection */
 	glm::vec3 Pos;
 	glm::vec3 Front = glm::vec3(-4.0, 0.0, -14.0);
 	glm::vec3 Up = glm::vec3(0.0, 1.0, 0.0);
@@ -27,17 +25,11 @@ public:
 	float pitch = 0.0f;
 	float FOV = 45.0f;
 
-	glm::vec3 OriginalPos;
-
-	/// <summary>
-	/// The view and projection needed to position all the other elements on the right spot.
-	/// </summary>
+	/* TODO: */
 	glm::mat4 view;
 	glm::mat4 projection;
 
-	/// <summary>
-	///  The mode of the camera.
-	/// </summary>
+	/* The mode of the Camera */
 	ModeType Mode;
 	
 	CameraMode();
