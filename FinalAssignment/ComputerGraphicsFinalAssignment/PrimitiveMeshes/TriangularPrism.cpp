@@ -4,7 +4,6 @@ TriangularPrism::TriangularPrism(glm::vec3 color, ShadingType st)
 {
 	this->color = color;
 	shading_type = ShadingType::Basic;
-	material = defaultMaterial;
 	setData();
 }
 

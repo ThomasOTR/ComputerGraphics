@@ -15,10 +15,6 @@ public:
 	/// </summary>
 	Shader shader;
 
-	/// <summary>
-	/// An property which stores a lightsource that is used with Phong Shaders.
-	/// </summary>
-	Material material;
 	/* Scaling, Rotating, Positioning and doing this in Animations */
 
 	/// <summary>

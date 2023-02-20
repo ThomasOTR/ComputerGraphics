@@ -10,7 +10,6 @@ Pyramid::Pyramid(glm::vec3 inputColor, ShadingType st) : Pyramid()
 {
 	color = inputColor;
 	shading_type = st;
-	material = defaultMaterial;
 	setData();
 }
 void Pyramid::setData()

@@ -1,4 +1,5 @@
 #include "Object.h"
+
 Object::Object(std::string object_path, std::string texture_path)
 {
     this->object_path = object_path;
@@ -109,7 +110,7 @@ void Object::Render(glm::mat4 view, glm::mat4 projection)
 
     shader.setMat4("mv", mv);
     shader.setMat4("projection", projection);
-    shader.setVec3("light_pos", defaultLight.Position);
+    shader.setVec3("light_pos", LightSource);
 
     shader.setVec3("mat_ambient", material.AmbientColor);
     shader.setVec3("mat_diffuse", material.DiffuseColor);

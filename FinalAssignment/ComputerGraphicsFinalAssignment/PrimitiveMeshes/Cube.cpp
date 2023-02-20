@@ -6,7 +6,6 @@ Cube::Cube(glm::vec3 inputColor, ShadingType st)
 {
 	color = inputColor;
 	shading_type = st;
-	material = defaultMaterial;
 	setData();
 
 }

@@ -7,6 +7,7 @@
 #include "Models/Tree.h"
 #include "Models/Sidewalk.h"
 #include "Models/Car.h"
+#include "Models/Lamppost.h"
 
 #include "PrimitiveMeshes/TriangularPrism.h"
 #include "PrimitiveMeshes/Plane.h"
@@ -62,7 +63,6 @@ void EnvironmentBuilder::LoadAllEntities()
 		bench->Scale(glm::vec3(1,1,1));
 		bench->Rotate(glm::vec3(0, 1, 0), 90);
 		entities.push_back(bench);
-
 		TrashBin* trashbin = new TrashBin();
 		trashbin->Move(glm::vec3(sidewalkPos.x - (i + 0.8), sidewalkPos.y, sidewalkPos.z + 1));
 		entities.push_back(trashbin);
@@ -74,7 +74,9 @@ void EnvironmentBuilder::LoadAllEntities()
 		tree->Move(glm::vec3(sidewalkPos.x - i, sidewalkPos.y, sidewalkPos.z + 2));
 		entities.push_back(tree);
 	}
-#pragma endregion
+	Lamppost* l = new Lamppost();
+	l->Move(glm::vec3(0, 0, 0));
+	entities.push_back(l);
 	
 	Car* car = new Car();
 	car->Move(glm::vec3(-30, 0, 5));

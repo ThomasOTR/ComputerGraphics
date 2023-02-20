@@ -31,13 +31,9 @@ public:
 	void Buffer(glm::mat4, glm::mat4) override;
 	void BufferBasic(glm::mat4, glm::mat4);
 	void BufferBasicTexture(glm::mat4, glm::mat4);
-	void BufferPhong(glm::mat4, glm::mat4);
-	void BufferLambert(glm::mat4, glm::mat4);
 
 	/* Methods to render the shape based on the ShadingType*/
 	void Render(glm::mat4, glm::mat4) override;
-	void RenderBasic(glm::mat4, glm::mat4);
-	void RenderShading(glm::mat4, glm::mat4);
 
 	/// <summary>
 	/// Methods that will be inherited by subclasses to set multiple things that are different for each shape

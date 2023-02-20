@@ -4,7 +4,6 @@ Plane::Plane(glm::vec3 color, ShadingType st)
 {
 	this->color = color;
 	shading_type = st;
-	material = defaultMaterial;
 	setData();
 }
 

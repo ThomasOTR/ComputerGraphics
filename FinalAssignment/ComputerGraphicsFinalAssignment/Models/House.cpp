@@ -6,7 +6,6 @@
 House::House()
 {
 	AddComponents();
-	material = defaultMaterial;
 }
 
 void House::AddComponents()

@@ -23,6 +23,9 @@ public:
 	/* A vec3 where the color of this object is stored.*/
 	glm::vec3 color = glm::vec3();
 
+	/* An property which stores a lightsource that is used with Phong Shaders*/
+	Material material;
+
 	Object() = default;
 	Object(std::string, std::string texture_path);
 	Object(std::string, glm::vec3 color);
@@ -31,6 +34,7 @@ public:
 	/// A method to load the object
 	/// </summary>
 	void LoadObject();
+
 
 	// Inherited via Entity
 

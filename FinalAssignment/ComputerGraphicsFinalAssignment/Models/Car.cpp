@@ -4,7 +4,6 @@
 Car::Car()
 {
 	AddComponents();	
-	material = defaultMaterial;
 }
 
 void Car::AddComponents()

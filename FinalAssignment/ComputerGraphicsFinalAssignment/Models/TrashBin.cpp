@@ -4,7 +4,6 @@
 TrashBin::TrashBin()
 {
 	AddComponents();
-	material = defaultMaterial;
 }
 
 void TrashBin::AddComponents()

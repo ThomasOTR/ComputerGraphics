@@ -4,7 +4,6 @@
 Tree::Tree()
 {
 	AddComponents();
-	material = defaultMaterial;
 }
 
 void Tree::AddComponents()

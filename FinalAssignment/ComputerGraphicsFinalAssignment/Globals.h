@@ -1,6 +1,5 @@
 #pragma once
 #include "Material.h"
-#include "Light.h"
 
 /* 
  * Shader Paths 
@@ -19,13 +18,13 @@ extern const char* skyboxVertPath;
 /* 
  * Materials
  */
-extern const Material defaultMaterial;
+extern Material defaultMaterial;
 
 /*
  * Light Sources 
  */
 
-extern const Light defaultLight;
+extern glm::vec3 LightSource;
 
 /*
  *  Resource paths
