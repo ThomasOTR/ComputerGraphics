@@ -120,3 +120,45 @@ void PrimitiveMesh::Render(glm::mat4 view, glm::mat4 projection) {
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, sizeof(vertices) / sizeof(unsigned int), GL_UNSIGNED_INT, 0);
 }
+
+void PrimitiveMesh::RenderShading(glm::mat4, glm::mat4)
+{
+}
+
+void PrimitiveMesh::RenderBasic(glm::mat4, glm::mat4)
+{
+}
+
+void PrimitiveMesh::CalculateNormals(std::vector<GLfloat>)
+{
+	glm::vec3 N, U, V;
+	std::vector<GLfloat> newNormals;
+
+	for (int i = 0; i < sizeof(vertices); i += 9) {
+		glm::vec3 p1, p2, p3;
+
+		int j = i;
+		p1 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
+		j += 3;
+		p2 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
+		j += 3;
+		p3 = glm::vec3(vertices[j], vertices[j + 1], vertices[j + 2]);
+
+		U = p2 - p1;
+		V = p3 - p1;
+
+		N.x = (U.y * V.z) - (U.z * V.y);
+		N.y = (U.z * V.x) - (U.x * V.z);
+		N.z = (U.x * V.y) - (U.y * V.x);
+
+		// Normalize (divide by root of dot product)
+		N = glm::normalize(N);
+
+		for (int p = 0; p < 3; p++) {
+			newNormals.push_back(N.x);
+			newNormals.push_back(N.y);
+			newNormals.push_back(N.z);
+		}
+	}
+	std::copy(newNormals.begin(), newNormals.end(), normals);
+}
