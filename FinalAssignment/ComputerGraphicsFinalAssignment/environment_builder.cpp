@@ -12,8 +12,10 @@
 #include "PrimitiveMeshes/TriangularPrism.h"
 #include "PrimitiveMeshes/Plane.h"
 
-#include "Animations/Scale/ScalingAnimation.h"
+#include "Animations/Rotate/RotationAnimation.h"
 #include "Animations/Move/TranslateX_Animation.h"
+#include "Animations/Scale/ScalingAnimation.h"
+
 
 #include <vector>
 EnvironmentBuilder::EnvironmentBuilder()
@@ -62,9 +64,9 @@ void EnvironmentBuilder::LoadAllEntities()
 		bench->Scale(glm::vec3(1,1,1));
 		bench->Rotate(glm::vec3(0, 1, 0), 90);
 		entities.push_back(bench);
-		TrashBin* trashbin = new TrashBin();
+		/*TrashBin* trashbin = new TrashBin();
 		trashbin->Move(glm::vec3(sidewalkPos.x - (i + 0.8), sidewalkPos.y, sidewalkPos.z + 1));
-		entities.push_back(trashbin);
+		entities.push_back(trashbin);*/
 	}
 	for (int i = -30; i < 0; i += 6)
 	{
@@ -81,7 +83,7 @@ void EnvironmentBuilder::LoadAllEntities()
 	car->Move(glm::vec3(-30, 0, 5));
 	car->Scale(glm::vec3(0.5, 0.5, 0.5));
 	car->Rotate(glm::vec3(0, 1, 0), 90);
-	car->AddAnimation(new TranslateX_Animation(4.0f,0.1f));
+	car->AddAnimations({ new TranslateX_Animation(4.0f,0.1f), new RotationAnimation(glm::vec3(0, 1, 0), 90), new ScalingAnimation(4,0.01)});
 
 	Plane* plane = new Plane(glm::vec3(0.282, 0.435, 0.22), ShadingType::Basic);
 	plane->Move(glm::vec3(0, 0, 0));

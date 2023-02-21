@@ -34,6 +34,8 @@ public:
 
 	/* Methods to render the shape based on the ShadingType*/
 	void Render(glm::mat4, glm::mat4) override;
+	void RenderShading(glm::mat4, glm::mat4);
+	void RenderBasic(glm::mat4, glm::mat4);
 
 	/* After research found out Normals are a usefull piece for a model to build.
 	* I calculated it by following: https://www.khronos.org/opengl/wiki/Calculating_a_Surface_Normal

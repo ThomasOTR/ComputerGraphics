@@ -17,7 +17,7 @@ void Car::AddComponents()
 	Object* wheels = new Object("Objects/car/car_wheels.obj", glm::vec3(0., 0., 0.));
 	wheels->Move(GetPosition());
 
-	Parts.insert(Parts.end(), { body,interior,wheels });
+	Parts.insert(Parts.end(), { interior,wheels,body });
 
 
 

@@ -7,6 +7,8 @@
 class ScalingAnimation :
 	public Animation
 {
+private: 
+	float currentScale = 1;
 public:
 	ScalingAnimation(float, float);
 

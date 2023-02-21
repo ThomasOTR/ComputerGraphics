@@ -1,13 +1,15 @@
 #include "RotationAnimation.h"
+#include <iostream>
 
-RotationAnimation::RotationAnimation(float rotateX, float rotateY, float rotateZ, float rotAngle )
+RotationAnimation::RotationAnimation(glm::vec3 rotation, float rotAngle)
 {
 	this->rotAngle = rotAngle;
-	rotation = glm::vec3(rotateX, rotateY, rotateZ);
+	this->rotation = rotation;
+
 }
 
 glm::mat4 RotationAnimation::Animate(glm::mat4 model)
 {
 	this->AnimationCompleted = true;
-	return RotateEntity(model, glm::radians(rotAngle), rotation);
+	return RotateEntity(model, rotAngle, rotation);
 }
