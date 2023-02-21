@@ -26,8 +26,7 @@ void main()
     vec4 P = mv * vec4(position, 1.0);
 
     // Calculate normal in view-space
-    vs_out.N = mat3(model) * normal;
-
+    vs_out.N = mat3(mv) * normal;
     // Calculate light vector
     vs_out.L = light_pos - P.xyz;
 

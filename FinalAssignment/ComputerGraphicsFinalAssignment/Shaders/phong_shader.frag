@@ -32,7 +32,7 @@ void main()
 
     vec3 result;
 	if (texture_applied) {
-		vec3 diffuse = max(dot(N, L), 0.9) * texture2D(texsampler, UV).rgb;
+        vec3 diffuse = max(dot(N, L), 0.9) * texture2D(texsampler, UV).xyz;
         vec3 specular = pow(max(dot(R, V), 0.0), mat_power) * mat_specular;
         result = (mat_ambient + diffuse + specular);
 	} 

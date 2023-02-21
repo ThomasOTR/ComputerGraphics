@@ -12,6 +12,6 @@ public:
 	glm::vec3 Specular = glm::vec3(0.7, 0.7, 0.7);
 	float Power;
 	Material() = default;
-	Material(glm::vec3 Ambient, glm::vec3 Diffuse, glm::vec3 Specular, float Shininess);
+	Material(glm::vec3 Ambient, glm::vec3 Diffuse, glm::vec3 Specular, float Power);
 };
 

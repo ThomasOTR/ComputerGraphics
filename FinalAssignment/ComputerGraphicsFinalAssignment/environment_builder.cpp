@@ -38,7 +38,6 @@ void EnvironmentBuilder::LoadAllEntities()
 			fence->Rotate(glm::vec3(0, 1, 0), 90);
 			entities.push_back(fence);
 		}
-
 	}
 #pragma endregion
 

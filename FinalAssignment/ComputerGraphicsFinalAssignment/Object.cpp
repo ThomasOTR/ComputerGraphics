@@ -4,7 +4,7 @@ Object::Object(std::string object_path, std::string texture_path)
 {
     this->object_path = object_path;
     this->texture_path = texture_path;
-
+    this->material = defaultMaterial;
     LoadObject();
 }
 
@@ -12,6 +12,7 @@ Object::Object(std::string object_path, glm::vec3 color)
 {
     this->object_path = object_path;
     this->color = color;
+    this->material = defaultMaterial;
 
     LoadObject();
 }
