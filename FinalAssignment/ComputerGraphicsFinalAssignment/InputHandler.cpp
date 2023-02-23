@@ -57,7 +57,10 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 'e' :
 		if (camera.CurrentMode.Mode == ModeType::Drone)
+		{
 			camera.CurrentMode.Pos.y -= movementSpeed;
+			if (camera.CurrentMode.Pos.y < 0.5) camera.CurrentMode.Pos.y = 0.5;
+		}
 		break;
 	}
 	return camera;

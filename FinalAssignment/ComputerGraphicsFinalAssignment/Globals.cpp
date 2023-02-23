@@ -23,4 +23,4 @@ Material defaultMaterial = Material(glm::vec3(.1, .1 , .1), glm::vec3(0.5, 0.5, 
 //extern std::string objectPath = "Objects/MadeInBlender/";
 //extern std::string resourcePath = "Textures/";
 
-glm::vec3 LightSource = glm::vec3(0, 5, 0);
+glm::vec3 LightSource = glm::vec3(-30, 15, 0);

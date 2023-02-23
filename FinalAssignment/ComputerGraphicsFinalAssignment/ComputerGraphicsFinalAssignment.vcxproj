@@ -152,9 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animations\Move\MoveLeftAnimation.cpp" />
     <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp" />
     <ClCompile Include="Animations\Move\TranslateY_Animation.cpp" />
-    <ClCompile Include="Animations\Move\TranslateX_Animation.cpp" />
+    <ClCompile Include="Animations\Move\MoveRightAnimation.cpp" />
     <ClCompile Include="Animations\Rotate\RotationAnimation.cpp" />
     <ClCompile Include="Animations\Scale\ScalingAnimation.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -188,9 +189,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animations\Move\MoveLeftAnimation.h" />
     <ClInclude Include="Animations\Move\TranslateZ_Animation.h" />
     <ClInclude Include="Animations\Move\TranslateY_Animation.h" />
-    <ClInclude Include="Animations\Move\TranslateX_Animation.h" />
+    <ClInclude Include="Animations\Move\MoveRightAnimation.h" />
     <ClInclude Include="Animations\Rotate\RotationAnimation.h" />
     <ClInclude Include="Animations\Scale\ScalingAnimation.h" />
     <ClInclude Include="Camera.h" />

@@ -19,7 +19,7 @@ glm::mat4 TranslateZ_Animation::Animate(glm::mat4 model)
 	}
 
 	/* Checks if the Animation is completed */
-	if ((!Negative && model[3].y < Goal) or (Negative && model[3].y > Goal))
+	if ((!Negative && model[3].z < Goal) or (Negative && model[3].z > Goal))
 	{
 		AnimationCompleted = true;
 		return model;

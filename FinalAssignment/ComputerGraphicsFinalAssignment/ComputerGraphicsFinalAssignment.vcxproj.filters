@@ -105,7 +105,7 @@
     <ClCompile Include="Animations\Move\TranslateY_Animation.cpp">
       <Filter>Source Files\Animations\Move</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\Move\TranslateX_Animation.cpp">
+    <ClCompile Include="Animations\Move\MoveRightAnimation.cpp">
       <Filter>Source Files\Animations\Move</Filter>
     </ClCompile>
     <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp">
@@ -155,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="Models\Lamppost.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\Move\MoveLeftAnimation.cpp">
+      <Filter>Source Files\Animations\Move</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -209,7 +212,7 @@
     <ClInclude Include="Helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Move\TranslateX_Animation.h">
+    <ClInclude Include="Animations\Move\MoveRightAnimation.h">
       <Filter>Header Files\Animations\Move</Filter>
     </ClInclude>
     <ClInclude Include="Animations\Move\TranslateY_Animation.h">
@@ -256,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="Models\Lamppost.h">
       <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\Move\MoveLeftAnimation.h">
+      <Filter>Header Files\Animations\Move</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

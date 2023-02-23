@@ -1,6 +1,5 @@
 #include "Pyramid.h"
 #include "../Transformations.h"
-#include "../Animations/Move/TranslateX_Animation.h"
 #include "../Animations/Move/TranslateY_Animation.h"
 #include "../Animations/Move/TranslateZ_Animation.h"
 #include "../Animations/Scale/ScalingAnimation.h"
