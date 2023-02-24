@@ -8,7 +8,7 @@ class Tree :
     public Model
 {
 public:
-    Tree();
+    Tree() = default;
 
     // Inherited via Model
     virtual void AddComponents() override;

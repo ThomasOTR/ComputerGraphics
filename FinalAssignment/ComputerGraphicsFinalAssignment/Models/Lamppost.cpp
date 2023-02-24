@@ -1,11 +1,6 @@
 #include "Lamppost.h"
 #include "../Object.h"
 
-Lamppost::Lamppost()
-{
-	AddComponents();
-}
-
 void Lamppost::AddComponents()
 {
 	glm::vec3 position = GetPosition();

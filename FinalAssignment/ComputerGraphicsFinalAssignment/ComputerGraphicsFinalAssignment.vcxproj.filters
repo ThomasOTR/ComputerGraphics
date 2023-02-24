@@ -120,9 +120,6 @@
     <ClCompile Include="Animations\Rotate\RotationAnimation.cpp">
       <Filter>Source Files\Animations\Rotate</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PrimitiveMeshes\Cube.cpp">
       <Filter>Source Files\PrimitiveMeshes</Filter>
     </ClCompile>
@@ -137,9 +134,6 @@
     </ClCompile>
     <ClCompile Include="Models\TrashBin.cpp">
       <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PrimitiveMeshes\TriangularPrism.cpp">
       <Filter>Source Files\PrimitiveMeshes</Filter>
@@ -209,9 +203,6 @@
     <ClInclude Include="shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Animations\Move\MoveRightAnimation.h">
       <Filter>Header Files\Animations\Move</Filter>
     </ClInclude>
@@ -241,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="Models\TrashBin.h">
       <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PrimitiveMeshes\TriangularPrism.h">
       <Filter>Header Files\PrimitiveMeshes</Filter>

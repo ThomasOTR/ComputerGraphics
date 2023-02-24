@@ -160,11 +160,9 @@
     <ClCompile Include="Animations\Scale\ScalingAnimation.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraMode.cpp" />
-    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="environment_builder.cpp" />
     <ClCompile Include="Globals.cpp" />
-    <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Loaders.cpp" />
     <ClCompile Include="main.cpp" />
@@ -197,11 +195,9 @@
     <ClInclude Include="Animations\Scale\ScalingAnimation.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraMode.h" />
-    <ClInclude Include="Color.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="environment_builder.h" />
     <ClInclude Include="Globals.h" />
-    <ClInclude Include="Helpers.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Loaders.h" />

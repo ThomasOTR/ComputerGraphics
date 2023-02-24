@@ -10,22 +10,33 @@ class Entity
 {
 public:
 
-	/// <summary>
-	/// An property which stores the Shader that is used for this Entity.
-	/// </summary>
+	/* An property which stores the Shader that is used for the Entity. */
 	Shader shader;
 
-	/* Scaling, Rotating, Positioning and doing this in Animations */
+	/* A property which stores all the animations of the Entity.*/
+	std::vector<Animation*> animations = {};
 
 	/// <summary>
-	/// Properties about the animations.
+	/// A method to add a single animation
 	/// </summary>
-
-	std::vector<Animation*> animations = {};
+	/// <param name="Animation">: Pointer to a Animation instance</param>
 	void AddAnimation(Animation*);
+
+	/// <summary>
+	/// A method to add multiple animations at once
+	/// </summary>
+	/// <param name="Animations">: Vector with pointers to animation instances </param>
 	void AddAnimations(std::vector<Animation*>);
+
+	/// <summary>
+	/// A method to run the Animations. This method can be overridden by subclasses to implement a bit different approach.
+	/// </summary>
 	virtual void RunAnimations();
+
+	/* A bool to check if the Animation is running */
 	bool AnimationRunning = false;
+
+	/* A bool to set the Animations in loop*/
 	bool AnimationInLoop = false;
 
 	/// <summary>
@@ -36,25 +47,49 @@ public:
 	glm::mat4 model = glm::mat4(1.0);
 	glm::mat4 mvp, mv;
 
-
 	Entity() = default;
 
 	/// <summary>
-	/// Methods to buffer and render each entity
+	/// Method to buffer the entity
 	/// </summary>
 	/// <param name="">projection</param>
 	/// <param name="">view</param>
 	virtual void Buffer(glm::mat4, glm::mat4) = 0;
+
+	/// <summary>
+	/// Method to render the entity
+	/// </summary>
+	/// <param name="">projection</param>
+	/// <param name="">view</param>
 	virtual void Render(glm::mat4, glm::mat4) = 0;
 
+	/// <summary>
+	/// Method to move the Entity
+	/// </summary>
+	/// <param name="position">: A vec3 with XYZ values to move the entity in those directions</param>
 	virtual void Move(glm::vec3);
+
+	/// <summary>
+	/// Method to receive the Position of the entity.
+	/// </summary>
+	/// <returns>Current position of the entity</returns>
 	glm::vec3 GetPosition();
 
+	/// <summary>
+	/// Method to rotate the entity
+	/// </summary>
+	/// <param name="rotation">: A vec3 that has the values in which direction the rotation will go.</param>
+	/// <param name="rotAngle">: How many degrees the entity will rotate.</param>
 	virtual void Rotate(glm::vec3, float);
+
+	/// <summary>
+	/// Method to scale the entity
+	/// </summary>
+	/// <param name="scale">: A vec3 that will indicate it which axis the entity will scale</param>
 	virtual void Scale(glm::vec3);
 
 	/// <summary>
-	/// Methods to handle memory allocation 
+	/// Methods to handle memory allocation.
 	/// </summary>
 	void* operator new(size_t i)
 	{

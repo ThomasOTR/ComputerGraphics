@@ -1,7 +1,7 @@
 #include "Loaders.h"
 unsigned int loadBMP(const char* imagepath) {
 
-    printf("Reading image %s\n", imagepath);
+    //printf("Reading image %s\n", imagepath);
 
     // Data read from the header of the BMP file
     unsigned char header[54];
@@ -163,7 +163,7 @@ unsigned int loadDDS(const char* imagepath) {
 
 }
 bool LoadOBJ(const char* path, std::vector<glm::vec3>& out_vertices, std::vector<glm::vec2>& out_uvs, std::vector<glm::vec3>& out_normals) {
-    printf("Loading OBJ file %s...\n", path);
+    //printf("Loading OBJ file %s...\n", path);
 
     std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
     std::vector<glm::vec3> temp_vertices;
@@ -266,7 +266,7 @@ unsigned int loadCubemap(std::vector<std::string> faces)
         unsigned char* data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
         if (data)
         {
-            std::cout << "Cubemap texture success to load at path: " << faces[i] << std::endl;
+            //std::cout << "Cubemap texture success to load at path: " << faces[i] << std::endl;
             glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
             stbi_image_free(data);
         }

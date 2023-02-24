@@ -4,7 +4,6 @@
 void Model::Move(glm::vec3 position)
 {
 	Entity::Move(position);
-	ResetComponents();
 }
 
 void Model::Rotate(glm::vec3 rotation, float rotAngle)

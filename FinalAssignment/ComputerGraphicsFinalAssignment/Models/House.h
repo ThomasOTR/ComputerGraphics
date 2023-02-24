@@ -8,7 +8,7 @@ class House :
     public Model
 {
 public:
-    House();
+    House() = default;
 
     // Inherited via Mesh
     virtual void AddComponents() override;

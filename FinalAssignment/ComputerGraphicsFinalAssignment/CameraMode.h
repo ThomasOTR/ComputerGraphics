@@ -25,7 +25,7 @@ public:
 	float pitch = 0.0f;
 	float FOV = 45.0f;
 
-	/* TODO: */
+	
 	glm::mat4 view;
 	glm::mat4 projection;
 

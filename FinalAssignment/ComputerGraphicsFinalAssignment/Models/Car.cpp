@@ -1,11 +1,6 @@
 #include "Car.h"
 #include "../Object.h"
 
-Car::Car()
-{
-	AddComponents();	
-}
-
 void Car::AddComponents()
 {
 	glm::vec3 position = GetPosition();

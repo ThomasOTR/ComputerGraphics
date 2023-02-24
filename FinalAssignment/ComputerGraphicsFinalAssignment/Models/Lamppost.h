@@ -4,7 +4,7 @@ class Lamppost :
     public Model
 {
 public:
-    Lamppost();
+    Lamppost() = default;
     // Inherited via Model
     virtual void AddComponents() override;
 };

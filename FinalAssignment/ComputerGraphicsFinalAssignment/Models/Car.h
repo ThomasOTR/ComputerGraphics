@@ -8,7 +8,7 @@ class Car :
     public Model
 {
 public:
-    Car();
+    Car() = default;
 
     // Inherited via Mesh
     virtual void AddComponents() override;

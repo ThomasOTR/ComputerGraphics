@@ -18,8 +18,10 @@ public:
 	/* A boolean to know in which direction it has to animate. */
 	bool Negative = false;
 
-	/* Useful values about speed, start and finish. */
+	/* A value that determines how fast the animation will go */
 	float AnimateValue = 0.1f;
+
+	/* A value that stores the value which is the goal of the Animation */
 	float Goal;
 
 	

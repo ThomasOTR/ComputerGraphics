@@ -1,11 +1,5 @@
 #include "TrashBin.h"
 #include "../Object.h"
-
-TrashBin::TrashBin()
-{
-	AddComponents();
-}
-
 void TrashBin::AddComponents()
 {
 	glm::vec3 position = GetPosition();

@@ -3,10 +3,6 @@
 #include "../PrimitiveMeshes/Cube.h"
 #include "../PrimitiveMeshes/Plane.h"
 #include "../PrimitiveMeshes/TriangularPrism.h"
-House::House()
-{
-	AddComponents();
-}
 
 void House::AddComponents()
 {

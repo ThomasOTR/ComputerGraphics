@@ -5,7 +5,6 @@ Sidewalk::Sidewalk(int amountOfBlocks,bool x_axis)
 {
 	this->amountOfBlocks = amountOfBlocks;
 	this->x_axis = x_axis;	
-	AddComponents();
 }
 
 void Sidewalk::AddComponents()

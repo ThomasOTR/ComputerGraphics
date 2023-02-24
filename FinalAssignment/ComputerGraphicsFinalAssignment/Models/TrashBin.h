@@ -8,7 +8,7 @@ class TrashBin :
     public Model
 {
 public:
-    TrashBin();
+    TrashBin() = default;
 
     // Inherited via Model
     virtual void AddComponents() override;
