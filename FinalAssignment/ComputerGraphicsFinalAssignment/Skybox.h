@@ -46,7 +46,7 @@ private:
     };
     
     /* A vector with image_paths of each side of the skybox */
-    std::vector<std::string> sides
+    /*std::vector<std::string> sides
     {
         "Textures/skybox/right.jpg",
         "Textures/skybox/left.jpg",
@@ -54,6 +54,15 @@ private:
         "Textures/skybox/bottom.jpg",
         "Textures/skybox/front.jpg",
         "Textures/skybox/back.jpg"
+    };*/
+    std::vector<std::string> sides
+    {
+        "Textures/skybox2/right.jpg",
+        "Textures/skybox2/left.jpg",
+        "Textures/skybox2/up.jpg",
+        "Textures/skybox2/down.jpg",
+        "Textures/skybox2/front.jpg",
+        "Textures/skybox2/back.jpg",
     };
 public:
     Skybox();

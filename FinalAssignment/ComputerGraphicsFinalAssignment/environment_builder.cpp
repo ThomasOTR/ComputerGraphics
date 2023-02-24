@@ -74,16 +74,16 @@ void EnvironmentBuilder::LoadAllEntities()
 	Sidewalk* sidewalk2 = new Sidewalk(37, true);
 	sidewalk2->Move(glm::vec3(-14.7, 0, 6.5));
 
-	Sidewalk* sidewalk3 = new Sidewalk(25, false);
-	sidewalk3->Move(glm::vec3(-12.6, 0, -21.5));
+	//Sidewalk* sidewalk3 = new Sidewalk(25, false);
+	//sidewalk3->Move(glm::vec3(-12.6, 0, -21.5));
 
-	Sidewalk* sidewalk4 = new Sidewalk(31, true);
-	sidewalk4->Move(glm::vec3(-12.6, 0, -21.5));
+	//Sidewalk* sidewalk4 = new Sidewalk(31, true);
+	//sidewalk4->Move(glm::vec3(-12.6, 0, -21.5));
 
-	Sidewalk* sidewalk5 = new Sidewalk(25, false);
-	sidewalk5->Move(glm::vec3(11, 0, -21.5));
+	//Sidewalk* sidewalk5 = new Sidewalk(25, false);
+	//sidewalk5->Move(glm::vec3(11, 0, -21.5));
 
-	entities.insert(entities.end(), { sidewalk,sidewalk2, sidewalk3, sidewalk4, sidewalk5 });
+	entities.insert(entities.end(), { sidewalk/*,sidewalk2, sidewalk3, sidewalk4, sidewalk5 */});
 
 	for (int i = -30; i < 0; i += 5)
 	{
