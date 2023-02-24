@@ -14,58 +14,69 @@ class Shader
 {
 public:
     Shader() = default;
-    Shader(const char*, const char*);
+
+    /// <summary>
+    /// Constructor to set shader with paths for the fragment and vertex shaders
+    /// </summary>
+    /// <param name="vertexPath">: Path of the vertex shader</param>
+    /// <param name="fragmentPath">: Path of the fragment shader</param>
+    Shader(const char* vertexPath, const char* fragmentPath);
 
    /* ID created by glCreateProgram() to get the right Program for your shaders. */
     unsigned int ID;
 
     /// <summary>
-    /// A method to trigger glUseProgram() with the stored ID 
+    /// A method to trigger glUseProgram() with the stored ID.
     /// </summary>
     void use();
 
     /// <summary>
     /// A method to get the location of input of shader files.
     /// </summary>
-    /// <param name="">name of the input</param>
+    /// <param name="name">: Name of the input where you need the location of.</param>
     /// <returns></returns>
-    unsigned int getAttribLocation(const std::string&);
+    unsigned int getAttribLocation(const std::string& name );
 
     /// <summary>
-    /// Method to set a glm::mat4
+    /// Method to set a glm::mat4.
     /// </summary>
-    /// <param name="">name of the input </param>
-    /// <param name="">mat4 that needs to be stored</param>
-    void setMat4(const std::string&, const glm::mat4&);
+    /// <param name="name">: name of the input </param>
+    /// <param name="value">: value to be set</param>
+    void setMat4(const std::string& name, const glm::mat4& value);
 
     /// <summary>
-    /// Method to set a glm::mat4
+    /// Method to set a glm::vec3.
     /// </summary>
-    /// <param name="">name of the input </param>
-    /// <param name="">vec3 that needs to be stored</param>
-    void setVec3(const std::string&, const glm::vec3&);
+    /// <param name="name">: name of the input </param>
+    /// <param name="value">: value to be set</param>
+    void setVec3(const std::string& name, const glm::vec3& value);
 
     /// <summary>
-    /// Method to set a glm::mat4
+    /// Method to set a float.
     /// </summary>
-    /// <param name="">name of the input </param>
-    /// <param name="">float that needs to be stored</param>
-    void setFloat(const std::string&, float);
+    /// <param name="name">: name of the input </param>
+    /// <param name="value">: value to be set</param>
+    void setFloat(const std::string& name, float value);
 
-    void setInt(const std::string&, int);
+    /// <summary>
+    /// Method to set a int.
+    /// </summary>
+    /// <param name="name">: name of the input </param>
+    /// <param name="value">: value to be set</param>
+    void setInt(const std::string& name, int value);
 
     /// <summary>
     /// Method to set a Texture
     /// </summary>
-    /// <param name="">name of the input </param>
-    /// <param name="">name of boolean</param>
-    void setTexture(const std::string&, const std::string&);
+    /// <param name="name">: name of the input </param>
+    /// <param name="bool_name">: name of boolean </param>
+    void setTexture(const std::string& name, const std::string& bool_name);
 
     /// <summary>
     /// Method to set boolean related to textures
     /// </summary>
     /// <param name="">name of boolean</param>
-    void setNoTexture(const std::string&);
+    void setNoTexture(const std::string& bool_name);
 
 
 
@@ -74,8 +85,8 @@ private:
     /// <summary>
     /// Method to check the shader on any compile errors
     /// </summary>
-    /// <param name="shader"></param>
-    /// <param name="type"></param>
-    void checkCompileErrors(GLuint shader, std::string type);
+    /// <param name="programID">: ID of the program that is checked on compile errors</param>
+    /// <param name="type">: Type of error that is checked</param>
+    void checkCompileErrors(GLuint programID, std::string type);
 };
 

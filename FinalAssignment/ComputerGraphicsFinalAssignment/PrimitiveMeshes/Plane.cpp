@@ -1,9 +1,8 @@
 #include "Plane.h"
 
-Plane::Plane(glm::vec3 color, ShadingType st)
+Plane::Plane(glm::vec3 color)
 {
 	this->color = color;
-	shading_type = st;
 	setData();
 }
 

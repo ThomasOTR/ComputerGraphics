@@ -14,6 +14,3 @@ glm::mat4 TranslateEntity(glm::mat4 model, glm::vec3 position)
 {
     return glm::translate(model, position);;
 }
-glm::mat4 translate(glm::mat4 model, float x, float y, float z) {
-    return glm::translate(model, glm::vec3(x, y, z));;
-}

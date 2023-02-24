@@ -34,7 +34,7 @@ class TriangularPrism :
         };    
 public:
         TriangularPrism() = default;
-        TriangularPrism(glm::vec3 color, ShadingType);
+        TriangularPrism(glm::vec3 color);
 
         // Inherited via Shape
         virtual void setData() override;

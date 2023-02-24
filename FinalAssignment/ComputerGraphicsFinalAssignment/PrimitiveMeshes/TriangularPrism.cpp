@@ -1,9 +1,8 @@
 #include "TriangularPrism.h"
 
-TriangularPrism::TriangularPrism(glm::vec3 color, ShadingType st)
+TriangularPrism::TriangularPrism(glm::vec3 color)
 {
 	this->color = color;
-	shading_type = ShadingType::Basic;
 	setData();
 }
 

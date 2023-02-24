@@ -1,11 +1,6 @@
 #include "Model.h"
 #include <glm/gtx/string_cast.hpp>
 
-void Model::Move(glm::vec3 position)
-{
-	Entity::Move(position);
-}
-
 void Model::Rotate(glm::vec3 rotation, float rotAngle)
 {
 	Entity::Rotate(rotation, rotAngle);
@@ -45,13 +40,6 @@ void Model::RunAnimations()
 
 	}
 }
-
-void Model::ResetComponents()
-{
-	Parts.clear();
-	AddComponents();
-}
-
 
 void Model::Buffer(glm::mat4 view, glm::mat4 projection)
 {

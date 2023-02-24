@@ -46,15 +46,6 @@ private:
     };
     
     /* A vector with image_paths of each side of the skybox */
-    /*std::vector<std::string> sides
-    {
-        "Textures/skybox/right.jpg",
-        "Textures/skybox/left.jpg",
-        "Textures/skybox/top.jpg",
-        "Textures/skybox/bottom.jpg",
-        "Textures/skybox/front.jpg",
-        "Textures/skybox/back.jpg"
-    };*/
     std::vector<std::string> sides
     {
         "Textures/skybox2/right.jpg",
@@ -70,15 +61,15 @@ public:
     /// <summary>
     /// Method to buffer the object
     /// </summary>
-    /// <param name="">view</param>
-    /// <param name="">projection</param>
+    /// <param name="view">: Calculated View Matrix</param>
+    /// <param name="projection">: Calculated Projection Matrix</param>
     virtual void Buffer(glm::mat4, glm::mat4);
 
     /// <summary>
     /// Method to render the object
     /// </summary>
-    /// <param name="">view</param>
-    /// <param name="">projection</param>
+    /// <param name="view">: Calculated View Matrix</param>
+    /// <param name="projection">: Calculated Projection Matrix</param>
     virtual void Render(glm::mat4, glm::mat4);
 
     GLfloat vertices[120] = {};

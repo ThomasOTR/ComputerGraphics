@@ -13,30 +13,18 @@ public:
 	std::vector<Entity*> Parts = {};
 
 	/// <summary>
-	/// Methods to set the Position. 
-	/// This method is needed to override the Entity SetPosition method to update each part.
+	/// Method to set the Rotation. 
+	/// This method is needed to override the Entity Rotate method to update each part.
 	/// </summary>
-	/// <param name="">X</param>
-	/// <param name="">Y</param>
-	/// <param name="">Z</param>
-	void Move(glm::vec3) override;
+	/// <param name="rotation">: A vec3 that has the values in which direction the rotation will go.</param>
+	/// <param name="rotAngle">: How many degrees the entity will rotate.</param>
+	void Rotate(glm::vec3 rotation , float rotAngle);
 
 	/// <summary>
-	/// Methods to set the Rotation. 
-	/// This method is needed to override the Entity SetRotation method to update each part.
+	/// Method to set the Scale. 
+	/// This method is needed to override the Entity Scale method to update each part.
 	/// </summary>
-	/// <param name="">X</param>
-	/// <param name="">Y</param>
-	/// <param name="">Z</param>
-	void Rotate(glm::vec3, float);
-
-	/// <summary>
-	/// Methods to set the Scale. 
-	/// This method is needed to override the Entity SetSacle method to update each part.
-	/// </summary>
-	/// <param name="">X</param>
-	/// <param name="">Y</param>
-	/// <param name="">Z</param>
+	/// <param name="scale">: A vec3 that will indicate it which axis the entity will scale</param>
 	void Scale(glm::vec3);
 
 	/// <summary>
@@ -45,26 +33,25 @@ public:
 	void RunAnimations();
 
 	/// <summary>
-	/// Method to add all components to initalise the model.
+	/// Method to add all components to setup the model.
 	/// </summary>
 	virtual void AddComponents() = 0;
 
-	void ResetComponents();
-	// Inherited via Entity
 
 	/// <summary>
-	/// Method to buffer the Model
-	/// </summary>
-	/// <param name="">view</param>
-	/// <param name="">projection</param>
-	virtual void Buffer(glm::mat4, glm::mat4) override;
+	/// Method to buffer the Model.
+	/// This method overrides the Buffer method of Entity.
+	/// <param name="view">: Calculated View Matrix</param>
+	/// <param name="projection">: Calculated Projection Matrix</param>
+	void Buffer(glm::mat4 view, glm::mat4 projection) override;
 
 	/// <summary>
 	/// Method to render the Model
+	/// This method overrides the Render method of Entity	
 	/// </summary>
-	/// <param name="">view</param>
-	/// <param name="">projection</param>
-	virtual void Render(glm::mat4, glm::mat4) override;
+	/// <param name="view">: Calculated View Matrix</param>
+	/// <param name="projection">: Calculated Projection Matrix</param>
+	void Render(glm::mat4 view, glm::mat4 projection) override;
 
 };
 

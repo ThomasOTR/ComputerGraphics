@@ -11,45 +11,55 @@ class Object : public Entity
 private:
 	std::string object_path;
 public:
-	/* Vector to store vertices. */
+	/* Property which stores the vertices of the Object. This will be set in the LoadObject method */
 	std::vector<glm::vec3> vertices;
 
-	/* Vector to store normals. */
+	/* Property which stores the normals of the Object. This will be set in the LoadObject method */
 	std::vector<glm::vec3> normals;
 
-	/* Vector to store uvs */
+	/* Property which stores the uvs of the Object. This will be set in the LoadObject method */
 	std::vector<glm::vec2> uvs;
 
-	/* A vec3 where the color of this object is stored.*/
+	/* Property to store the color, which will be retrieved during buffering the Object */
 	glm::vec3 color = glm::vec3();
 
-	/* An property which stores a lightsource that is used with Phong Shaders*/
+	/* Property which stores the Material, which will be retrieved during buffering the Object*/
 	Material material;
 
 	Object() = default;
-	Object(std::string, std::string texture_path);
-	Object(std::string, glm::vec3 color);
+
+	/// <summary>
+	/// Constructor which will set a Texture.
+	/// </summary>
+	/// <param name="object_path">: Path to the object, so it can be accessed during the buffering process</param>
+	/// <param name="texture_path">: Path to the texture, so it can be accessed during the buffering process</param>
+	Object(std::string object_path, std::string texture_path);
+
+	/// <summary>
+	/// Constructor which will set a Color.
+	/// </summary>
+	/// <param name="object_path">: Path to the object, so it can be accessed during the buffering process.</param>
+	/// <param name="color">: The color that will be given to the Object.</param>
+	Object(std::string object_path, glm::vec3 color);
 
 	/// <summary>
 	/// A method to load the object
 	/// </summary>
 	void LoadObject();
 
-
-	// Inherited via Entity
+	/// <summary>
+	/// Method to buffer the Object.
+	/// This method overrides the Buffer method of Entity.
+	/// <param name="view">: Calculated View Matrix</param>
+	/// <param name="projection">: Calculated Projection Matrix</param>
+	void Buffer(glm::mat4 view, glm::mat4 projection) override;
 
 	/// <summary>
-	/// Method to buffer the object
+	/// Method to render the Object
+	/// This method overrides the Render method of Entity	
 	/// </summary>
-	/// <param name="">view</param>
-	/// <param name="">projection</param>
-	virtual void Buffer(glm::mat4, glm::mat4);
-
-	/// <summary>
-	/// Method to render the object
-	/// </summary>
-	/// <param name="">view</param>
-	/// <param name="">projection</param>
-	virtual void Render(glm::mat4, glm::mat4);
+	/// <param name="view">: Calculated View Matrix</param>
+	/// <param name="projection">: Calculated Projection Matrix</param>
+	void Render(glm::mat4 view, glm::mat4 projection) override;
 };
 

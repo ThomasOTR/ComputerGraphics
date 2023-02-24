@@ -18,34 +18,34 @@ private:
 	/// <summary>
 	/// A method that calculates a value to move the Camera to left or right.
 	/// </summary>
-	/// <param name="camera"></param>
-	/// <returns></returns>
+	/// <param name="camera">: Camera instance, which new position needs to be calculated.</param>
+	/// <returns>new position of the camera</returns>
 	glm::vec3 CalculateLeftRightMovement(Camera camera);
 
 	/// <summary>
 	/// A method that calculates a value to move the camera forward and backward
 	/// </summary>
-	/// <param name="camera"></param>
-	/// <returns></returns>
+	/// <param name="camera">: Camera instance, which new position needs to be calculated.</param>
+	/// <returns>new position of the camera.</returns>
 	glm::vec3 CalculateForwardBackwardMovement(Camera camera);
 
 public:
 	/// <summary>
 	/// Method to process key input
 	/// </summary>
-	/// <param name="">Camera input to update the camera easily.</param>
-	/// <param name="">Number which represents a key</param>
+	/// <param name="camera">: Camera instance that will be updated.</param>
+	/// <param name="keyNumber">: Number of the key that is pressed.</param>
 	/// <returns>An updated Camera instance</returns>
-	Camera processKeyInput(Camera, unsigned char);
+	Camera processKeyInput(Camera camera, unsigned char keyNumber);
 
 	/// <summary>
 	/// Method to process mouse input
 	/// </summary>
-	/// <param name="">Camera input to update the camera easily</param>
-	/// <param name="">X position of the mouse</param>
-	/// <param name="">Y position of the mouse</param>
+	/// <param name="camera">: Camera instance that will be updated.</param>
+	/// <param name="x">: The X position of the mouse.</param>
+	/// <param name="y">: The Y position of the mouse.</param>
 	/// <returns>An updated Camera instance</returns>
-	Camera processMouseInput(Camera, int, int);
+	Camera processMouseInput(Camera camera, int x, int y);
 
 };
 

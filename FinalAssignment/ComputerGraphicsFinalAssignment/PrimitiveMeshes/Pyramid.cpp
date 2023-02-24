@@ -5,10 +5,9 @@
 #include "../Animations/Scale/ScalingAnimation.h"
 #include "../Animations/Rotate/RotationAnimation.h"
 
-Pyramid::Pyramid(glm::vec3 inputColor, ShadingType st) : Pyramid()
+Pyramid::Pyramid(glm::vec3 inputColor)
 {
 	color = inputColor;
-	shading_type = st;
 	setData();
 }
 void Pyramid::setData()

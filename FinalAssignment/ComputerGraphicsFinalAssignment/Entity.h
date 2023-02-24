@@ -80,13 +80,13 @@ public:
 	/// </summary>
 	/// <param name="rotation">: A vec3 that has the values in which direction the rotation will go.</param>
 	/// <param name="rotAngle">: How many degrees the entity will rotate.</param>
-	virtual void Rotate(glm::vec3, float);
+	virtual void Rotate(glm::vec3 rotation, float rotAngle);
 
 	/// <summary>
 	/// Method to scale the entity
 	/// </summary>
 	/// <param name="scale">: A vec3 that will indicate it which axis the entity will scale</param>
-	virtual void Scale(glm::vec3);
+	virtual void Scale(glm::vec3 scale);
 
 	/// <summary>
 	/// Methods to handle memory allocation.

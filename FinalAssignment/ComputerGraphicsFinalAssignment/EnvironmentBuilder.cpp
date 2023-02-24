@@ -1,4 +1,4 @@
-#include "environment_builder.h"
+#include "EnvironmentBuilder.h"
 #include "Skybox.h"
 
 #include "Models/House.h"
@@ -53,7 +53,7 @@ void EnvironmentBuilder::LoadAllEntities()
 
 	std::cout << "Loading Road..." << std::endl;
 	/* Adding a road where the Car can drive on.*/
-	Plane* road = new Plane(glm::vec3(0.502, 0.502, 0.502), ShadingType::Basic);
+	Plane* road = new Plane(glm::vec3(0.502, 0.502, 0.502));
 	road->Move(glm::vec3(-5, 0.01, 5));
 	road->Scale(glm::vec3(27, 0, 1));
 	entities.push_back(road);
@@ -128,7 +128,7 @@ void EnvironmentBuilder::LoadAllEntities()
 
 	std::cout << "Loading Plane..." << std::endl;
 	/* Adding a huge plane to have a ground to put everything on*/
-	Plane* plane = new Plane(glm::vec3(0.282, 0.435, 0.22), ShadingType::Basic);
+	Plane* plane = new Plane(glm::vec3(0.282, 0.435, 0.22));
 	plane->Scale(glm::vec3(50, 1, 15));
 	entities.push_back(plane);
 

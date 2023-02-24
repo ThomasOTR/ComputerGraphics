@@ -19,7 +19,7 @@ public:
         2,3,1
     };
     Plane() = default;
-    Plane(glm::vec3 color, ShadingType);
+    Plane(glm::vec3 color);
 
 
     // Inherited via Shape

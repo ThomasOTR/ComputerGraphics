@@ -72,7 +72,7 @@ private:
 
 public:
     Cube() = default;
-	Cube(glm::vec3, ShadingType);
+	Cube(glm::vec3);
 	// Inherited via Shape
 	virtual void setData();
 };

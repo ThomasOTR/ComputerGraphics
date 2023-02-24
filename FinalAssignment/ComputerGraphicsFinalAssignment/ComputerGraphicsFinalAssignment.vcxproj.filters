@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\Animations">
       <UniqueIdentifier>{267cea49-089b-4995-890e-7b0485a46602}</UniqueIdentifier>
     </Filter>
@@ -75,7 +71,7 @@
     <ClCompile Include="Transformations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="environment_builder.cpp">
+    <ClCompile Include="EnvironmentBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CameraMode.cpp">
@@ -176,7 +172,7 @@
     <ClInclude Include="Transformations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="environment_builder.h">
+    <ClInclude Include="EnvironmentBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CameraMode.h">

@@ -60,7 +60,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     /* Delete the shaders */
     glDeleteShader(vertex);
     glDeleteShader(fragment);
-
 }
 
 void Shader::use()
@@ -92,30 +91,30 @@ void Shader::setTexture(const std::string& name, const std::string& bool_name)
     glUniform1i(glGetUniformLocation(ID, name.c_str()), 0);
     glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), 1);
 }
-void Shader::setNoTexture(const std::string& name)
+void Shader::setNoTexture(const std::string& bool_name)
 {
-    glUniform1i(glGetUniformLocation(ID, name.c_str()), 0);
+    glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), 0);
 }
 
-void Shader::checkCompileErrors(GLuint shader, std::string type)
+void Shader::checkCompileErrors(GLuint programID, std::string type)
 {
     GLint success;
     GLchar infoLog[1024];
     if (type != "PROGRAM")
     {
-        glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+        glGetShaderiv(programID, GL_COMPILE_STATUS, &success);
         if (!success)
         {
-            glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+            glGetShaderInfoLog(programID, 1024, NULL, infoLog);
             std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
         }
     }
     else
     {
-        glGetProgramiv(shader, GL_LINK_STATUS, &success);
+        glGetProgramiv(programID, GL_LINK_STATUS, &success);
         if (!success)
         {
-            glGetProgramInfoLog(shader, 1024, NULL, infoLog);
+            glGetProgramInfoLog(programID, 1024, NULL, infoLog);
             std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
         }
     }

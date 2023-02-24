@@ -1,7 +1,7 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include "InputHandler.h"
-#include "environment_builder.h"
+#include "EnvironmentBuilder.h"
 
 
 const unsigned int WIDTH = 800, HEIGHT = 600;
