@@ -31,16 +31,16 @@ public:
 	/// <summary>
 	/// Constructor which will set a Texture.
 	/// </summary>
-	/// <param name="object_path">: Path to the object, so it can be accessed during the buffering process</param>
-	/// <param name="texture_path">: Path to the texture, so it can be accessed during the buffering process</param>
-	Object(std::string object_path, std::string texture_path);
+	/// <param name="object_name">: name of the object to fetch the right object</param>
+	/// <param name="texture_name">: name of the texture to fetch the right texture</param>
+	Object(std::string object_name, std::string texture_name,bool MadeInBlender);
 
 	/// <summary>
 	/// Constructor which will set a Color.
 	/// </summary>
 	/// <param name="object_path">: Path to the object, so it can be accessed during the buffering process.</param>
 	/// <param name="color">: The color that will be given to the Object.</param>
-	Object(std::string object_path, glm::vec3 color);
+	Object(std::string object_path, glm::vec3 color, bool MadeInBlender);
 
 	/// <summary>
 	/// A method to load the object

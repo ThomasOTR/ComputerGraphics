@@ -10,13 +10,13 @@ void Tree::AddComponents()
 
 	if (selectTreeType)
 	{
-		trunk = new Object("Objects/MadeInBlender/trunk1.obj", "Textures/tree_trunk.bmp");
-		leaves = new Object("Objects/MadeInBlender/leaves1.obj", "Textures/leaves.bmp");
+		trunk = new Object("trunk.obj", "tree_trunk.bmp",true);
+		leaves = new Object("leaves.obj", "leaves.bmp",true);
 	}
 	else
 	{
-		trunk = new Object("Objects/MadeInBlender/trunk1.obj", glm::vec3(0.588, 0.294, 0.));
-		leaves = new Object("Objects/MadeInBlender/leaves1.obj", glm::vec3(0., 0.82, 0.));
+		trunk = new Object("trunk.obj", glm::vec3(0.588, 0.294, 0.),true);
+		leaves = new Object("leaves.obj", glm::vec3(0., 0.82, 0.),true);
 	}
 	trunk->Move(position);
 	trunk->Scale(glm::vec3(1.5, 1.5, 1.5));

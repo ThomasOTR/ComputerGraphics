@@ -2,12 +2,12 @@
 
 CameraMode::CameraMode()
 {
-	Pos = glm::vec3(0.0, 0.0, 0.0);
+	Position = glm::vec3(0.0, 0.0, 0.0);
 	Mode = ModeType::Walk;
 }
-CameraMode::CameraMode(glm::vec3 Pos, ModeType Mode)
+CameraMode::CameraMode(glm::vec3 Position, ModeType Mode)
 {
-	this->Pos = Pos;
+	this->Position = Position;
 	this->Mode = Mode;
 }
 

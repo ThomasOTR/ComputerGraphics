@@ -12,7 +12,7 @@ void Sidewalk::AddComponents()
 	glm::vec3 position = GetPosition();
 	for (int i = 0; i <= amountOfBlocks; i++)
 	{
-		Object* part = new Object("Objects/box.obj", "Textures/sidewalk.bmp");
+		Object* part = new Object("box.obj", "sidewalk.bmp",false);
 
 		if (x_axis) part->Move(glm::vec3(position.x + (i* 0.75) , position.y, position.z));
 		else part->Move(glm::vec3(position.x, position.y, position.z + i));

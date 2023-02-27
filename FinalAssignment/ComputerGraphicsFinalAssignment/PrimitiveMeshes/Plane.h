@@ -8,12 +8,16 @@ class Plane :
     public PrimitiveMesh
 {
 public:
+
+    /* Vertices needed to create a Plane*/
     std::vector<GLfloat> PlaneVertices = {
     -1.0, 0.0, -1.0, // 0
      1.0, 0.0, -1.0, // 1
     -1.0, 0.0,  1.0, // 2
      1.0, 0.0,  1.0  // 3
     };
+
+    /* Elements needed to create a Plane*/
     std::vector<GLushort> Plane_Elements = {
         0,1,2,
         2,3,1

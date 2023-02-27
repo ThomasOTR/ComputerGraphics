@@ -32,7 +32,7 @@ void Camera::SwitchMode()
 }
 void Camera::CalculateViewMatrix()
 {
-    CurrentMode.view = glm::lookAt(CurrentMode.Pos, CurrentMode.Pos + CurrentMode.Front, CurrentMode.Up);
+    CurrentMode.view = glm::lookAt(CurrentMode.Position, CurrentMode.Position + CurrentMode.Front, CurrentMode.Up);
 }
 
 void Camera::CalculateProjectionMatrix()

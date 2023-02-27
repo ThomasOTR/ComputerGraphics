@@ -69,14 +69,13 @@ public:
     /// Method to set a Texture
     /// </summary>
     /// <param name="name">: name of the input </param>
-    /// <param name="bool_name">: name of boolean </param>
-    void setTexture(const std::string& name, const std::string& bool_name);
+    void setTexture(const std::string& name);
 
     /// <summary>
-    /// Method to set boolean related to textures
+    /// Method to set boolean.
     /// </summary>
     /// <param name="">name of boolean</param>
-    void setNoTexture(const std::string& bool_name);
+    void setBool(const std::string& bool_name, bool value);
 
 
 

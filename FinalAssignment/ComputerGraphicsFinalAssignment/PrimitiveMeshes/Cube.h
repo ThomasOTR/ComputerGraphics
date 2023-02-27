@@ -8,6 +8,8 @@ class Cube :
 	public PrimitiveMesh
 {
 private:
+    
+    /* The vertices that are needed to create a cube*/
 	std::vector<GLfloat> Cube_Vertices = {
         // front
         -1.0, -1.0, 1.0,
@@ -40,13 +42,8 @@ private:
             1.0, 1.0, -1.0,
             1.0, 1.0, 1.0,
     };
-    std::vector<GLfloat> Cube_Texcoords = {
-        // front
-        0.0, 0.0,
-        1.0, 0.0,
-        1.0, 1.0,
-        0.0, 1.0,
-    };
+    
+    /* The elements that are needed to create a cube*/
     std::vector<GLushort> Cube_Elements = {
         // front
          0,  1,  2,

@@ -222,14 +222,10 @@
   <ItemGroup>
     <None Include="Shaders\basic_shader.frag" />
     <None Include="Shaders\basic_shader.vert" />
-    <None Include="Shaders\lambert_shader.frag" />
-    <None Include="Shaders\lambert_shader.vert" />
     <None Include="Shaders\phong_shader.frag" />
     <None Include="Shaders\phong_shader.vert" />
     <None Include="Shaders\skybox_shader.frag" />
     <None Include="Shaders\skybox_shader.vert" />
-    <None Include="Shaders\texture_shader.frag" />
-    <None Include="Shaders\texture_shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

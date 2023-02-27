@@ -86,14 +86,14 @@ void Shader::setInt(const std::string& name, int value)
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
-void Shader::setTexture(const std::string& name, const std::string& bool_name)
+void Shader::setTexture(const std::string& name)
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), 0);
-    glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), 1);
 }
-void Shader::setNoTexture(const std::string& bool_name)
+ 
+void Shader::setBool(const std::string& bool_name, bool value)
 {
-    glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), 0);
+    glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), value);
 }
 
 void Shader::checkCompileErrors(GLuint programID, std::string type)

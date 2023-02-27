@@ -27,39 +27,34 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 'w':
 		// Move Forward
-		camera.CurrentMode.Pos.x += CalculateForwardBackwardMovement(camera).x;
-		camera.CurrentMode.Pos.z += CalculateForwardBackwardMovement(camera).z;
-
-		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Position.x += CalculateForwardBackwardMovement(camera).x;
+		camera.CurrentMode.Position.z += CalculateForwardBackwardMovement(camera).z;
 		break;
 	
 	case 'a':
 		// Move left
-		camera.CurrentMode.Pos.x -= CalculateLeftRightMovement(camera).x;
-		camera.CurrentMode.Pos.z -= CalculateLeftRightMovement(camera).z;
-		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Position.x -= CalculateLeftRightMovement(camera).x;
+		camera.CurrentMode.Position.z -= CalculateLeftRightMovement(camera).z;
 		break;
 	case 's':
 		// Move Backwards
-		camera.CurrentMode.Pos.x -= CalculateForwardBackwardMovement(camera).x;
-		camera.CurrentMode.Pos.z -= CalculateForwardBackwardMovement(camera).z;
-		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Position.x -= CalculateForwardBackwardMovement(camera).x;
+		camera.CurrentMode.Position.z -= CalculateForwardBackwardMovement(camera).z;
 		break;
 	case 'd':
 		// Move right
-		camera.CurrentMode.Pos.x += CalculateLeftRightMovement(camera).x;
-		camera.CurrentMode.Pos.z += CalculateLeftRightMovement(camera).z;
-		std::cout << glm::to_string(camera.CurrentMode.Pos) << std::endl;
+		camera.CurrentMode.Position.x += CalculateLeftRightMovement(camera).x;
+		camera.CurrentMode.Position.z += CalculateLeftRightMovement(camera).z;
 		break;
 	case 'q': 
 		if(camera.CurrentMode.Mode == ModeType::Drone)
-			camera.CurrentMode.Pos.y += movementSpeed;
+			camera.CurrentMode.Position.y += movementSpeed;
 		break;
 	case 'e' :
 		if (camera.CurrentMode.Mode == ModeType::Drone)
 		{
-			camera.CurrentMode.Pos.y -= movementSpeed;
-			if (camera.CurrentMode.Pos.y < 0.5) camera.CurrentMode.Pos.y = 0.5;
+			camera.CurrentMode.Position.y -= movementSpeed;
+			if (camera.CurrentMode.Position.y < 0.5) camera.CurrentMode.Position.y = 0.5;
 		}
 		break;
 	}

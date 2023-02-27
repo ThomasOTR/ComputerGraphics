@@ -1,19 +1,22 @@
 #include "Object.h"
 
-Object::Object(std::string object_path, std::string texture_path)
+Object::Object(std::string object_name, std::string texture_name, bool MadeInBlender)
 {
-    this->object_path = object_path;
-    this->texture_path = texture_path;
+    std::string path = MadeInBlender ? blenderObjectPath : objectPath;
+    this->object_path = path + object_name;
+
+    this->texture_path = resourcePath + texture_name;
     this->material = defaultMaterial;
     LoadObject();
 }
 
-Object::Object(std::string object_path, glm::vec3 color)
+Object::Object(std::string object_name, glm::vec3 color, bool MadeInBlender)
 {
-    this->object_path = object_path;
+    std::string path = MadeInBlender ? blenderObjectPath : objectPath;
+
+    this->object_path = path + object_name;
     this->color = color;
     this->material = defaultMaterial;
-
     LoadObject();
 }
 
@@ -89,10 +92,10 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
     if (!texture_path.empty())
     {
         texture_id = setTexture(texture_path.c_str());
-        shader.setTexture("texture1", "texture_applied");
+        shader.setBool("texture_applied", true);
     }
     else {
-        shader.setNoTexture("texture_applied");
+        shader.setBool("texture_applied",false);
         shader.setVec3("objectColor", color);
     }
 }
@@ -113,8 +116,8 @@ void Object::Render(glm::mat4 view, glm::mat4 projection)
     shader.setMat4("projection", projection);
     shader.setVec3("light_pos", LightSource);
 
-    shader.setVec3("mat_ambient", material.AmbientColor);
-    shader.setVec3("mat_diffuse", material.DiffuseColor);
+    shader.setVec3("mat_ambient", material.Ambient);
+    shader.setVec3("mat_diffuse", material.Diffuse);
     shader.setVec3("mat_specular", material.Specular);
     shader.setFloat("mat_power", material.Power);
 

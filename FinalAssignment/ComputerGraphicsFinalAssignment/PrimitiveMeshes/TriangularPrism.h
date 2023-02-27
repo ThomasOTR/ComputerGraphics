@@ -6,21 +6,21 @@ class TriangularPrism :
     public PrimitiveMesh
 {
     private:
-        std::vector<GLfloat> Prism_Vertices = { // X, Y, Z.
-            //back
 
+        /* Vertices needed to create the Triangular Prism */
+        std::vector<GLfloat> Prism_Vertices = {
             0.0f, 0.0f, 0.0f,
             1.0f, 1.0f, 1.0f,
-
             0.0f, 1.0f, 0.0f,
             1.0f, 0.0f, 0.0f,
             0.0f, 0.0f, 1.0f,
-
             0.0f, 1.0f, 1.0f,
             1.0f, 1.0f, 0.0f,
             1.0f, 0.0f, 1.0f,
 
         };
+
+        /* Elements needed to create the Triangular Prism */
         std::vector<GLushort> Prism_Elements = {
             0,4,2,
             2,3,0,

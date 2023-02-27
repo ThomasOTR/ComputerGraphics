@@ -37,7 +37,7 @@ void EnvironmentBuilder::LoadAllEntities()
 		
 		/* Adding some fences between the houses. Adding it within the loop is way easier. */
 		for (int i = 0; i <= 4; i++) {
-			Object* fence = new Object("Objects/MadeInBlender/fence.obj", "Textures/wood.bmp");
+			Object* fence = new Object("fence.obj", "wood.bmp",true);
 			glm::vec3 housePosition = house->GetPosition();
 			fence->Move(glm::vec3(housePosition.x + 1.5f, 0.0f, housePosition.z + 2.5f - (i*0.9)));
 			fence->Scale(glm::vec3(0.75, 0.75, 0.75));
@@ -74,7 +74,7 @@ void EnvironmentBuilder::LoadAllEntities()
 	std::cout << "Loading benches..." << std::endl;
 	for (int i = -30; i < 21; i += 5)
 	{
-		Object* bench = new Object("Objects/MadeInBlender/bench.obj", "Textures/wood.bmp");
+		Object* bench = new Object("bench.obj", "wood.bmp",true);
 		bench->Move(glm::vec3(i, 0, 7.5));
 		bench->Scale(glm::vec3(1,1,1));
 		bench->Rotate(glm::vec3(0, 1, 0), 90);

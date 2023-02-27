@@ -3,6 +3,7 @@
 
 /// <summary>
 /// Class to create a Skybox
+/// To create this Skybox, i have used information and some code from https://learnopengl.com/Advanced-OpenGL/Cubemaps.
 /// </summary>
 class Skybox :
     public Entity
@@ -11,36 +12,29 @@ private:
     /* A vector with all the vertices needed for the skybox */
     std::vector<GLfloat> skyboxVertices =
     {
-        //   Coordinates
-        -1.0f, -1.0f,  1.0f,//        7--------6
-         1.0f, -1.0f,  1.0f,//       /|       /|
-         1.0f, -1.0f, -1.0f,//      4--------5 |
-        -1.0f, -1.0f, -1.0f,//      | |      | |
-        -1.0f,  1.0f,  1.0f,//      | 3------|-2
-         1.0f,  1.0f,  1.0f,//      |/       |/
-         1.0f,  1.0f, -1.0f,//      0--------1
+        -1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f, -1.0f,
+        -1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f, -1.0f,
         -1.0f,  1.0f, -1.0f
     };
 
     /* A vector with all the indices needed for the skybox */
     std::vector<GLushort> skyboxIndices =
     {
-        // Right
         1, 2, 6,
         6, 5, 1,
-        // Left
         0, 4, 7,
         7, 3, 0,
-        // Top
         4, 5, 6,
         6, 7, 4,
-        // Bottom
         0, 3, 2,
         2, 1, 0,
-        // Back
         0, 1, 5,
         5, 4, 0,
-        // Front
         3, 7, 6,
         6, 2, 3
     };
@@ -48,12 +42,12 @@ private:
     /* A vector with image_paths of each side of the skybox */
     std::vector<std::string> sides
     {
-        "Textures/skybox2/right.jpg",
-        "Textures/skybox2/left.jpg",
-        "Textures/skybox2/up.jpg",
-        "Textures/skybox2/down.jpg",
-        "Textures/skybox2/front.jpg",
-        "Textures/skybox2/back.jpg",
+        "Textures/skybox/right.jpg",
+        "Textures/skybox/left.jpg",
+        "Textures/skybox/up.jpg",
+        "Textures/skybox/down.jpg",
+        "Textures/skybox/front.jpg",
+        "Textures/skybox/back.jpg",
     };
 public:
     Skybox();

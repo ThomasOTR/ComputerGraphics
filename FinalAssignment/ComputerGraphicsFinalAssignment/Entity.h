@@ -11,7 +11,7 @@ class Entity
 public:
 
 	/* An property which stores the Shader that is used for the Entity. */
-	Shader shader;
+	Shader shader = Shader();
 
 	/* A property which stores all the animations of the Entity.*/
 	std::vector<Animation*> animations = {};
@@ -42,7 +42,10 @@ public:
 	/// <summary>
 	/// Properties which will be used to buffer and render the entity.
 	/// </summary>
-	unsigned int texture_id, VAO, VBO;
+	unsigned int texture_id = 0;
+	unsigned int VAO = 0;
+	unsigned int VBO = 0;
+	
 	std::string texture_path;
 	glm::mat4 model = glm::mat4(1.0);
 	glm::mat4 mvp, mv;
