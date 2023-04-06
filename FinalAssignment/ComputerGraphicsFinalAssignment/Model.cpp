@@ -21,24 +21,10 @@ void Model::Scale(glm::vec3 scale)
 
 void Model::RunAnimations()
 {
-	if (animations.size() != 0)
-	{
-		Animation* animation = animations.front();
 		for (Entity* p : Parts) {
-			p->model = animation->Animate(p->model);
+			
+			if(p->animations.size() != 0) p->RunAnimations();
 		}
-
-		if (animation->AnimationCompleted == true)
-		{
-			if (AnimationInLoop)
-			{
-				animation->ResetAnimation();
-				animations.push_back(animation);
-			}
-			animations.erase(animations.begin());
-		}
-
-	}
 }
 
 void Model::Buffer(glm::mat4 view, glm::mat4 projection)
@@ -51,6 +37,14 @@ void Model::Render(glm::mat4 view, glm::mat4 projection)
 	for (Entity* p : Parts) {
 		RunAnimations();
 		p->Render(view, projection);
+	}
+}
+
+void Model::AddAnimation(Animation* animation)
+{
+	for (Entity* p : Parts) {
+		
+		p->AddAnimation(animation);
 	}
 }
 

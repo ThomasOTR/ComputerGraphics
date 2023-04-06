@@ -22,7 +22,7 @@ public:
 	float AnimateValue = 0.1f;
 
 	/* A value that stores the value which is the goal of the Animation */
-	float Goal;
+	float Goal = 0;
 
 	
 	Animation() = default;
@@ -37,6 +37,6 @@ public:
 	/// <summary>
 	/// A method to reset the Animation so it can be reused without creating a new animation with all the values. */
 	/// </summary>
-	void ResetAnimation();
+	virtual void ResetAnimation();
 };
 

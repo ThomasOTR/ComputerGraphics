@@ -12,12 +12,8 @@
 #include "PrimitiveMeshes/Plane.h"
 #include "PrimitiveMeshes/Cube.h"
 
-#include "Animations/Rotate/RotationAnimation.h"
-#include "Animations/Move/MoveRightAnimation.h"
-#include "Animations/Move/TranslateZ_Animation.h"
-
-#include "Animations/Scale/ScalingAnimation.h"
-
+#include "Animations/MoveRightAndTurnAroundAnimation.h"
+#include "Animations/TakeOffAndFlyAndDescendAnimation.h"
 #include <vector>
 EnvironmentBuilder::EnvironmentBuilder()
 {
@@ -82,7 +78,7 @@ void EnvironmentBuilder::LoadAllEntities()
 	}
 
 	std::cout << "Loading Lampposts..." << std::endl;
-	for (int i = -27.5; i < 22.5; i += 5)
+	for (double i = -27.5; i < 22.5; i += 5)
 	{
 		Lamppost* l = new Lamppost();
 		l->Move(glm::vec3(i, 0, 7.5));
@@ -102,7 +98,7 @@ void EnvironmentBuilder::LoadAllEntities()
 
 	for (int i = -30; i < 20; i += 3)
 	{
-		for (int j = 9; j < 15; j += 2.5)
+		for (double j = 9; j < 15; j += 2.5)
 		{
 			Tree* tree = new Tree();
 			tree->Move(glm::vec3(i, 0, j));
@@ -110,26 +106,37 @@ void EnvironmentBuilder::LoadAllEntities()
 			entities.push_back(tree);
 		}
 	}
+	Object* heli = new Object("helicopter.obj", glm::vec3(0., 0.588, 1.), false);
+	heli->Move(glm::vec3(0, 0.6, 25.5));
+	heli->Scale(glm::vec3(0.3, 0.3, 0.3));
+	heli->AddAnimation(
+		new TakeOffAndFlyAndDescendAnimation(-20, 0.1, 10, true)
+	);
+	//bench->Rotate(glm::vec3(0, 1, 0), 90);
+	entities.push_back(heli);
+	Object* helipad = new Object("helipad.obj", glm::vec3(0., 0.3, 1.), false);
+	helipad->Move(glm::vec3(0, 0, 25));
+	helipad->Scale(glm::vec3(.3,.3,.3));
+	entities.push_back(helipad);
+
 #pragma endregion
 
 #pragma region NecessaryComponents
 	std::cout << "--------------" << std::endl << "Loading Region NecessaryComponents..." << std::endl << "--------------" << std::endl;
 	std::cout << "Loading Car..." << std::endl;
 	/* Adding the car */
-	Car* car = new Car();
+	Object* car = new Object("car.obj", glm::vec3(0., 0.588, 1.), false);
 	car->Move(glm::vec3(-30, 0, 5));
-	car->AddComponents();
 	car->Scale(glm::vec3(0.5, 0.5, 0.5));
 	car->AnimationInLoop = true;
-	car->AddAnimations({ 
-		new MoveRightAnimation(20,0.01f,false), new RotationAnimation(glm::vec3(0, 1, 0), 180),
-		new MoveRightAnimation(-30,0.01f,true), new RotationAnimation(glm::vec3(0, 1, 0), 180)});
+	//car->AddAnimation(
+	//	new MoveRightAndTurnAroundAnimation(20,0.1f));
 	entities.push_back(car);
 
 	std::cout << "Loading Plane..." << std::endl;
 	/* Adding a huge plane to have a ground to put everything on*/
 	Plane* plane = new Plane(glm::vec3(0.282, 0.435, 0.22));
-	plane->Scale(glm::vec3(50, 1, 15));
+	plane->Scale(glm::vec3(50, 1, 30));
 	entities.push_back(plane);
 
 	std::cout << "Loading Skybox..." << std::endl;

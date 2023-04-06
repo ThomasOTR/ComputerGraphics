@@ -20,13 +20,7 @@ public:
 	/// A method to add a single animation
 	/// </summary>
 	/// <param name="Animation">: Pointer to a Animation instance</param>
-	void AddAnimation(Animation*);
-
-	/// <summary>
-	/// A method to add multiple animations at once
-	/// </summary>
-	/// <param name="Animations">: Vector with pointers to animation instances </param>
-	void AddAnimations(std::vector<Animation*>);
+	virtual void AddAnimation(Animation*);
 
 	/// <summary>
 	/// A method to run the Animations. This method can be overridden by subclasses to implement a bit different approach.

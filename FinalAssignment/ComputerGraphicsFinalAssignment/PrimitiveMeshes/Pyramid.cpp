@@ -1,9 +1,4 @@
 #include "Pyramid.h"
-#include "../Transformations.h"
-#include "../Animations/Move/TranslateY_Animation.h"
-#include "../Animations/Move/TranslateZ_Animation.h"
-#include "../Animations/Scale/ScalingAnimation.h"
-#include "../Animations/Rotate/RotationAnimation.h"
 
 Pyramid::Pyramid(glm::vec3 inputColor)
 {

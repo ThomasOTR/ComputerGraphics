@@ -98,23 +98,8 @@
     <ClCompile Include="Material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\Move\TranslateY_Animation.cpp">
-      <Filter>Source Files\Animations\Move</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\Move\MoveRightAnimation.cpp">
-      <Filter>Source Files\Animations\Move</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\Move\TranslateZ_Animation.cpp">
-      <Filter>Source Files\Animations\Move</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\Scale\ScalingAnimation.cpp">
-      <Filter>Source Files\Animations\Scale</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animations\Rotate\RotationAnimation.cpp">
-      <Filter>Source Files\Animations\Rotate</Filter>
     </ClCompile>
     <ClCompile Include="PrimitiveMeshes\Cube.cpp">
       <Filter>Source Files\PrimitiveMeshes</Filter>
@@ -146,8 +131,11 @@
     <ClCompile Include="Models\Lamppost.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
-    <ClCompile Include="Animations\Move\MoveLeftAnimation.cpp">
-      <Filter>Source Files\Animations\Move</Filter>
+    <ClCompile Include="Animations\MoveRightAndTurnAroundAnimation.cpp">
+      <Filter>Source Files\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations\TakeOffAndFlyAndDescendAnimation.cpp">
+      <Filter>Source Files\Animations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,21 +187,6 @@
     <ClInclude Include="shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Move\MoveRightAnimation.h">
-      <Filter>Header Files\Animations\Move</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\Move\TranslateY_Animation.h">
-      <Filter>Header Files\Animations\Move</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\Move\TranslateZ_Animation.h">
-      <Filter>Header Files\Animations\Move</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\Rotate\RotationAnimation.h">
-      <Filter>Header Files\Animations\Rotate</Filter>
-    </ClInclude>
-    <ClInclude Include="Animations\Scale\ScalingAnimation.h">
-      <Filter>Header Files\Animations\Scale</Filter>
-    </ClInclude>
     <ClInclude Include="PrimitiveMeshes\Cube.h">
       <Filter>Header Files\PrimitiveMeshes</Filter>
     </ClInclude>
@@ -244,8 +217,11 @@
     <ClInclude Include="Models\Lamppost.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="Animations\Move\MoveLeftAnimation.h">
-      <Filter>Header Files\Animations\Move</Filter>
+    <ClInclude Include="Animations\MoveRightAndTurnAroundAnimation.h">
+      <Filter>Header Files\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations\TakeOffAndFlyAndDescendAnimation.h">
+      <Filter>Header Files\Animations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

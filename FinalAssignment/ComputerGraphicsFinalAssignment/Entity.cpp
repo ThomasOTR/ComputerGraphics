@@ -6,11 +6,6 @@ void Entity::AddAnimation(Animation* animation)
 	animations.push_back(animation);
 }
 
-void Entity::AddAnimations(std::vector<Animation*> animations)
-{
-	for (Animation* a : animations) this->animations.push_back(a);
-}
-
 void Entity::RunAnimations()
 {
 	if (animations.size() != 0)

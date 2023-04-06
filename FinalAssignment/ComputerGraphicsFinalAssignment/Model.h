@@ -53,5 +53,8 @@ public:
 	/// <param name="projection">: Calculated Projection Matrix</param>
 	void Render(glm::mat4 view, glm::mat4 projection) override;
 
+	void AddAnimation(Animation*) override;
+	
+
 };
 
