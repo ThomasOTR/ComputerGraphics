@@ -8,13 +8,6 @@ MoveRightAndTurnAroundAnimation::MoveRightAndTurnAroundAnimation(float Goal, flo
 	this->AnimateValue = AnimateValue;
 }
 
-void MoveRightAndTurnAroundAnimation::ResetAnimation()
-{
-	AnimationStarted = false;
-	AnimationCompleted = false;
-	IsTurnedAround = false;
-}
-
 glm::mat4 MoveRightAndTurnAroundAnimation::Animate(glm::mat4 model)
 {
 	std::cout << model[3].x << std::endl;
@@ -32,8 +25,11 @@ glm::mat4 MoveRightAndTurnAroundAnimation::Animate(glm::mat4 model)
 	{
 		
 		AnimationCompleted = true;
+		IsTurnedAround = false;
 		return RotateEntity(model, 180, glm::vec3(0, 1, 0));
 	}
+
+	/* Otherwise animate on the X axis*/
 	return TranslateEntity(model, glm::vec3(AnimateValue, 0.0, 0.0));
 }
 

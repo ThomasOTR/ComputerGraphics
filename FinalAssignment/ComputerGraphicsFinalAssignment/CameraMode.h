@@ -37,7 +37,9 @@ public:
 	/* The mode of the Camera */
 	ModeType Mode;
 	
+	float MovementSpeed = 0.25;
+
 	CameraMode();
-	CameraMode(glm::vec3,ModeType);
+	CameraMode(glm::vec3,ModeType, float);
 };
 

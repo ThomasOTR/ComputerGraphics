@@ -4,7 +4,7 @@
 #include <glm/gtc/type_ptr.hpp>
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
-    /* Defining the stringsand stream variables */
+    /* Defining the strings and stream variables */
     std::string vSource;
     std::string fSource;
     std::ifstream VSS; // Vertex Shader Stream
@@ -90,12 +90,10 @@ void Shader::setTexture(const std::string& name)
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), 0);
 }
- 
 void Shader::setBool(const std::string& bool_name, bool value)
 {
     glUniform1i(glGetUniformLocation(ID, bool_name.c_str()), value);
 }
-
 void Shader::checkCompileErrors(GLuint programID, std::string type)
 {
     GLint success;

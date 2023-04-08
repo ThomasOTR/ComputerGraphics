@@ -28,11 +28,6 @@ public:
 	void Scale(glm::vec3);
 
 	/// <summary>
-	/// A method to run the animations. This will override the RunAnimations method of Entity.
-	/// </summary>
-	void RunAnimations();
-
-	/// <summary>
 	/// Method to add all components to setup the model.
 	/// </summary>
 	virtual void AddComponents() = 0;
@@ -51,10 +46,7 @@ public:
 	/// </summary>
 	/// <param name="view">: Calculated View Matrix</param>
 	/// <param name="projection">: Calculated Projection Matrix</param>
-	void Render(glm::mat4 view, glm::mat4 projection) override;
-
-	void AddAnimation(Animation*) override;
-	
+	void Render(glm::mat4 view, glm::mat4 projection) override;	
 
 };
 

@@ -8,12 +8,7 @@ const char* phongVertPath = "Shaders/phong_shader.vert";
 const char* skyboxFragPath = "Shaders/skybox_shader.frag";
 const char* skyboxVertPath = "Shaders/skybox_shader.vert";
 
-
-
 Material defaultMaterial = Material(glm::vec3(.1, .1 , .1), glm::vec3(0.5, 0.5, 0.5), glm::vec3(0.7, 0.7, 0.7), 64);
-
-
-
 
 extern std::string objectPath = "Objects/";
 extern std::string blenderObjectPath = "Objects/MadeInBlender/";

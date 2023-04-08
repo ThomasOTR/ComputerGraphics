@@ -37,6 +37,6 @@ public:
 	/// <summary>
 	/// A method to reset the Animation so it can be reused without creating a new animation with all the values. */
 	/// </summary>
-	virtual void ResetAnimation();
+	void ResetAnimation();
 };
 

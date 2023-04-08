@@ -16,10 +16,10 @@ public:
 	CameraMode CurrentMode;
 
 	/* A property which holds the values of the walk mode; */
-	CameraMode WalkMode = CameraMode(glm::vec3(2.0, 0.7, 7.0),ModeType::Walk);
+	CameraMode WalkMode = CameraMode(glm::vec3(2.0, 0.7, 7.0),ModeType::Walk, 0.1);
 	
 	/* A property which holds the values of the DroneMode; */
-	CameraMode DroneMode = CameraMode(glm::vec3(0.0, 8.0, 15.0), ModeType::Drone);
+	CameraMode DroneMode = CameraMode(glm::vec3(0.0, 8.0, 15.0), ModeType::Drone, 0.25);
 
 	Camera();
 	

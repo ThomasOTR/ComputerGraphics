@@ -6,8 +6,6 @@
 class InputHandler
 {
 private:
-	/* Multiplier to move the camera smoothly when WASD is presssed. */
-	float movementSpeed = 0.25f;
 
 	/* Multiplier to move the camera smoothly when the mouse is moved. */
 	float sensitivity = 0.1f;

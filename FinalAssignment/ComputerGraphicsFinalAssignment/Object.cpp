@@ -4,7 +4,6 @@ Object::Object(std::string object_name, std::string texture_name, bool MadeInBle
 {
     std::string path = MadeInBlender ? blenderObjectPath : objectPath;
     this->object_path = path + object_name;
-
     this->texture_path = resourcePath + texture_name;
     this->material = defaultMaterial;
     LoadObject();
@@ -27,7 +26,9 @@ void Object::LoadObject()
 
 void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 {
+    /* Set shader*/
     shader = Shader(phongVertPath, phongFragPath);
+
     unsigned int position_id, normal_id, uv_id;
     unsigned int vbo_vertices, vbo_normals, vbo_uvs;
 
@@ -102,25 +103,28 @@ void Object::Buffer(glm::mat4 view, glm::mat4 projection)
 
 void Object::Render(glm::mat4 view, glm::mat4 projection)
 {
-    shader.use();
-
+    /* Run the animations if the object has any */
     RunAnimations();
 
+    /* Bind the Texture*/
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture_id);
 
-    mv = view * model;
+    /* Enable Shader*/
     shader.use();
 
-    shader.setMat4("mv", mv);
+    /* Set MVP for the shader*/
+    shader.setMat4("mv", view * model);
     shader.setMat4("projection", projection);
-    shader.setVec3("light_pos", LightSource);
 
+    /* Set the Material and Light Position for the Phong Shading*/
+    shader.setVec3("light_pos", LightSource);
     shader.setVec3("mat_ambient", material.Ambient);
     shader.setVec3("mat_diffuse", material.Diffuse);
     shader.setVec3("mat_specular", material.Specular);
     shader.setFloat("mat_power", material.Power);
 
+    /* Draw the object */
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size());
 }

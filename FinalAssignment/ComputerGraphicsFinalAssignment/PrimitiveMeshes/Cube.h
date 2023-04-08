@@ -8,7 +8,6 @@ class Cube :
 	public PrimitiveMesh
 {
 private:
-    
     /* The vertices that are needed to create a cube*/
 	std::vector<GLfloat> Cube_Vertices = {
         // front
@@ -64,9 +63,6 @@ private:
           20, 21, 22,
           22, 23, 20,
     };
-
-
-
 public:
     Cube() = default;
 	Cube(glm::vec3);

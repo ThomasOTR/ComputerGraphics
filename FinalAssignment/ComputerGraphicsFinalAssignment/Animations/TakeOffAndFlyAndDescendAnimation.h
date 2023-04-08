@@ -4,8 +4,8 @@ class TakeOffAndFlyAndDescendAnimation :
     public Animation
 {
 private:
-    int maxY;
-    int startY = 0;
+    float maxY;
+    float startY = 0.0;
     bool HasReachedYLimit = false;
     bool HasReachedZLimit = false;
 

@@ -1,17 +1,15 @@
 #include "InputHandler.h"
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/ext.hpp>
-#include <iostream>
-
 
 glm::vec3 InputHandler::CalculateLeftRightMovement(Camera camera)
 {
-	return glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * movementSpeed;
+	return glm::normalize(glm::cross(camera.CurrentMode.Front, camera.CurrentMode.Up)) * camera.CurrentMode.MovementSpeed;
 }
 
 glm::vec3 InputHandler::CalculateForwardBackwardMovement(Camera camera)
 {
-	return movementSpeed * camera.CurrentMode.Front;
+	return camera.CurrentMode.MovementSpeed * camera.CurrentMode.Front;
 }
 
 Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
@@ -48,12 +46,12 @@ Camera InputHandler::processKeyInput(Camera camera, unsigned char key)
 		break;
 	case 'q': 
 		if(camera.CurrentMode.Mode == ModeType::Drone)
-			camera.CurrentMode.Position.y += movementSpeed;
+			camera.CurrentMode.Position.y += camera.CurrentMode.MovementSpeed;
 		break;
 	case 'e' :
 		if (camera.CurrentMode.Mode == ModeType::Drone)
 		{
-			camera.CurrentMode.Position.y -= movementSpeed;
+			camera.CurrentMode.Position.y -= camera.CurrentMode.MovementSpeed;
 			if (camera.CurrentMode.Position.y < 0.5) camera.CurrentMode.Position.y = 0.5;
 		}
 		break;

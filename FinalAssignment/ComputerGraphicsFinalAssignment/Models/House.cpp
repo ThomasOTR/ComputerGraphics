@@ -8,17 +8,18 @@ void House::AddComponents()
 {
 	glm::vec3 position = GetPosition();
 
-	bool selectHouseRandom = rand() & 1;
-
-	if (selectHouseRandom)
+	/* There will be randomly chosen which roof a house will have. */
+	bool SelectRoof = rand() & 1;
+	if (SelectRoof)
 	{
+		/* A Pyramid Roof*/
 		Pyramid* top = new Pyramid(glm::vec3(0.588, 0.294, 0.));
 		top->Move(glm::vec3(position.x, position.y + 2.0f, position.z));
-
-		Parts.insert(Parts.end(), { top });
+		Parts.push_back(top);
 	}
 	else
 	{
+		/* A roof of 2 TriangularPrisms */
 		TriangularPrism* top1 = new TriangularPrism(glm::vec3(0.588, 0.294, 0.));
 		top1->Move(glm::vec3(position.x + 1.1f, position.y + 1.0f, position.z));
 		top1->Scale(glm::vec3(2.2, 1.2, 1.2));
