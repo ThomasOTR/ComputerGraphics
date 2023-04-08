@@ -13,10 +13,10 @@ private:
      * A value that determines how long the sidewalk is.
      * The sidewalk is build by multiple blocks next to each other to keep it textured nice 
      */
-    int amountOfBlocks;
+    int AmountOfParts;
 
-    /* A bool that is set to know in which direction the sidewalk is build */
-    bool x_axis;
+    /* A bool that determines in which direction the sidewalk will extend */
+    bool BuildOnXaxis;
 public:
     Sidewalk() = default;
     Sidewalk(int,bool);

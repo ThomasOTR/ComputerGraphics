@@ -8,7 +8,7 @@ class TriangularPrism :
     private:
 
         /* Vertices needed to create the Triangular Prism */
-        std::vector<GLfloat> Prism_Vertices = {
+        std::vector<GLfloat> PrismVertices = {
             0.0f, 0.0f, 0.0f,
             1.0f, 1.0f, 1.0f,
             0.0f, 1.0f, 0.0f,
@@ -21,7 +21,7 @@ class TriangularPrism :
         };
 
         /* Elements needed to create the Triangular Prism */
-        std::vector<GLushort> Prism_Elements = {
+        std::vector<GLushort> PrismElements = {
             0,4,2,
             2,3,0,
             0,4,3,

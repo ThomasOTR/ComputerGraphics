@@ -10,6 +10,6 @@ Cube::Cube(glm::vec3 inputColor)
 }
 void Cube::setData()
 {
-	std::copy(Cube_Vertices.begin(), Cube_Vertices.end(), vertices);
-	std::copy(Cube_Elements.begin(), Cube_Elements.end(), indices);
+	std::copy(CubeVertices.begin(), CubeVertices.end(), vertices);
+	std::copy(CubeElements.begin(), CubeElements.end(), indices);
 }

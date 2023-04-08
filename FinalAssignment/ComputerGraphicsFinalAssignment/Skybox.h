@@ -10,7 +10,7 @@ class Skybox :
 {
 private:
     /* A vector with all the vertices needed for the skybox */
-    std::vector<GLfloat> skyboxVertices =
+    std::vector<GLfloat> SkyboxVertices =
     {
         -1.0f, -1.0f,  1.0f,
          1.0f, -1.0f,  1.0f,
@@ -23,7 +23,7 @@ private:
     };
 
     /* A vector with all the indices needed for the skybox */
-    std::vector<GLushort> skyboxIndices =
+    std::vector<GLushort> SkyboxIndices =
     {
         1, 2, 6,
         6, 5, 1,
@@ -40,7 +40,7 @@ private:
     };
     
     /* A vector with image_paths of each side of the skybox */
-    std::vector<std::string> sides
+    std::vector<std::string> ImagesOfEachSide
     {
         "Textures/skybox/right.jpg",
         "Textures/skybox/left.jpg",

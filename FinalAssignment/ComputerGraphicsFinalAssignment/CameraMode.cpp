@@ -3,6 +3,7 @@
 CameraMode::CameraMode()
 {
 	Position = glm::vec3(0.0, 0.0, 0.0);
+
 	/* Set the camera modus as default on Walk */
 	Mode = ModeType::Walk;
 }

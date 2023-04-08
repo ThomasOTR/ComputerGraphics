@@ -37,6 +37,7 @@ public:
 	/* The mode of the Camera */
 	ModeType Mode;
 	
+	/* The Movement Speed of the camera. */
 	float MovementSpeed = 0.25;
 
 	CameraMode();

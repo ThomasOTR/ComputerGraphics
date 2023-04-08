@@ -75,10 +75,7 @@ public:
     /// Method to set boolean.
     /// </summary>
     /// <param name="">name of boolean</param>
-    void setBool(const std::string& bool_name, bool value);
-
-
-
+    void setBool(const std::string& name, bool value);
 private:
 
     /// <summary>

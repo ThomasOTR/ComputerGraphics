@@ -18,7 +18,7 @@ public:
     };
 
     /* Elements needed to create a Plane*/
-    std::vector<GLushort> Plane_Elements = {
+    std::vector<GLushort> PlaneElements = {
         0,1,2,
         2,3,1
     };

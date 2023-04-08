@@ -6,7 +6,6 @@ TakeOffAndFlyAndDescendAnimation::TakeOffAndFlyAndDescendAnimation(float Goal, f
 	this->Goal = Goal;
 	this->AnimateValue = AnimateValue;
 	this->maxY = maxY;
-
 	this->Negative = Negative;
 }
 
@@ -27,7 +26,6 @@ glm::mat4 TakeOffAndFlyAndDescendAnimation::Animate(glm::mat4 model)
 	/* Move to the location*/
 	else if (!HasReachedZLimit && HasReachedYLimit)
 	{
-		
 		if (Negative)
 		{
 			if(model[3].z > Goal) return TranslateEntity(model, glm::vec3(0.0, 0.0, -AnimateValue * 2));

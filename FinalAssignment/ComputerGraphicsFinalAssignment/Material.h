@@ -18,6 +18,7 @@ public:
 
 	/* The shinyness of the material */
 	float Power;
+
 	Material() = default;
 	Material(glm::vec3 Ambient, glm::vec3 Diffuse, glm::vec3 Specular, float Power);
 };

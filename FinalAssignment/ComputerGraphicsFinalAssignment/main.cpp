@@ -21,10 +21,6 @@ void ReshapeCallback(int width, int height)
     glViewport(0, 0, width, height);
 }
 
-/*
-
-*/
-
 /// <summary>
 /// A callback triggered when a key is pressed.
 /// This callback will trigger an InputHandler to perform an action based on a key

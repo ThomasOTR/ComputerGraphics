@@ -9,7 +9,7 @@ class Cube :
 {
 private:
     /* The vertices that are needed to create a cube*/
-	std::vector<GLfloat> Cube_Vertices = {
+	std::vector<GLfloat> CubeVertices = {
         // front
         -1.0, -1.0, 1.0,
             1.0, -1.0, 1.0,
@@ -43,7 +43,7 @@ private:
     };
     
     /* The elements that are needed to create a cube*/
-    std::vector<GLushort> Cube_Elements = {
+    std::vector<GLushort> CubeElements = {
         // front
          0,  1,  2,
          2,  3,  0,

@@ -9,6 +9,7 @@
 class Object : public Entity
 {
 private:
+	/* Path to the object */
 	std::string object_path;
 public:
 	/* Property which stores the vertices of the Object. This will be set in the LoadObject method */

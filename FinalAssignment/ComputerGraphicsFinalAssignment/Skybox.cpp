@@ -2,8 +2,8 @@
 
 Skybox::Skybox()
 {
-    std::copy(skyboxVertices.begin(), skyboxVertices.end(), vertices);
-    std::copy(skyboxIndices.begin(), skyboxIndices.end(), indices);
+    std::copy(SkyboxVertices.begin(), SkyboxVertices.end(), vertices);
+    std::copy(SkyboxIndices.begin(), SkyboxIndices.end(), indices);
 
     Scale(glm::vec3(10, 10, 10));
 }
@@ -34,7 +34,7 @@ void Skybox::Buffer(glm::mat4, glm::mat4)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     /* Load the Cubemap with all the images for each side */
-    texture_id = loadCubemap(sides);
+    texture_id = loadCubemap(ImagesOfEachSide);
 }
 
 void Skybox::Render(glm::mat4 view, glm::mat4 projection)

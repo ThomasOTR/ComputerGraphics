@@ -6,9 +6,10 @@ void Tree::AddComponents()
 
 	Object* trunk;
 	Object* leaves;
-	bool selectTreeType = rand() & 1;
 
-	if (selectTreeType)
+	/* There will be randomly chosen which tree will be rendered */
+	bool ChoiceOfTree = rand() & 1;
+	if (ChoiceOfTree)
 	{
 		trunk = new Object("trunk.obj", "tree_trunk.bmp",true);
 		leaves = new Object("leaves.obj", "leaves.bmp",true);

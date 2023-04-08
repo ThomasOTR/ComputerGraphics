@@ -8,6 +8,6 @@ TriangularPrism::TriangularPrism(glm::vec3 color)
 
 void TriangularPrism::setData()
 {
-	std::copy(Prism_Vertices.begin(), Prism_Vertices.end(), vertices);
-	std::copy(Prism_Elements.begin(), Prism_Elements.end(), indices);
+	std::copy(PrismVertices.begin(), PrismVertices.end(), vertices);
+	std::copy(PrismElements.begin(), PrismElements.end(), indices);
 }

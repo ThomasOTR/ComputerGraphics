@@ -10,7 +10,7 @@ class Pyramid : public PrimitiveMesh
 private:
     
     /* Vertices needed for the Pyramid */
-    std::vector<GLfloat> Pyramid_Vertices = {
+    std::vector<GLfloat> PyramidVertices = {
            -1.0, -1.0,  1.0, 
             1.0, -1.0,  1.0, 
             0.0,  1.0,  0.0,
@@ -19,7 +19,7 @@ private:
     };
 
     /* Elements needed for the Pyramid */
-    std::vector<GLushort> Pyramid_Elements = {
+    std::vector<GLushort> PyramidElements = {
        0,1,2,
        1,4,2, 
        4,3,2, 
